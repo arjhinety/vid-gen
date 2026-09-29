@@ -1,0 +1,153 @@
+# OpenGrad Study 001 — the lesson: "The empty bin", taught by Graddy-senpai. ~6.5 minutes.
+# The pilot (projects/opengrad-study-001) retold as an interactive lesson by one teacher,
+# Graddy-chan (a Live2D chibi senpai, build/cast/live2d/graddy), who stands in a lane on the
+# right of the sheet and talks to the viewer as her kōhai. Same house sheet, same claims (the
+# pilot's sources/claims-pilot.yaml), same data (data/study001.json is a byte copy of the pilot's
+# extract; refresh by copying, never edit). The pilot's scenes are forked into scenes/ and re-laid
+# for the narrower stage; the pilot itself stays untouched.
+id: opengrad-study-001-lesson
+title: "The empty bin: a lesson"
+description: >-
+  OpenGrad Study 001 as an interactive lesson taught by Graddy-senpai: predict-and-reveal,
+  checkpoints and a recap, over the pilot's measured results.
+format: { width: 1920, height: 1080, fps: 30 }
+brand: { name: Experimental Labs, place: Philippines, crumbs: [OpenGrad Study 001] }
+headline: { enabled: false }
+languages:
+  en: { voice: narrator-en, subtitles: [en] }
+  ja: { voice: narrator-ja, subtitles: [en], burn_subtitles: true }
+script: script/lesson.yaml
+claims: ../opengrad-study-001/sources/claims-pilot.yaml
+audio:
+  target_lufs: -16
+  line_gap: 0.35
+  beat_gap: 1.0
+  music:
+    tracks:
+      - { path: projects/opengrad-study-001/assets/music/graph-paper-learning.wav, from: cold-open }
+      - { path: projects/opengrad-study-001/assets/music/hidden-flaw-discovery-take2.wav, from: smoke-test }
+    gain_db: -9
+    duck_db: -7
+  sfx:
+    - { at: "cold-open:better", offset: 0.3, sound: impact, gain_db: -13 }
+    - { at: "same-questions:refuse", offset: 0.4, sound: impact, gain_db: -12 }
+    - { at: "empty-bin:empty", offset: 0.2, sound: impact, gain_db: -11 }
+    - { at: "empty-bin:title", offset: 0.1, sound: stamp, gain_db: -16 }
+    - { at: "what-next:nothing", offset: 0.1, sound: stamp, gain_db: -16 }
+# The presenter: one transparent Live2D track over the whole film, in the lane right of the stage
+# (docs/cast.md). The model is built by py/cast (see docs/cast.md, "Making a character").
+cast:
+  model: build/cast/live2d/graddy/graddy.model3.json
+  box: { x: 1400, y: 216, w: 520, h: 864 }
+  fit: { height: 0.78, x: 0, y: -0.05 }
+  pace: standard
+scenes:
+  - id: cold-open
+    renderer: web
+    entry: scenes/ColdOpen.tsx
+    section: [Qwen3.5-2B]
+    lead: 1.2
+    hold: 2.0
+    question: [{ at: better, text: "How did the model that refuses score better?" }]
+    beats: [l01, l02]
+    claims: [pilot-sentinel-base, pilot-sentinel-m1, pilot-m1-promoted]
+  - id: four-moves
+    renderer: web
+    entry: scenes/FourMoves.tsx
+    section: [§ The question]
+    lead: 0.6
+    hold: 1.2
+    question: "Can training teach a small model when to use a tool?"
+    beats: [l03, l04]
+    claims: [pilot-question, pilot-model, pilot-four-modes, pilot-b0-overcall]
+  - id: training
+    renderer: web
+    entry: scenes/Training.tsx
+    section: [01 · Post-training]
+    lead: 0.5
+    hold: 0.6
+    beats: [l05, l06]
+    claims: [pilot-corpus, pilot-confirmatory-once, pilot-b0-overcall, pilot-m0-overcall, pilot-dpo-method, pilot-dpo-gain, pilot-dpo-noise, pilot-gate-change]
+  - id: f1-geometry
+    renderer: manim
+    entry: scenes/manim/f1_geometry.py:F1Geometry
+    section: [01 · Post-training, The metric]
+    lead: 0.7
+    hold: 1.8
+    question: "What does the score actually measure?"
+    beats: [l07]
+    claims: [pilot-metric-defs, pilot-b0-pr, pilot-m0-pr, pilot-dpo-gain]
+  - id: smoke-test
+    renderer: web
+    entry: scenes/SmokeTest.tsx
+    section: [02 · The alarm]
+    lead: 0.6
+    hold: 1.6
+    question: "How did the model that refuses score better?"
+    beats: [l08]
+    claims: [pilot-sentinel-score]
+  - id: same-questions
+    renderer: web
+    entry: scenes/SameQuestions.tsx
+    section: [02 · The alarm, GSM8K + capability]
+    lead: 0.7
+    hold: 1.4
+    question:
+      - { text: "Is it refusing, or has it lost the skill?" }
+      - { at: loss, text: null }
+    beats: [l09, l10, l11]
+    claims: [pilot-gsm8k-n, pilot-gsm8k-base, pilot-gsm8k-refuse, pilot-gsm8k-8shot, pilot-capability-loss, pilot-dpo-gain, pilot-two-failures]
+  - id: empty-bin
+    renderer: web
+    entry: scenes/EmptyBin.tsx
+    section: [03 · The empty bin]
+    lead: 0.8
+    hold: 1.6
+    question: [{ at: "line:l12#0", text: "Why didn't any gate catch it?" }]
+    beats: [l12]
+    claims: [pilot-heldout-counts, pilot-vacuity]
+  - id: checkpoint
+    renderer: web
+    entry: scenes/Checkpoint.tsx
+    section: [03 · The empty bin, Checkpoint]
+    lead: 0.6
+    hold: 1.2
+    question: "Why did no gate see the refusals?"
+    beats: [l13]
+    claims: [pilot-heldout-counts, pilot-vacuity]
+  - id: the-label
+    renderer: web
+    entry: scenes/TheLabel.tsx
+    section: [04 · The label]
+    lead: 0.6
+    hold: 1.0
+    question: "Where did the refusals come from?"
+    beats: [l14]
+    claims: [pilot-label-code, pilot-refusal-share, pilot-refusal-w2c, pilot-suspect]
+  - id: what-next
+    renderer: web
+    entry: scenes/WhatNext.tsx
+    section: [05 · What next]
+    lead: 0.6
+    hold: 1.6
+    question: "What would fix it?"
+    beats: [l15, l16]
+    claims: [pilot-label-not-refusal, pilot-limits, pilot-s002-explain, pilot-pconf, pilot-s002-gate, pilot-punans-stop]
+  - id: recap
+    renderer: web
+    entry: scenes/Recap.tsx
+    section: [Recap]
+    lead: 0.6
+    hold: 1.4
+    question: "What should you take away?"
+    beats: [l17]
+    claims: [pilot-m1-promoted, pilot-gsm8k-refuse, pilot-capability-loss, pilot-heldout-counts, pilot-vacuity, pilot-label-not-refusal]
+  - id: close
+    renderer: web
+    entry: scenes/Close.tsx
+    section: [Study 002]
+    lead: 0.8
+    hold: 3.0
+    question: null
+    beats: [l18]
+    claims: [pilot-tagline]

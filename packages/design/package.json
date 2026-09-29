@@ -1,0 +1,12 @@
+{
+  "name": "@vid/design",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "OpenGrad visual language: tokens, fonts, base CSS.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./theme.css": "./theme.css",
+    "./tokens.json": "./tokens.json"
+  }
+}

@@ -1,0 +1,28 @@
+name: en-master-soft
+engine: qwen3/base06b-icl-soft (Qwen3-TTS 12Hz 0.6B-Base, Apache-2.0) cross-lingual
+  clone of ja-master-soft
+method: 'bootstrap: error-free, unflagged benchmark sentences with the highest ECAPA
+  similarity to the JA master, joined with 0.3 s gaps, normalised to -16 LUFS / peak
+  <= -1 dBFS'
+sentences:
+- p6_long__spoken__s10
+- p6_long__spoken__s08
+similarity_to_ja_master:
+- 0.863
+- 0.827
+transcript: Not occasionally, and not at random, but systematically, as if refusal
+  were a place it kept falling back into. It was only when we asked ordinary questions,
+  the kind with no tool involved at all, that the picture changed.
+duration_s: 15.98
+sha256: cf9c9e8fec5691e88929b35451d69381f04c9c5b0f884601eac48944bd43aea2
+provenance: 'Fully synthetic: derived only from ja-master-soft (itself caption-designed
+  in Irodori). No recording of any real person or character was used.'
+created: '2026-09-28'
+generation:
+  model: Qwen/Qwen3-TTS-12Hz-0.6B-Base (revision 5d83992436eae1d760afd27aff78a71d676296fc)
+  backend: faster-qwen3-tts 0.5.2 (qwen-tts-hf 0.1.1.post1, transformers 5.15.1), bf16, sdpa
+  mode: ICL clone of research/tts/voices/ja-master-soft.wav with its Japanese transcript as ref_text
+  sampling: temperature 0.9, top_k 50, repetition_penalty 1.05 (package defaults), torch.manual_seed(1234) per sentence
+caveat: >-
+  The two source sentences are benchmark sentences (p6_long s08 and s10), so the enboot runs have a
+  mild advantage on those two sentences; every other sentence is unseen.

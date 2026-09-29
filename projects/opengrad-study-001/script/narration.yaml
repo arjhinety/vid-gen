@@ -1,0 +1,350 @@
+# OpenGrad Study 001 — pilot narration ("The empty bin").
+#
+# Written to be heard, not read: the narration is never shown on screen (the open question
+# and the labels on the exhibits carry the words; see docs/design-system.md). So:
+# - connected sentences of about 8 to 14 words, with a few short ones kept for the turns;
+# - every term defined, in plain words, the first time it is said;
+# - about three spoken numbers a minute; the rest sit on the objects they describe;
+# - `pause:` after a line is authored, not left to the default gap: 0.5-0.8 s after a
+#   question, 1-1.6 s after a definition, 2.5-3.5 s of silence after the big reveals,
+#   where the picture does the talking.
+# `tone:` directs the voice for a line (a word from the voice files' `tones` tables: curious,
+# disbelief, irony, gravity, surprise, reveal, resolve, warm); an inline `{tone}` in one
+# language's text places it at a clause (Irodori emoji). About a third of the lines carry one,
+# at the turns; the rest are neutral, so the direction means something. `*…*` marks the word
+# the line leans on (shown only when a project turns the headline on). Display text keeps digits; the per-language normaliser produces spoken forms
+# and `say_en` / `say_ja` override where it would get them wrong. [[cue]] marks the word an
+# animation is locked to; every cue appears in both languages. `claims` ids resolve in
+# ../sources/claims-pilot.yaml; a line with no claims states no result (a definition or a
+# transition). The Japanese was written by the pipeline author (not a native speaker) and
+# should be reviewed before publication.
+
+beats:
+  # ---------------------------------------------------------------- cold open
+  - id: b01
+    intent: "A question a child could answer; the base model is wrong; the trained model refuses; the score says it's better."
+    lines:
+      - en: "Here is a [[q]]question a ten-year-old could answer."
+        ja: "これは、十歳の子どもでも解ける[[q]]問題です。"
+        pause: 0.45
+      - en: "The original model [[base]]answers it, and gets it wrong."
+        ja: "元のモデルは[[base]]答えますが、間違えます。"
+        claims: [pilot-sentinel-base]
+        pause: 1.3
+      - en: "The model we trained [[trained]]doesn't even *try*."
+        ja: "私たちが訓練したモデルは、[[trained]]答えようとすらしません。"
+        tone: disbelief
+        claims: [pilot-sentinel-m1]
+        pause: 1.8
+      - en: "And yet, by the score we used to judge it, [[better]]the trained model was the better one."
+        ja: "それなのに、評価に使ったスコアでは、[[better]]{irony}訓練したモデルの方が優れていました。"
+        tone: irony
+        claims: [pilot-m1-promoted]
+        pause: 1.2
+  - id: b02
+    intent: "Promise the answer, and plant the title."
+    lines:
+      - en: "This is the story of how that happened, and of the one place [[bin]]we forgot to look."
+        ja: "これは、それがどう起きたのか、そして私たちが見落としていた[[bin]]ただ一つの場所の話です。"
+        tone: curious
+
+  # ---------------------------------------------------------------- the question
+  - id: b03
+    intent: "The research question, post-training defined, the model, and the four moves."
+    lines:
+      - en: "It started with a narrow question: can a little extra training teach a small model [[when]]*when* to use a tool?"
+        ja: "始まりは、ひとつの小さな問いでした。少しの追加学習で、小さなモデルに[[when]]いつツールを使うべきかを教えられるのか。"
+        tone: curious
+        claims: [pilot-question]
+        pause: 0.45
+      - en: "Training a finished model further like this is called [[post]]post-training."
+        ja: "完成したモデルを、こうしてさらに訓練することを、[[post]]事後学習と呼びます。"
+        pause: 0.45
+      - en: "The model was [[model]]Qwen 3.5, with about two billion parameters."
+        say_en: "The model was [[model]]Kwen three point five, with about two billion parameters."
+        ja: "モデルは[[model]]Qwen3.5。パラメータは、およそ二十億です。"
+        say_ja: "モデルは[[model]]クウェン三点五。パラメータは、およそ二十億です。"
+        claims: [pilot-model]
+        pause: 0.6
+      - en: "Every request has [[moves]]four possible moves, and one of them is right."
+        ja: "どの依頼にも、[[moves]]取りうる動きが四つあり、正しいのは一つです。"
+        claims: [pilot-four-modes]
+        pause: 0.4
+      - en: "[[call]]Call a tool. [[clarify]]Ask for what's missing. [[decline]]Decline what it can't do. Or [[answer]]just answer."
+        ja: "[[call]]ツールを呼ぶ。[[clarify]]足りない情報を尋ねる。[[decline]]できないことは断る。そして、[[answer]]ただ答える。"
+        claims: [pilot-four-modes]
+    pause: 1.2
+  - id: b04
+    intent: "The base model over-calls; the dots make it visible before the number."
+    lines:
+      - en: "Before any training, it [[reach]]reached for a tool far too often."
+        ja: "訓練前のモデルは、[[reach]]あまりにも頻繁に、ツールに手を伸ばしました。"
+        claims: [pilot-b0-overcall]
+        pause: 2.2
+      - en: "When no tool was needed, it called one anyway [[p62]]62% of the time."
+        ja: "ツールが要らない場面でも、[[p62]]62%の割合で呼んでしまったのです。"
+        tone: disbelief
+        claims: [pilot-b0-overcall]
+
+  # ---------------------------------------------------------------- post-training
+  - id: b05
+    intent: "Fine-tuning defined; the corpus; the held-out test defined; over-calling collapses."
+    lines:
+      - en: "So we [[finetune]]fine-tuned it: more training, on [[corpus]]tool-use conversations gathered from [[sources]]four public datasets."
+        ja: "そこで、[[finetune]]ファインチューニング、つまり追加の訓練をしました。[[corpus]]ツール利用の会話を、[[sources]]四つの公開データセットから集めて。"
+        claims: [pilot-corpus]
+        pause: 1.2
+      - en: "The final exam was a [[heldout]]held-out set: questions the model never trained on, kept [[sealed]]sealed and scored once."
+        ja: "最終試験は[[heldout]]ホールドアウトセット。訓練では一度も見せていない問題で、[[sealed]]封をしたまま、一度だけ採点しました。"
+        claims: [pilot-confirmatory-once]
+        pause: 0.45
+      - en: "Over-calling [[drop]]collapsed, from 62% to 15%."
+        ja: "過剰な呼び出しは、[[drop]]62%から15%へと激減しました。"
+        tone: surprise
+        claims: [pilot-b0-overcall, pilot-m0-overcall]
+        pause: 1.8
+  - id: b06
+    intent: "Preference training defined; its gain within noise; the gate defined, and moved."
+    lines:
+      - en: "The last step was [[pref]]preference training: show the model two replies, and nudge it toward the better one."
+        ja: "最後の一歩は[[pref]]選好学習。二つの応答を見せて、良い方へとモデルを少しずつ寄せていきます。"
+        claims: [pilot-dpo-method]
+        pause: 0.45
+      - en: "It added [[seven]]seven correct calls out of 453. From a single run, that's [[noise]]within noise."
+        ja: "増えた正しい呼び出しは、453件中、[[seven]]わずか七件。一回だけの実行では、[[noise]]誤差の範囲です。"
+        tone: irony
+        claims: [pilot-dpo-gain, pilot-dpo-noise]
+        pause: 0.6
+      - en: "It was promoted anyway, by a [[gate]]gate, a pass-or-fail checklist that was rewritten *after* the first results came in."
+        ja: "それでも昇格しました。合否を決めるチェックリスト、[[gate]]ゲートが、最初の結果を見た後に書き直されていたのです。"
+        tone: gravity
+        claims: [pilot-gate-change]
+        pause: 1.4
+
+  # ---------------------------------------------------------------- the metric (manim)
+  - id: b07
+    intent: "Precision, recall and F1 as geometry; fine-tuning moves to a better contour, preference training barely moves."
+    lines:
+      - en: "The score was [[f1]]F1. Here's what it measures."
+        ja: "スコアは[[f1]]F1。何を測っているのか、見てみましょう。"
+        pause: 0.45
+      - en: "[[prec]]Precision: of the tools it called, how many were right."
+        ja: "[[prec]]適合率。呼んだツールのうち、正しかったのはいくつか。"
+        claims: [pilot-metric-defs]
+        pause: 1.1
+      - en: "[[rec]]Recall: of the calls it should have made, how many it made."
+        ja: "[[rec]]再現率。呼ぶべき場面のうち、実際に呼べたのはいくつか。"
+        claims: [pilot-metric-defs]
+        pause: 1.1
+      - en: "F1 is their [[harm]]harmonic mean, which is only high when both are high."
+        ja: "F1はその[[harm]]調和平均で、両方が高いときだけ、高くなります。"
+        claims: [pilot-metric-defs]
+        pause: 1.4
+      - en: "The original model sat [[b0]]here. It almost never missed a call, but fewer than half of its calls were right."
+        ja: "元のモデルは[[b0]]ここ。呼ぶべき場面はほぼ逃しませんが、呼んだうち正しかったのは、半分にも届きません。"
+        claims: [pilot-b0-pr]
+        pause: 1.1
+      - en: "Fine-tuning [[m0]]traded a little recall for a lot of precision."
+        ja: "ファインチューニングは、再現率を少し手放して、[[m0]]適合率を大きく上げました。"
+        claims: [pilot-m0-pr]
+        pause: 0.45
+      - en: "Preference training [[m1]]barely moved it."
+        ja: "選好学習は、[[m1]]ほとんど動かしませんでした。"
+        tone: irony
+        claims: [pilot-dpo-gain]
+
+  # ---------------------------------------------------------------- the alarm
+  - id: b08
+    intent: "Callback to the cold open: the smoke test; same score, opposite failures."
+    lines:
+      - en: "Then a [[smoke]]smoke test, seven fixed questions, raised an alarm."
+        ja: "そこへ、七つの決まった問題による[[smoke]]スモークテストが、警報を鳴らしました。"
+        tone: gravity
+        claims: [pilot-sentinel-score]
+        pause: 0.45
+      - en: "Both models passed [[five]]five of the seven."
+        ja: "どちらのモデルも、七問中[[five]]五問に合格。"
+        claims: [pilot-sentinel-score]
+        pause: 0.45
+      - en: "But they failed [[opposite]]in opposite ways."
+        ja: "でも、失敗の仕方は[[opposite]]正反対でした。"
+        claims: [pilot-sentinel-score]
+        pause: 0.6
+      - en: "The original model got answers wrong. The trained one [[refused]]*refused* to answer."
+        ja: "元のモデルは答えを間違え、訓練したモデルは、[[refused]]答えることを拒んだのです。"
+        tone: disbelief
+        claims: [pilot-sentinel-score]
+  - id: b09
+    intent: "1,319 questions; the base attempts all; both trained checkpoints refuse all. Hold on the red grid."
+    lines:
+      - en: "So we asked [[gsm]]1,319 grade-school maths questions."
+        ja: "そこで、小学生レベルの算数を[[gsm]]1,319問、出しました。"
+        say_ja: "そこで、小学生レベルの算数を[[gsm]]せんさんびゃくじゅうきゅう問、出しました。"  # kana: Irodori read 千三百十九 as 1,309 on 5 of 6 seeds
+        claims: [pilot-gsm8k-n]
+        pause: 0.45
+      - en: "The original model [[attempt]]attempted every one."
+        ja: "元のモデルは、[[attempt]]すべてに挑みました。"
+        claims: [pilot-gsm8k-base]
+        pause: 0.45
+      - en: "Both trained checkpoints, the models saved after each training step, [[refuse]]refused every *single* one."
+        ja: "訓練の各段階で保存した二つのモデル、チェックポイントは、[[refuse]]一問残らず拒否しました。"
+        tone: gravity
+        claims: [pilot-gsm8k-refuse]
+        pause: 3.2
+  - id: b10
+    intent: "The 8-shot control: the refusal answers the shape of the request."
+    lines:
+      - en: "Then we changed only the prompt, adding [[shots]]eight worked examples before each question."
+        ja: "次に、プロンプトだけを変えました。各問題の前に、[[shots]]解き方の例を八つ添えたのです。"
+        claims: [pilot-gsm8k-8shot]
+        pause: 0.45
+      - en: "The refusals [[vanish]]vanished. Same questions, same model."
+        ja: "拒否は[[vanish]]{surprise}消えました。同じ問題、同じモデルのままで。"
+        tone: surprise
+        claims: [pilot-gsm8k-8shot]
+        pause: 1.5
+      - en: "Only the *shape* of the request had changed."
+        ja: "変わったのは、依頼の形だけでした。"
+        tone: reveal
+        claims: [pilot-gsm8k-8shot]
+        pause: 2.0
+  - id: b11
+    intent: "The second failure: real ability loss where there is no refusal."
+    lines:
+      - en: "With the refusals gone, a second problem [[second]]showed through."
+        ja: "拒否が消えると、もう一つの問題が[[second]]見えてきました。"
+        claims: [pilot-capability-loss]
+        pause: 0.45
+      - en: "Tool use [[up]]went up, but maths, following instructions, and general knowledge [[down]]all went down."
+        ja: "ツールの利用は[[up]]上がりましたが、算数、指示に従う力、一般知識は、[[down]]どれも下がりました。"
+        tone: gravity
+        claims: [pilot-dpo-gain, pilot-capability-loss]
+        pause: 1.2
+      - en: "So there were two failures: a [[switch]]refusal switch, and [[loss]]real ability, *lost*."
+        ja: "つまり、失敗は二つ。[[switch]]拒否のスイッチと、[[loss]]本当に失われた能力です。"
+        claims: [pilot-two-failures]
+
+  # ---------------------------------------------------------------- the empty bin
+  - id: b12
+    intent: "Callback to the four moves: the ANSWER bin was always empty; the metric was vacuous. Pay off the promise."
+    lines:
+      - en: "So why didn't any gate catch it?"
+        ja: "では、なぜどのゲートも、気づかなかったのか。"
+        tone: curious
+        pause: 1.0
+      - en: "Count what the held-out set [[count]]contained, move by move."
+        ja: "ホールドアウトセットの中身を、動きごとに[[count]]数えてみましょう。"
+        claims: [pilot-heldout-counts]
+        pause: 1.8
+      - en: "[[empty]]Not one question where the right move was to just answer."
+        ja: "ただ答えるのが正しい問題は、[[empty]]一問もありませんでした。"
+        tone: gravity
+        claims: [pilot-heldout-counts]
+        pause: 3.0
+      - en: "So the answering score had [[zero]]nothing to divide by."
+        ja: "だから、答える力のスコアには、[[zero]]割る数がなかったのです。"
+        claims: [pilot-vacuity]
+        pause: 0.45
+      - en: "It read zero for every model, even the original, so its check was [[off]]switched off."
+        ja: "どのモデルでも、元のモデルでさえゼロ。だから、そのチェックは[[off]]外されました。"
+        claims: [pilot-vacuity]
+        pause: 1.3
+      - en: "Not a statistics problem. [[title]]An *empty bin*: the one place we forgot to look."
+        ja: "統計の問題ではありません。[[title]]{reveal}空っぽの箱。私たちが見落としていた、ただ一つの場所です。"
+        tone: reveal
+        claims: [pilot-vacuity]
+
+  # ---------------------------------------------------------------- the label
+  - id: b13
+    intent: "The annotation contract, shown as code; the suspect, marked as a hypothesis."
+    lines:
+      - en: "The training data had a blind spot of its own."
+        ja: "訓練データにも、独自の死角がありました。"
+        pause: 0.45
+      - en: "Each example's right move was labelled by [[code]]a few lines of code."
+        ja: "各事例の正しい動きは、[[code]]数行のコードでラベル付けされていました。"
+        claims: [pilot-label-code]
+        pause: 0.6
+      - en: "If it calls a tool, it's a call. [[else]]Anything else is an answer."
+        ja: "ツールを呼んでいれば「呼び出し」。[[else]]それ以外は、すべて「回答」。"
+        claims: [pilot-label-code]
+        pause: 1.1
+      - en: "So a reply like [[apology]]“I'm unable to do that” was filed as an *answer*."
+        ja: "つまり、[[apology]]「それはできません」という応答も、「回答」に分類されたのです。"
+        tone: irony
+        claims: [pilot-label-code]
+        pause: 1.6
+      - en: "That's about [[tenth]]one example in ten, and in one source, [[w2c]]six in ten."
+        ja: "その割合は、[[tenth]]およそ十件に一件。あるデータ源では、[[w2c]]十件に六件でした。"
+        claims: [pilot-refusal-share, pilot-refusal-w2c]
+        pause: 0.6
+      - en: "The study calls this its [[suspect]]prime suspect, not a proven cause."
+        ja: "研究はこれを[[suspect]]最有力の容疑者と呼びます。証明された原因ではありません。"
+        claims: [pilot-suspect]
+
+  # ---------------------------------------------------------------- the basin (manim, metaphor)
+  - id: b14
+    intent: "Our metaphor, clearly flagged: refusal as a basin; examples tilt the ground."
+    lines:
+      - en: "Here's one way to picture it. A metaphor, not a measurement."
+        ja: "ひとつのたとえで、描いてみます。測定ではありません。"
+        claims: [pilot-metaphor]
+        pause: 0.45
+      - en: "Refusal became a [[basin]]basin. A bare question [[roll]]rolls straight in."
+        ja: "拒否は[[basin]]くぼみになり、むき出しの質問は、[[roll]]まっすぐ転がり込みます。"
+        claims: [pilot-metaphor]
+        pause: 1.2
+      - en: "Worked examples [[tilt]]tilt the ground, and the same question [[out]]rolls out."
+        ja: "解き方の例が[[tilt]]地面を傾けると、同じ質問は[[out]]転がり出ていきます。"
+        claims: [pilot-metaphor, pilot-gsm8k-8shot]
+
+  # ---------------------------------------------------------------- lesson and next
+  - id: b15
+    intent: "The repo's own lesson, why not just delete refusals, and why training stopped."
+    lines:
+      - en: "The study's own verdict: [[label]]the defect is the *label*, not the refusal."
+        ja: "研究自身の結論は、こうです。[[label]]欠陥はラベルにあり、拒否そのものではない。"
+        tone: resolve
+        claims: [pilot-label-not-refusal]
+        pause: 1.1
+      - en: "Many of those refusals were right. Deleting them would only [[trade]]trade over-refusal for made-up answers."
+        ja: "拒否の多くは正しかった。消してしまえば、[[trade]]拒否しすぎが、でっち上げの答えに変わるだけです。"
+        claims: [pilot-label-not-refusal]
+        pause: 0.6
+      - en: "With [[one]]one model, trained once and never repeated, the study stopped there."
+        ja: "[[one]]モデルは一つ、訓練は一回きりで、再現もなし。研究は、そこで止まりました。"
+        claims: [pilot-limits]
+    pause: 1.4
+  - id: b16
+    intent: "Study 002: the empty bin gets filled; the new gate; the study stops itself."
+    lines:
+      - en: "Study 002 [[explain]]explains before it corrects."
+        ja: "研究002は、直す[[explain]]前に、まず説明します。"
+        say_ja: "研究ゼロゼロニは、直す[[explain]]前に、まず説明します。"
+        claims: [pilot-s002-explain]
+        pause: 0.45
+      - en: "Its test [[fill]]fills the empty bin, with 1,055 questions that should just be answered."
+        ja: "そのテストは、[[fill]]空っぽの箱を満たします。ただ答えるべき問題、1,055問で。"
+        tone: warm
+        say_ja: "そのテストは、[[fill]]空っぽの箱を満たします。ただ答えるべき問題、千五十五問で。"
+        claims: [pilot-pconf]
+        pause: 2.4
+      - en: "Its gate [[fails]]fails any model that keeps its tool score but stops answering."
+        ja: "そのゲートは、ツールのスコアを保ったまま答えなくなったモデルを、[[fails]]不合格にします。"
+        claims: [pilot-s002-gate]
+        pause: 1.0
+      - en: "It has already stopped itself once: two AI labellers agreed on [[agree]]77% of items, short of the [[floor]]80% it set in advance."
+        ja: "そして、すでに一度、自ら止まっています。二つのAIラベラーの一致率は[[agree]]77%で、事前に決めた[[floor]]80%に届かなかったのです。"
+        claims: [pilot-punans-stop]
+        pause: 0.6
+      - en: "So [[nothing]]nothing was trained."
+        ja: "だから、[[nothing]]何も訓練していません。"
+        tone: gravity
+        claims: [pilot-punans-stop]
+  - id: b17
+    intent: "Close on the repository's own line; point to what comes next."
+    lines:
+      - en: "[[grad]]Every gradient is a hypothesis. [[ckpt]]Every checkpoint is evidence."
+        ja: "[[grad]]すべての勾配は仮説であり、[[ckpt]]すべてのチェックポイントは証拠である。"
+        tone: resolve
+        claims: [pilot-tagline]

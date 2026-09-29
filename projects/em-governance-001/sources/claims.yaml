@@ -1,0 +1,375 @@
+# Claims this film makes. Every one resolves to the governance draft:
+#   sources/governance-draft-v0.1.pdf ("Experimental Machines — Founding Governance Design Draft v0.1",
+#   Sep 26, 2026, 53 pages; sha256 in data/governance.json). Page numbers are the PDF's own.
+# Classes, as used here:
+#   design                 what the draft decides or proposes (its DECIDED facts, PROVISIONAL recommendations,
+#                          FOUNDER DECISIONs). Nothing here is adopted yet: the draft is a proposal.
+#   author-interpretation  the draft's reading of Philippine law (its LEGAL REQUIREMENT / CONSERVATIVE labels). The
+#                          draft says counsel must check these (p.2); the film repeats them, it does not verify them.
+#   limitation             a weakness the draft flags in itself (§16).
+# The film's own one-line summaries are marked author-interpretation with the pages they summarise.
+claims:
+  # ------------------------------------------------------------------ the document
+  - id: draft-scope
+    text: "The draft runs to 53 pages and records 38 governance decisions (GDR-001 to GDR-038)."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "p.1 footer 'Page 1 of 53'; §3 decision record, pp.6-11"
+  - id: draft-status
+    text: "It is a design proposal for three founders to argue with, not a legal document; nothing in it is filing-ready wording."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "p.1 'How to read this draft'"
+  - id: draft-counsel
+    text: "Claude is not a lawyer; counsel should check the legal requirements before the Articles are drafted."
+    class: limitation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "p.2, 'Legal basis' paragraph"
+
+  # ------------------------------------------------------------------ what EM is
+  - id: em-purpose
+    text: "Experimental Machines is for serious technical ML research and for widening who can take part in it, especially researchers based in the Philippines."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "p.3 'What Experimental Machines is for'; §1 p.2"
+  - id: em-form
+    text: "Experimental Machines is designed as a Philippine non-stock, non-profit corporation (DECIDED, GDR-007)."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "p.7 GDR-007; p.1 premise 1"
+  - id: fin-no-dividends
+    text: "No dividends and no surplus sharing (RCC Sec. 86, as the draft reads it)."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "p.1 premise 1; §12 principles 1-3, p.32"
+  - id: fin-surplus
+    text: "Incidental surplus goes back into the purpose."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§12 principle 3, p.32"
+  - id: spon-accept
+    text: "EM may accept research grants, donations, compute credits, hardware and other support (secondary purpose 5; §11 'What EM may accept')."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "p.3 secondary purpose 5; §11 p.30"
+  - id: em-purpose-clause
+    text: "Proposed primary purpose: to undertake and assist scientific research in machine learning and related fields, for the public interest, and to make its methods, data, code and results openly available (PROVISIONAL, GDR-009)."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§1 'Proposed purpose language', p.3; GDR-009 p.7"
+  - id: em-tax-test
+    text: "The BIR's organizational test looks for a Sec. 30 purpose in the Articles, so the clause uses RMO 38-2019's 'scientific' wording."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§1 p.3"
+  - id: em-not
+    text: "EM is not a consultancy, automation agency, policy group, incubator, professional association or awareness campaign."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "p.3 'What Experimental Machines is for'"
+
+  # ------------------------------------------------------------------ three hats
+  - id: facts-roles
+    text: "The three founders are each a corporate member, a trustee and an officer (DECIDED)."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§1 'Founding facts', p.2; GDR-001 to GDR-003, p.6"
+  - id: members-change
+    text: "Members hold the powers that change what Experimental Machines is; the Board runs it."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§4 opening, p.11"
+  - id: officers
+    text: "Initial officers: President Alpha, Treasurer John, Corporate Secretary Arjhine (DECIDED, GDR-003)."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "GDR-003 p.6; §18 p.51"
+  - id: layers-flow
+    text: "Members elect the Board of Trustees; the Board appoints and oversees the officers (the draft recommends Board election of officers)."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§2 flowchart, p.4; §5 'Officers' row, p.16"
+  - id: law-combo
+    text: "No one is both President and Treasurer, or President and Secretary (LEGAL REQUIREMENT, RCC Sec. 24, as the draft reads it)."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§1 'Checks against the law', p.2"
+  - id: law-president
+    text: "The President must be a trustee: a CONSERVATIVE WORKING ASSUMPTION (RCC Sec. 24 applied through Sec. 86)."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "p.1 premise 3; p.2"
+  - id: unpaid
+    text: "No founder receives salary, honorarium or per diem for about the first year (DECIDED, GDR-005); trustees receive no compensation while serving (GDR-010)."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "GDR-005 and GDR-010, p.7; §9 p.25"
+  - id: titles-legal
+    text: "Corporate offices are legal functions, not scientific rank; research leadership follows the work and the project (DECIDED, GDR-006)."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "GDR-006 p.7; §1 p.2"
+
+  # ------------------------------------------------------------------ two layers
+  - id: layers
+    text: "The corporate layer answers 'is this lawful, funded and safe for the institution?'; the research layer answers 'is this true, and how do we find out?'. Neither outranks the other in its own domain. The Board sends resources, budget and risk; research sends back evidence, conclusions and publication calls."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§2, p.4 (text and flowchart)"
+  - id: titles
+    text: "No CEO, CTO, VP, Chief Scientist or Director titles unless a real need appears and the Board approves; research titles are Researcher, Research Engineer, Research Fellow, Project Lead; Project Lead is per project and ends with the project."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§2 'Rules that keep the layers separate', p.5"
+  - id: titles-noauth
+    text: "A corporate office confers no authority over scientific conclusions."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§2 table, p.5; §6"
+
+  # ------------------------------------------------------------------ member powers
+  - id: members-table
+    text: "Member powers include electing and removing trustees, amending the Articles and By-Laws, changing the mission, merger, dissolution and admitting members; most recommended thresholds are 2/3 of all members."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§4 table, pp.11-14"
+  - id: members-twothirds
+    text: "With three members, '2/3 of all members' means two of three, so thresholds alone cannot stop two founders acting together."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§4 opening, p.11"
+  - id: members-process
+    text: "The protections therefore rely on process (notice, delay, reasons, an outside reviewer) as much as on vote counts."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§4 opening, p.11"
+  - id: members-unanimity
+    text: "Unanimity is recommended nowhere: it would give any one founder a veto."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§4, p.14"
+
+  # ------------------------------------------------------------------ mission lock
+  - id: mission-rule
+    text: "Changing the primary purpose needs a written proposal circulated at least 30 days before the first vote, approval by 2/3 of all members at two meetings at least 60 days apart, and the new purpose must stay scientific (NIRC Sec. 30(E)), non-stock and non-profit, with the dissolution clause unchanged (PROVISIONAL, GDR-012)."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§4 'Mission-protection rule', p.15; GDR-012 p.8"
+  - id: mission-effect
+    text: "It gives the third founder two months and a public record to argue, and does not let one person block a change forever. Alternative (FOUNDER DECISION): unanimity while there are fewer than five members."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§4, p.15"
+
+  # ------------------------------------------------------------------ the Board
+  - id: board-powers
+    text: "The Board governs money, people, contracts, compliance and institutional risk: budget, banking, compute, grants, employment, contracts, officers, conflicts, compliance, assets, policies, and opening or closing programs."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§5 'What the Board decides', pp.15-16"
+  - id: board-limits
+    text: "The Board may not change, soften or withhold a result because someone dislikes it, order a negative result left unpublished, assign or remove authors, override a correction, or use a corporate title to settle a scientific dispute."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§5 'What the Board does not decide', p.17"
+  - id: prohibit-disguise
+    text: "Explicitly prohibited: using a budget or program-closure decision as a disguised way to alter or suppress a result."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§6 'Explicitly prohibited' item 5, p.19"
+  - id: intervene-grounds
+    text: "The Board may intervene only on listed grounds: law, privacy, security, safety, research misconduct, contract, budget, IP constraints, material institutional risk, and only as far as the ground requires."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§6 'When the Board may intervene', p.18"
+  - id: intervene-procedure
+    text: "Every intervention is written, gives reasons, names the ground, and is time-limited; researchers may ask the full Board to reconsider."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§6, p.19"
+  - id: science-disputes
+    text: "Scientific disagreements are settled by evidence among the researchers; a dissent may be recorded in the paper or the dissenter may decline authorship; no corporate officer breaks the tie."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§6 'Who holds scientific authority', p.18"
+
+  # ------------------------------------------------------------------ conflicts
+  - id: coi-rule
+    text: "A trustee with a potential interest in a related-party matter discloses and recuses from the vote; by policy the trustee also leaves the discussion."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§8 'Conflict recusal', p.24 (RCC Secs. 31, 52 as the draft reads them); GDR-020"
+  - id: coi-quorum
+    text: "Quorum is 2 of 3. With one trustee recused, both others must vote yes; if they disagree the matter fails, which for an insider contract is the safe outcome."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§8 'How the three-person board handles a conflict', p.25"
+  - id: coi-all
+    text: "If all three trustees are conflicted (e.g. a company all three own), the Board cannot approve it; the draft recommends treating such deals as presumptively not to be done until the Board has at least two trustees with no interest."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§8, p.25; Founder Review item 15, p.51"
+  - id: deadlock
+    text: "A failed motion leaves the status quo; if the Board cannot act on an operationally necessary matter for 60 days, any trustee may request non-binding mediation by the independent reviewer."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§8 'Deadlock', p.24; GDR-031"
+
+  # ------------------------------------------------------------------ membership
+  - id: members-not
+    text: "Researchers, research engineers, employees, fellows, contributors, collaborators, donors and sponsors are not members unless formally admitted."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§7 'Who is not a member', p.20"
+  - id: members-admission
+    text: "Admission: a member proposes in writing; the Board nominates; members approve by 2/3 of all members; the Secretary enters the new member on the register."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§7 'Admission', p.20; GDR-015"
+  - id: removal-causes
+    text: "Causes for removal are listed: serious misconduct, misuse of assets, breach of fiduciary duty, serious research misconduct, or a disqualifying conviction."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§7 'Ending membership', p.21"
+  - id: removal-notcause
+    text: "Not a cause: scientific disagreement, disagreement about research direction, voting against the majority, publishing a result others dislike, or good-faith criticism."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§7, p.22"
+  - id: removal-process
+    text: "Due process: written notice with the cause and facts; at least 30 days to respond in writing and at a hearing; a written finding by an independent reviewer that the cause is established; a vote of 2/3 of all members not counting the respondent (both of the other two); a written decision."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§7 'Due process for removal', p.22; GDR-016"
+  - id: removal-why
+    text: "With three members, the independent reviewer is the only mechanism that stops two founders removing the third for a non-cause reason; it is not perfect, because the other two still decide."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§7, p.22"
+
+  # ------------------------------------------------------------------ money
+  - id: fin-principles
+    text: "No dividends, no distributions, no surplus sharing; all money and property belong to the corporation, not to any person; trustee service is unpaid."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§12 financial principles 1-4 and 8, p.32"
+  - id: fin-ownpay
+    text: "Nobody sets or votes on their own compensation (a legal requirement for trustees, RCC Sec. 29; recommended for everyone)."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§12 principle 9, p.33"
+  - id: fin-reimburse
+    text: "Documented out-of-pocket expenses may be reimbursed, with receipts and approval by someone other than the claimant."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§12 principle 10, p.33"
+  - id: fin-twoperson
+    text: "Two people are involved in every payment above a policy threshold."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§12 principle 14, p.33; GDR-030 (OPEN)"
+  - id: founder-transition
+    text: "Founder paid work is neither promised nor forbidden; if it comes, in order: the role exists on its own merits, tax review (BIR ruling or written advice) first, the founder leaves the Board first, disclosure and recusal, the same terms as anyone else, and CTE disclosure (DEFERRED, GDR-022)."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§9 'Founder Transition Principle', pp.25-26"
+  - id: future-company
+    text: "A future for-profit is a separate entity with no right to EM's money, compute, data, models, code or IP; every dealing between them is a related-party transaction (PROVISIONAL, GDR-023)."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§9 'Separate Future Company Principle', pp.26-27"
+
+  # ------------------------------------------------------------------ IP
+  - id: ip-a-c
+    text: "Background IP (what existed before, or was made outside any EM program) and independent researcher work stay with the researcher (categories A and C)."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§10 'The five categories', pp.27-28"
+  - id: ip-b
+    text: "EM Program IP (made under an EM program, with substantial EM funding or compute, or under an EM agreement or grant) belongs to EM, open by default."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§10 category B, p.28; rule 2, p.29"
+  - id: ip-rule
+    text: "No 'everything you invent belongs to us' clause: category B is triggered only by six listed connections."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§10 rule 1, p.28"
+  - id: ip-d
+    text: "Attribution and academic rights always stay with the researcher; ownership is never authorship."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§10 category D, p.28; rule 4, p.29"
+
+  # ------------------------------------------------------------------ sponsors
+  - id: spon-principle
+    text: "EM may take money, compute and hardware from almost anyone, but never on terms that let the funder decide what the research finds."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§11 opening, p.30"
+  - id: spon-safeguards
+    text: "Ten safeguards, including: no guaranteed conclusion; no sponsor dictating or indefinitely suppressing findings; a confidentiality review limited to the sponsor's own information (up to 30 days recommended); a patent-filing delay (up to 90 days recommended); funding disclosed on every output; results presumptively publishable."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§11 'The ten safeguards', pp.30-31"
+  - id: consulting-line
+    text: "Recommended bright line: EM does not offer consulting, managed services, paid deployments or private paid benchmarking as an activity (PROVISIONAL, GDR-027)."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§11, p.32"
+  - id: consulting-vs
+    text: "Research sponsorship answers a research question with results published; consulting answers a client's business problem with results delivered privately."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§11 comparison table, p.31"
+  - id: consulting-risk
+    text: "If fee-for-service work becomes regular or substantial, the operational test for the tax exemption is in doubt; commercial work belongs in a separate company."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§11 'Where the Sec. 30(E) risk begins', p.31; p.32"
+
+  # ------------------------------------------------------------------ where rules live
+  - id: where-rules
+    text: "Articles need 2/3 of members and SEC approval; By-Laws need member votes (entrenched sections 2/3); policies need a Board vote; agreements bind individuals. Put a rule in the hardest-to-change document only if changing it should be hard."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§15 opening, p.42"
+
+  # ------------------------------------------------------------------ self-review
+  - id: review-summary
+    text: "The draft protects well against asset extraction, sponsor capture, IP overreach and consulting drift, and only partly against founder entrenchment and two-against-one conflicts, because three people who are all members, trustees and officers cannot fully check each other."
+    class: limitation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§16 opening, p.44"
+  - id: review-entrench
+    text: "Nothing forces the founders to admit anyone (flagged); option: commit to at least two non-founder members, or a five-seat Board, within a set period such as 3 years."
+    class: limitation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§16 item 1, p.45"
+  - id: review-twoone
+    text: "RCC Sec. 27 lets 2/3 of members remove a trustee 'with or without cause', so two founders could remove the third from the Board (not from membership); whether the By-Laws can require cause is uncertain (flagged)."
+    class: limitation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§16 item 6, p.46"
+
+  # ------------------------------------------------------------------ status and next
+  - id: status-counts
+    text: "Eight decided, twenty-seven for review (including three open), three deferred."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§18 p.51; §3 p.6"
+  - id: founder-blocking
+    text: "Sixteen founder choices; five block Articles drafting: the purpose-clause approach, the principal office address, initial capital and contributors, confirming residency and citizenship, and trustee expense reimbursement."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§17 items 1-5, p.48-49"
+  - id: next-step
+    text: "Next step: meet, work through Founder Review items 1-5, and mark each PROVISIONAL item accept, change or reject."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "p.53"
+  - id: close-summary
+    text: "The film's summary: with three people in every seat, the draft leans on time (notice periods, waiting), paper (written reasons and records) and an outsider (the independent reviewer)."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "summarises §4 p.11 ('notice, delay, reasons, an outside reviewer'), §7 p.22, §16 p.44"

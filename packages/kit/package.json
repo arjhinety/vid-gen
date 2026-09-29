@@ -1,0 +1,8 @@
+{
+  "name": "@vid/kit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "OpenGrad visual language components: optics, typography, instrument panels, annotation, data, code.",
+  "exports": { ".": "./src/index.ts" }
+}

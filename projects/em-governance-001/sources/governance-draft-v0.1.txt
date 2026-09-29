@@ -1,0 +1,3282 @@
+=== PAGE 1 ===
+Experimental Machines — Founding
+Governance Design Draft v0.1
+Sep 26, 2026  ·  @Alpha Romer Coma
+How to read this draft
+This is a design proposal for three founders to argue with, not a legal document. It
+translates what you have decided into a proposed institution, and shows what the
+Articles, By-Laws and policies should later say. Nothing here is filing-ready wording.
+Labels used throughout
+Legal basis. Phase 1 memo and Phase 1.1 corrections. The key premises carried forward:
+1. Non-stock, non-profit corporation; no dividends or surplus sharing (RCC Sec. 86).
+2. Trustees are unpaid while serving (CONSERVATIVE TAX POSITION: RMO 38-2019
+IV.A(1), VI.A.2(iii); NIRC Sec. 101(A)(2)).
+3. The President must be a trustee (CONSERVATIVE WORKING ASSUMPTION: RCC Sec.
+24 applied through Sec. 86; SEC Opinion 11-10).
+4. Treasurer and Secretary may be non-trustees (RCC Sec. 24).
+Label Meaning
+LEGAL REQUIREMENT Required by a Philippine statute or rule, with the
+authority cited
+CONSERVATIVE TAX POSITION Chosen to protect Sec. 30(E) exemption or
+donee status where the law is unsettled; not
+strictly required by statute
+CONSERVATIVE WORKING
+ASSUMPTION
+A legal point treated as true for design
+purposes, though not fully settled
+GOVERNANCE RECOMMENDATION My proposal; you may reject it
+FOUNDER DECISION Something only you can choose
+FUTURE POLICY Belongs in a later internal policy, not the charter
+documents
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 1 of 53
+=== PAGE 2 ===
+5. Trustees must be members (RCC Sec. 91).
+6. Founders are conservatively treated as "organizers" under NIRC Sec. 30(E) and RMO
+38-2019. No governance design removes that. Founder pay is a separate BIR question
+for later.
+7. RCC Sec. 31 applies to contracts with trustees, officers, and their spouses or relatives
+within the fourth degree. Founder status alone does not trigger it.
+8. Authorities marked UNVERIFIED in Phase 1.1 are not relied on here.
+Statutory citations in this draft come from RA 11232 (Revised Corporation Code, "RCC")
+and RA 8424 (NIRC). Sections I have not re-read from a primary copy in this pass are
+marked "(verify)". Claude is not a lawyer; have counsel check the legal requirements
+before the Articles are drafted.
+1. Founding facts and institutional philosophy
+Experimental Machines is designed as an independent, non-profit machine-learning
+research institution with three founding members, three unpaid trustees, and three
+officers whose titles are legal functions, not scientific rank.
+Founding facts (DECIDED)
+Checks against the law:
+President is a trustee. Satisfies RCC Sec. 24 ("a president, who must be a director")
+under the CONSERVATIVE WORKING ASSUMPTION that it applies to non-stock
+corporations.
+No one is both President and Treasurer, or President and Secretary. LEGAL
+REQUIREMENT, RCC Sec. 24.
+Person Corporate
+member
+Trustee Corporate office Paid by the
+org
+Arjhine A. Ty Yes Yes Corporate
+Secretary
+No
+Alpha Romer Coma Yes Yes President No
+John Andrew
+Balbarrossa
+Yes Yes Treasurer No
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 2 of 53
+=== PAGE 3 ===
+Treasurer must be a Philippine resident; Secretary must be a Philippine citizen and
+resident. LEGAL REQUIREMENT, RCC Sec. 24. FOUNDER DECISION to confirm: John
+is resident; Arjhine is a citizen and resident.
+All trustees are members. LEGAL REQUIREMENT, RCC Sec. 91.
+All three are unpaid. CONSERVATIVE TAX POSITION for trustees; a founder choice for
+the first year.
+What Experimental Machines is for
+Serious technical machine-learning research, and widening who can take part in it,
+especially researchers based in the Philippines. It is not a consultancy, automation
+agency, policy group, incubator, professional association, or awareness campaign.
+Proposed purpose language (GOVERNANCE RECOMMENDATION, for Articles
+drafting)
+The BIR's organizational test looks for a Sec. 30 purpose in the Articles. RMO 38-2019
+defines "scientific" as "undertaking or assisting in pure or basic, applied and scientific
+research in the field of ... industry, engineering ... physical and natural sciences for the
+public interest." Machine learning is not named, so the clause should use those words and
+then name the field.
+Primary purpose (plain-English sketch, not final wording):
+To undertake and assist pure, basic and applied scientific research in machine
+learning and related fields of computing, engineering, mathematics and the physical
+sciences, for the public interest, and to make the methods, data, code and results of
+that research openly available.
+Secondary purposes, each "in furtherance of the primary purpose":
+1. Publishing and disseminating research, including negative results.
+2. Developing and releasing open-source research software, models, datasets and
+benchmarks.
+3. Training researchers through fellowships, mentorship, workshops and scientific
+meetings.
+4. Collaborating with universities, research institutes and other non-profit bodies.
+5. Receiving grants, donations, compute and equipment, and administering funded
+research.
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 3 of 53
+=== PAGE 4 ===
+6. Acquiring and holding property needed for research.
+Research areas (model training, post-training, optimization, inference, speculative
+decoding, quantization, distributed training, architectures, mixture-of-experts,
+evaluation, ML systems, hardware-aware and efficient ML, datasets, reproducibility,
+methodology, open models and infrastructure) belong in an illustrative "including but not
+limited to" list, or better, only in the Mission Statement. Listing them exhaustively in the
+Articles would force an amendment every time the research moves.
+Wording to avoid in the Articles: "frontier" (undefined), "democratization" (vague),
+"benchmarking services" or "consulting" (reads as commercial), and "education" as a
+stand-alone purpose. Education is not a Sec. 30(E) purpose; Sec. 30(H) covers schools.
+Keep it as a means of the scientific purpose.
+Name. This draft uses Experimental Machines as the corporate name. Whether
+"Experimental Intelligence" continues as a program or brand name is a FOUNDER
+DECISION (see Founder Review Required).
+2. Researcher-first design: two layers
+Two layers share the same people but answer different questions. The corporate layer
+answers "is this lawful, funded and safe for the institution?" The research layer answers
+"is this true, and how do we find out?" Neither layer outranks the other in its own domain
+(Section 6).
+flowchart LR
+  subgraph Corporate["Corporate governance layer"]
+    M["Members<br/>Arjhine, Alpha, John"] -->|elect| B["Board of 
+Trustees<br/>Arjhine, Alpha, John"]
+    B -->|appoints and oversees| O["Officers<br/>President: 
+Alpha<br/>Treasurer: John<br/>Secretary: Arjhine"]
+  end
+  subgraph Research["Research layer"]
+    R["Researchers"] <--> E["Research Engineers"]
+    E <--> F["Fellows"]
+    F <--> P["Project Leads"]
+    P <--> C["Collaborators"]
+  end
+  B -.->|resources, budget, risk| Research
+  Research -.->|evidence, conclusions, publication calls| B
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 4 of 53
+=== PAGE 5 ===
+The three founders sit in both layers. In the corporate layer they hold offices; in the
+research layer they are researchers like anyone else, and lead whichever projects they
+actually lead.
+Rules that keep the layers separate
+Research titles for the three founders are not assigned here. The public sites show
+"Founder" and "Co-Founder" only. What each founder is called on the research side is a
+FOUNDER DECISION.
+Rule Label
+Corporate titles (President, Treasurer,
+Corporate Secretary) are used only in
+filings, contracts, bank documents and
+official correspondence
+GOVERNANCE RECOMMENDATION
+Public-facing and research titles are
+research titles only: Researcher, Research
+Engineer, Research Fellow, Project Lead
+GOVERNANCE RECOMMENDATION
+"Project Lead" is per project and ends with
+the project; it is not a rank
+GOVERNANCE RECOMMENDATION
+No CEO, CTO, VP, Chief Scientist or Director
+titles unless a real operational need appears
+and the Board approves the role
+GOVERNANCE RECOMMENDATION
+Research roles are not corporate offices. Do
+not name them in the By-Laws
+GOVERNANCE RECOMMENDATION. Under
+Matling v. Coros (G.R. 157802, 2010), only
+offices named in the Code or By-Laws are
+corporate offices; keeping research roles out
+keeps them ordinary positions
+A corporate office confers no authority over
+scientific conclusions
+GOVERNANCE RECOMMENDATION
+(Section 6)
+Legal membership is separate from
+research participation. Researchers,
+fellows, contributors and collaborators are
+not members unless admitted under
+Section 7
+GOVERNANCE RECOMMENDATION; RCC
+Sec. 88–90 let the Articles and By-Laws
+define membership
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 5 of 53
+=== PAGE 6 ===
+3. Governance Decision Record
+Eight decisions are DECIDED (six from your brief, two from your legal assumption set).
+Twenty-four are PROVISIONAL recommendations for you to accept, change or reject.
+Three are OPEN and three DEFERRED. Later sections give the detail; this table is the
+index.
+Status key: DECIDED (you have decided) · PROVISIONAL (my recommendation, needs
+your review) · OPEN (needs a founder choice, no recommendation yet or several good
+options) · DEFERRED (not needed before incorporation).
+ID Title Status Proposed rule Rationale and
+legal relevance
+Consequences
+and risks
+Affects
+GDR-
+001
+Founding
+Members
+DECIDED Arjhine A. Ty,
+Alpha Romer
+Coma, John
+Andrew
+Balbarrossa are
+the initial voting
+members
+Members elect
+trustees and hold
+reserved powers
+(RCC Secs. 23, 88)
+Three equal
+votes; any two
+form a majority
+or a 2/3 vote
+Articles
+(incorporators,
+members); By-
+Laws
+GDR-
+002
+Initial Trustees DECIDED The same three
+serve as trustees
+Trustees must be
+members (RCC
+Sec. 91)
+Members and
+Board are the
+same people
+until the org
+grows; checks
+between them
+are weak for now
+(see Section 16)
+Articles (initial
+trustees)
+GDR-
+003
+Initial Officers DECIDED President: Alpha.
+Treasurer: John.
+Corporate
+Secretary:
+Arjhine
+President a
+trustee; no
+President-
+Treasurer or
+President-
+Secretary
+combination;
+residency and
+citizenship rules
+(RCC Sec. 24)
+Titles are legal
+functions only
+(GDR-006)
+Board
+organizational
+minutes; By-
+Laws (officer
+duties)
+GDR-
+004
+Initial Board Size DECIDED Three trustees Number must be
+stated (RCC Sec.
+91; Sec. 13
+contents of
+Articles, verify)
+Quorum is 2
+(RCC Sec. 52).
+With one trustee
+recused, both
+others must
+agree
+Articles
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 6 of 53
+=== PAGE 7 ===
+ID Title Status Proposed rule Rationale and
+legal relevance
+Consequences
+and risks
+Affects
+GDR-
+005
+Founders
+Initially Unpaid
+DECIDED No founder
+receives salary,
+honorarium or
+per diem for
+about the first
+year
+Avoids trustee
+and organizer
+compensation risk
+while the org is
+being built (Phase
+1.1)
+Founders fund
+their own time;
+reimbursement
+of documented
+expenses is still
+allowed (Section
+12)
+Articles (trustee
+clause); Board
+minutes
+GDR-
+006
+Researcher-First
+Principle
+DECIDED Corporate
+offices are legal
+functions;
+research
+leadership
+follows the work
+and the project
+Founder intent Needs Section 6
+to have teeth
+Research
+Independence
+Charter; public
+materials
+GDR-
+007
+Legal form and
+tax target
+DECIDED Philippine non-
+stock, non-profit
+corporation,
+organized for
+scientific
+purposes under
+NIRC Sec. 30(E)
+Your legal
+assumption set;
+RCC Secs. 86–87
+No dividends;
+CTE applied for
+later (GDR-036)
+Articles
+GDR-
+008
+Corporate name
+and program
+names
+OPEN Corporate name:
+Experimental
+Machines. Status
+of "Experimental
+Intelligence" to
+be decided
+Domain, GitHub
+org, emails and HF
+org already use
+Experimental
+Machines
+A program name
+needs no SEC
+filing; a second
+legal entity
+would
+Articles; public
+sites
+GDR-
+009
+Primary purpose
+clause
+PROVISIONAL Scientific
+research
+purpose using
+RMO 38-2019's
+"scientific"
+wording, then
+naming machine
+learning (Section
+1)
+Organizational
+test (RMO 38-
+2019 Sec. III)
+Too narrow
+forces
+amendments; too
+broad invites BIR
+doubt
+Articles
+GDR-
+010
+No trustee
+compensation
+DECIDED (legal
+assumption set)
+Trustees receive
+no compensation
+or remuneration
+in any capacity
+while serving;
+documented
+expense
+reimbursement
+allowed
+CONSERVATIVE
+TAX POSITION:
+RMO 38-2019
+IV.A(1), VI.A.2(iii);
+NIRC Sec. 101(A)
+(2)
+A trustee who
+wants paid work
+must first leave
+the Board (GDR-
+022)
+Articles; By-
+Laws
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 7 of 53
+=== PAGE 8 ===
+ID Title Status Proposed rule Rationale and
+legal relevance
+Consequences
+and risks
+Affects
+GDR-
+011
+Member
+reserved powers
+and thresholds
+PROVISIONAL Section 4 table Several
+thresholds are
+statutory
+minimums (RCC
+Secs. 15, 27, 39,
+47)
+Protects mission
+without
+unanimity
+Articles; By-
+Laws
+GDR-
+012
+Mission-
+protection rule
+PROVISIONAL Purpose changes
+need 2/3 of all
+members at two
+meetings at least
+60 days apart,
+and must keep a
+Sec. 30 scientific
+purpose
+Legal floor is 2/3
+(RCC Sec. 15)
+Slows capture;
+one founder
+cannot block
+alone
+By-Laws
+GDR-
+013
+Board powers PROVISIONAL Section 5 RCC Sec. 22: the
+Board exercises
+corporate powers
+"unless otherwise
+provided"
+Board governs
+resources, not
+conclusions
+By-Laws
+GDR-
+014
+Research
+independence
+PROVISIONAL Scientific
+authority rests
+with the
+researchers on
+the project;
+Board may
+intervene only on
+listed grounds
+(Section 6)
+Founder intent;
+supports
+operational test
+and credibility
+Needs a written
+charter and a
+review route
+Research
+Independence
+Charter; one By-
+Law hook
+GDR-
+015
+Member
+admission
+PROVISIONAL Board nominates
+on written
+criteria; approval
+by 2/3 of all
+members
+RCC Secs. 88–90
+let By-Laws define
+membership
+Selective; slow
+by design
+By-Laws
+GDR-
+016
+Member
+removal
+PROVISIONAL Enumerated
+causes only;
+notice, hearing,
+independent
+reviewer finding;
+2/3 of all
+members
+excluding the
+respondent
+RCC Sec. 90 Protects against
+ordinary
+disagreement;
+not perfect with
+three members
+By-Laws
+GDR-
+017
+Trustee terms PROVISIONAL Two-year
+staggered terms;
+re-election
+allowed; no term
+limits during the
+founding period
+RCC Secs. 22, 91:
+up to three years
+Continuity;
+annual renewal
+of one or two
+seats
+By-Laws
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 8 of 53
+=== PAGE 9 ===
+ID Title Status Proposed rule Rationale and
+legal relevance
+Consequences
+and risks
+Affects
+GDR-
+018
+Board expansion
+path
+PROVISIONAL Expand to 5 once
+there are at least
+5 members, by
+Articles
+amendment
+Number fixed in
+Articles
+(conservative
+reading)
+Requires an SEC-
+approved
+amendment
+Articles; Board
+plan
+GDR-
+019
+Meetings,
+quorum, voting
+PROVISIONAL Statutory
+quorum; remote
+participation
+allowed;
+emergency
+meetings on 24
+hours' notice
+RCC Secs. 23, 49,
+51, 52
+Workable for
+three people in
+different places
+By-Laws
+GDR-
+020
+Conflicts of
+interest
+PROVISIONAL Disclose, leave,
+not counted, for
+any related-party
+matter; extended
+by policy to
+member-only
+insiders and
+relatives
+RCC Secs. 31, 52 More recusals
+than the law
+requires
+By-Laws hook;
+Conflict-of-
+Interest Policy
+GDR-
+021
+Compensation
+framework
+PROVISIONAL Role-based
+bands, external
+benchmarks,
+nobody sets own
+pay; no pay tied
+to surplus
+RCC Secs. 29, 86;
+RMO 38-2019
+IV.A(2)
+Applies first to
+non-founder
+staff
+Compensation
+Policy
+GDR-
+022
+Founder paid
+work
+DEFERRED Allowed only
+after BIR ruling or
+tax advice, after
+leaving the
+Board, on the
+same role-based
+terms
+Organizer issue
+(Phase 1.1)
+No promise
+either way
+Board resolution
+at the time
+GDR-
+023
+Separate future
+for-profit
+PROVISIONAL Separate entity;
+no ownership of
+nonprofit assets;
+fair, documented,
+conflict-
+reviewed
+dealings
+RCC Secs. 31, 86,
+93
+Blocks asset
+capture
+By-Laws hook;
+Related-Party
+Policy
+GDR-
+024
+IP framework PROVISIONAL Hybrid:
+background and
+independent IP
+stay with
+researchers;
+program IP
+belongs to EM,
+open by default
+Contract law;
+avoids inurement
+through IP
+Needs individual
+agreements
+IP Policy;
+contributor
+agreements
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 9 of 53
+=== PAGE 10 ===
+ID Title Status Proposed rule Rationale and
+legal relevance
+Consequences
+and risks
+Affects
+GDR-
+025
+Existing
+Research Asset
+Register
+PROVISIONAL
+(process); each
+asset OPEN
+Asset-by-asset
+decision; no
+automatic
+transfer
+Avoids unpaid-for
+or paid-for
+transfers that look
+like private
+benefit
+Needs a founder
+meeting per
+major asset
+Register; licence
+or assignment
+documents
+GDR-
+026
+Sponsored
+research and
+grants
+PROVISIONAL Ten safeguards
+(Section 11)
+Operational test;
+CIR v. St. Luke's
+(2012) on for-
+profit income
+Some sponsors
+will walk away
+Sponsored
+Research Policy
+GDR-
+027
+Consulting
+boundary
+PROVISIONAL No consulting,
+managed
+services or paid
+deployments as
+an activity
+NIRC Sec. 30, last
+paragraph; RMO
+38-2019 Sec. III
+Forgoes easy
+revenue
+Sponsored
+Research Policy;
+Board
+GDR-
+028
+Financial
+principles
+PROVISIONAL Section 12 RCC Sec. 86; NIRC
+30(E)
+Light; expands
+later
+Financial
+Controls Policy
+GDR-
+029
+Research
+integrity
+PROVISIONAL Writes down
+existing practice
+(Section 12)
+Credibility; not a
+legal requirement
+Low cost Research
+Integrity Policy
+GDR-
+030
+Bank signatories
+and spending
+approvals
+OPEN Recommend two
+signatures above
+a threshold
+amount
+Internal control;
+SEC AML
+guidance for non-
+profits (SEC MC
+15-2018, verify)
+Slower
+payments; less
+single-person
+risk
+Financial
+Controls Policy
+GDR-
+031
+Deadlock
+handling
+PROVISIONAL Failed votes
+leave the status
+quo; mediation
+by an outside
+person for
+disputes that
+stall operations
+Three-person
+board
+Status quo bias By-Laws; Board
+policy
+GDR-
+032
+Research
+Council (non-
+member
+researchers'
+voice)
+PROVISIONAL Create when
+there are
+researchers who
+are not members;
+advisory, not
+corporate
+Keeps Board
+connected to
+research
+Adds a body to
+run
+Research
+Independence
+Charter
+GDR-
+033
+Membership
+classes
+DEFERRED One class of
+voting members
+for now
+RCC Sec. 88
+allows classes
+later
+Simple Articles, later
+GDR-
+034
+Principal office
+address
+OPEN Must be in the
+Philippines; avoid
+publishing a
+founder's home
+address where
+possible
+RCC Sec. 13
+(verify)
+Address appears
+in public SEC
+records
+Articles
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 10 of 53
+=== PAGE 11 ===
+4. Member powers
+Members hold the powers that change what Experimental Machines is; the Board runs
+it. With three members, "2/3 of all members" means two of three, so thresholds alone
+cannot stop two founders acting together. The protections below therefore rely on
+process (notice, delay, reasons, an outside reviewer) as much as on vote counts.
+"All members" means all voting members on the register, not only those present. Where
+the law sets a minimum, the By-Laws may require more but not less (CONSERVATIVE
+WORKING ASSUMPTION; counsel to confirm that higher member thresholds in the By-
+Laws are enforceable for each item).
+ID Title Status Proposed rule Rationale and
+legal relevance
+Consequences
+and risks
+Affects
+GDR-
+035
+Fiscal year PROVISIONAL Calendar year Simplest for BIR
+filings
+None significant By-Laws
+GDR-
+036
+CTE and PCNC
+timing
+DEFERRED Apply for a CTE
+once operating;
+PCNC later if
+donor
+deductions
+matter
+RMO 38-2019 VI;
+RR 13-98
+Gifts are not
+income anyway
+(NIRC Sec. 32(B)
+(3))
+Tax filings
+GDR-
+037
+Public legal-
+status
+statements
+PROVISIONAL Say "non-profit"
+only after SEC
+registration; "tax-
+exempt" only
+after a CTE
+Accuracy Update the HF
+org label and site
+footers
+Public sites
+GDR-
+038
+Corporate term PROVISIONAL Perpetual
+existence
+RCC Sec. 11
+default (verify)
+None Articles
+Power Legal floor Recommended
+threshold
+Label Consequence
+Elect trustees Members elect
+(RCC Sec. 23)
+Majority of
+votes cast,
+quorum
+present
+LEGAL
+REQUIREMENT +
+GOVERNANCE
+RECOMMENDATION
+Ordinary;
+each seat
+contested
+separately
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 11 of 53
+=== PAGE 12 ===
+Power Legal floor Recommended
+threshold
+Label Consequence
+Remove a
+trustee
+2/3 of
+members
+entitled to
+vote; with or
+without cause;
+removal
+without cause
+may not
+deprive a
+minority of
+representation
+(RCC Sec. 27)
+2/3 of all
+members, at a
+meeting called
+for that
+purpose, with
+written
+reasons and a
+chance to
+respond
+LEGAL
+REQUIREMENT +
+GOVERNANCE
+RECOMMENDATION
+Two founders
+can remove
+the third as
+trustee; the
+process
+makes it
+visible and
+deliberate.
+Removal as
+member is
+separate
+(Section 7)
+Amend the
+Articles
+Majority of
+Board + 2/3 of
+members
+(RCC Sec. 15)
+Same, plus 30
+days' written
+notice of the
+proposed text
+LEGAL
+REQUIREMENT +
+GOVERNANCE
+RECOMMENDATION
+Also needs
+SEC approval
+Amend the
+By-Laws
+Majority of
+Board +
+majority of
+members;
+members may
+delegate to the
+Board by 2/3
+(RCC Sec. 47)
+Majority for
+ordinary
+sections; 2/3
+of all members
+for the
+entrenched
+sections:
+membership,
+removal,
+member
+powers,
+research
+independence
+hook, conflicts.
+Do not
+delegate
+amendment
+power to the
+Board
+GOVERNANCE
+RECOMMENDATION
+Keeps the
+Board from
+rewriting its
+own checks
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 12 of 53
+=== PAGE 13 ===
+Power Legal floor Recommended
+threshold
+Label Consequence
+Change the
+scientific
+mission or
+primary
+purpose
+Articles
+amendment,
+2/3 (RCC Sec.
+15)
+Mission-
+protection
+rule below
+GOVERNANCE
+RECOMMENDATION
+Slower, not
+impossible
+Merger or
+consolidation
+Board approval
++ 2/3 of
+members
+(RCC merger
+provisions,
+verify)
+2/3 of all
+members, and
+only with a
+non-stock,
+non-profit
+entity with a
+similar
+scientific
+purpose
+LEGAL
+REQUIREMENT +
+CONSERVATIVE TAX
+POSITION
+Assets stay
+dedicated to
+a similar
+purpose
+(RMO 38-
+2019 IV.A(6))
+Dissolution Board majority
++ members;
+threshold
+depends on
+whether
+creditors are
+affected (RCC
+Secs. 134–135,
+verify)
+2/3 of all
+members
+GOVERNANCE
+RECOMMENDATION
+Higher than
+the minimum
+where the
+minimum is a
+majority
+Plan of
+distribution
+on dissolution
+2/3 of voting
+members
+present (RCC
+Sec. 94);
+assets to
+similar entities
+(Sec. 93)
+Same;
+recipients
+must be non-
+profit with a
+similar
+purpose, or the
+government
+LEGAL
+REQUIREMENT +
+CONSERVATIVE TAX
+POSITION
+Required for
+the CTE
+(RMO 38-
+2019 IV,
+VI.A.2(iv))
+Sell or
+dispose of all
+or
+substantially
+all assets
+Board + 2/3 of
+members
+(RCC Sec. 39)
+Same LEGAL
+REQUIREMENT
+Covers
+wholesale
+transfer of IP
+or compute
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 13 of 53
+=== PAGE 14 ===
+Unanimity is recommended nowhere. It would give any one founder a veto over the
+institution's future, and a single departure or illness could freeze it.
+Power Legal floor Recommended
+threshold
+Label Consequence
+Change
+membership
+structure or
+create classes
+Articles or By-
+Law
+amendment
+2/3 of all
+members
+GOVERNANCE
+RECOMMENDATION
+Stops dilution
+of existing
+votes by the
+Board
+Trustee
+compensation
+Majority of
+members may
+grant it (RCC
+Sec. 29)
+Not available:
+the Articles
+will state
+trustees
+receive no
+compensation;
+changing that
+needs an
+Articles
+amendment
+and would put
+the CTE at risk
+CONSERVATIVE TAX
+POSITION
+Closes the
+route entirely
+while the
+clause stands
+Admit new
+members
+None in
+statute
+Board
+nomination +
+2/3 of all
+members
+(Section 7)
+GOVERNANCE
+RECOMMENDATION
+Selective
+Major
+restructuring
+(affiliating
+with, licensing
+a program's
+whole IP
+portfolio to, or
+creating any
+entity)
+Depends on
+transaction
+2/3 of all
+members,
+after conflict
+review
+GOVERNANCE
+RECOMMENDATION
+Key
+protection
+against
+capture by a
+founder-
+linked
+company
+(Section 9)
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 14 of 53
+=== PAGE 15 ===
+Mission-protection rule (GOVERNANCE RECOMMENDATION)
+A change to the primary purpose, or to the research-independence section of the By-
+Laws, requires all of the following:
+1. A written proposal stating the new text and the reasons, circulated to all members at
+least 30 days before the first vote.
+2. Approval by 2/3 of all members at two meetings held at least 60 days apart.
+3. The new purpose must remain a scientific purpose within NIRC Sec. 30(E), non-stock
+and non-profit, with the dissolution clause unchanged.
+What this does: it gives the third founder, and anyone else, two months and a public
+record to argue. It does not let one person block a change forever.
+Alternative (FOUNDER DECISION): require unanimity for purpose changes only while
+there are fewer than five members. Safer for the mission, but creates a one-person veto
+during the founding years.
+5. Board powers
+The Board governs money, people, contracts, compliance and institutional risk. It does
+not govern scientific conclusions. By law the Board "shall exercise the corporate powers,
+conduct all business, and control all properties of the corporation" unless the Code
+provides otherwise (RCC Sec. 22). Everything in the first table is therefore the Board's by
+default; the second table is the proposed self-limit.
+What the Board decides
+Area Board power Notes
+Budget Adopt the annual budget;
+approve material changes
+GOVERNANCE
+RECOMMENDATION: "material"
+defined in the Financial Controls
+Policy
+Banking and financial
+controls
+Open accounts; set
+signatories and approval
+limits; appoint an external
+auditor when required
+Treasurer operates within these
+(GDR-030)
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 15 of 53
+=== PAGE 16 ===
+Area Board power Notes
+Major expenditures,
+equipment, compute
+Approve items above a
+threshold set by policy, and
+any multi-month compute
+commitment
+Threshold is a FOUNDER
+DECISION
+Grants, donations,
+sponsorships
+Accept or decline; approve
+terms under the Sponsored
+Research Policy
+Board checks the terms, not the
+expected results
+Employment and
+compensation
+Approve roles, salary bands
+and the compensation
+framework; approve any
+insider hire or pay change
+with the interested person
+recused
+RCC Secs. 29, 31, 52
+Contracts, leases,
+partnerships
+Approve institutional
+agreements, MOUs, data
+and compute agreements
+Project Leads may negotiate;
+Board signs off above policy
+limits
+Officers Elect and remove officers,
+unless the By-Laws let
+members elect them
+directly (RCC Sec. 91)
+Recommend Board election:
+simpler for three people
+Conflicts of interest Administer the policy; keep
+the disclosure register
+RCC Sec. 52 recusal
+Compliance SEC, BIR, labor, data-privacy
+and NPO filings
+Treasurer and Secretary do the
+filing; Board is accountable
+Asset protection Insurance, security, access
+control for compute and
+data
+Governance policies Adopt and amend internal
+policies, except where By-
+Laws reserve them to
+members
+Research programs Create, fund, pause or close
+major institutional programs
+as a resource decision
+Closing a program cannot be
+used to suppress a result
+(Section 6)
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 16 of 53
+=== PAGE 17 ===
+What the Board does not decide (GOVERNANCE RECOMMENDATION)
+Where it lives. The Board's general powers are statutory and need only a short By-Law.
+The limits above go in one short By-Law clause pointing to the Research Independence
+Charter, and the detail goes in the Charter (Section 6).
+6. Research autonomy framework
+Corporate authority governs resources and institutional risk. Scientific authority
+governs scientific conclusions. This is a GOVERNANCE RECOMMENDATION; no
+Philippine statute requires it. It matters legally in one indirect way: an institution that
+visibly lets sponsors or insiders shape results looks less like a public-interest scientific
+body under Sec. 30(E).
+Who holds scientific authority
+The researchers doing a project, led by its Project Lead, decide:
+research questions and hypotheses;
+experiment design, model choices, training methodology;
+The Board may not Why
+Change, soften or withhold a research
+result, conclusion or benchmark number
+because a trustee, founder, sponsor or
+partner dislikes it
+Scientific authority rests with the
+researchers (Section 6)
+Order a negative result left unpublished
+because it reflects badly on the organization
+Integrity; your "results and retractions"
+practice
+Assign authorship or remove an author Authorship follows contribution (Section
+10D)
+Override a correction, erratum or retraction
+the researchers have issued, except on the
+review route in Section 6
+Same
+Use a corporate title to settle a scientific
+dispute
+GDR-006
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 17 of 53
+=== PAGE 18 ===
+benchmark design, evaluation methods, statistical analysis;
+technical implementation;
+interpretation of evidence;
+paper contents and publication recommendations;
+corrections, errata, retractions, and publication of negative findings.
+Scientific disagreements inside a project are settled by evidence and discussion among
+the researchers. If they cannot agree, the dissenting view may be recorded in the paper
+or report, or the dissenter may decline authorship. No corporate officer breaks the tie.
+When the Board may intervene
+Only on these grounds, and only as far as the ground requires:
+Ground Example What the Board may do
+Law Data Privacy Act issue; export
+control; court order
+Delay or modify release to
+comply
+Privacy Personal data in a dataset Require removal or
+anonymization
+Security Release would expose credentials
+or a live vulnerability
+Delay for responsible disclosure
+Safety Credible risk of serious harm from
+a released model or method
+Delay, stage, or restrict release;
+record reasons
+Research
+misconduct
+Fabrication, falsification,
+plagiarism
+Pause pending the Research
+Integrity process
+Contract Sponsor confidentiality or patent-
+filing window already agreed
+Enforce the agreed delay, no
+more
+Budget Funds or compute exhausted Stop spending; cannot rewrite
+results
+IP constraints Third-party license terms Require compliance before
+release
+Material
+institutional risk
+Legal liability or CTE risk Delay and seek advice; record
+reasons
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 18 of 53
+=== PAGE 19 ===
+Every intervention is written, gives reasons, names the ground, and is time-limited.
+Researchers may ask the full Board to reconsider, and once there are researchers who are
+not trustees, the Research Council (GDR-032) gives a written view first.
+Explicitly prohibited
+1. Altering a result because a founder dislikes it.
+2. Altering a result because a trustee or officer dislikes it.
+3. Altering or suppressing a result because a sponsor, partner or donor dislikes it.
+4. Suppressing a negative result because it makes Experimental Machines look bad.
+5. Using a budget or program-closure decision as a disguised way to do any of the above.
+Where each piece lives
+Content Document Why
+One sentence: scientific
+research is conducted and
+published openly for the
+public interest
+Articles (inside the purpose
+clause)
+Supports the organizational
+test; hard to change
+Short clause: Board powers
+exclude altering research
+conclusions; intervention
+only on grounds listed in the
+Research Independence
+Charter; this clause is
+entrenched
+By-Laws Gives the rule legal force
+without overloading the By-
+Laws
+Grounds, procedure,
+reconsideration route,
+prohibitions, Research
+Council
+Research Independence
+Charter (Board-adopted,
+member-approved to
+amend)
+Detail that will evolve
+Pre-registration, provenance,
+errata, retractions,
+misconduct process
+Research Integrity Policy Practice, not constitution
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 19 of 53
+=== PAGE 20 ===
+7. Membership: admission and removal
+Membership is a legal governance status that must be granted on purpose; it never
+follows automatically from doing research here. The law leaves the rules to you:
+membership and its rights are defined by the Articles and By-Laws (RCC Secs. 88–90),
+membership is personal and non-transferable unless they say otherwise (Sec. 89), and it
+ends "in the manner and for the causes provided in the articles of incorporation or the
+bylaws" (Sec. 90). The Corporate Secretary must keep a current list of members (Sec. 92).
+Who is not a member (GOVERNANCE RECOMMENDATION)
+Researchers, research engineers, employees, fellows, contributors, collaborators, open-
+source contributors, event participants, donors and sponsors are not members unless
+formally admitted. Contributor, fellowship and employment agreements should say so in
+one sentence.
+Admission (GOVERNANCE RECOMMENDATION)
+Eligibility, at least one of:
+sustained research contribution over roughly 12 months or more;
+sustained research-engineering contribution;
+scientific leadership of an Experimental Machines program;
+long-term institutional service;
+governance contribution.
+Also required: written acceptance of the Articles, By-Laws, Research Independence
+Charter and Conflict-of-Interest Policy; disclosure of interests; and no disqualification
+under RCC Sec. 26 if the person may later serve as trustee.
+Process:
+1. Any member proposes a candidate in writing, with reasons tied to the criteria.
+2. The Board reviews and nominates (majority of the Board).
+3. Members approve by 2/3 of all members.
+4. The Secretary enters the new member on the register; membership starts on the date
+of entry.
+Consequence: with three members, admission needs two of three. That is selective
+without letting one founder block every newcomer.
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 20 of 53
+=== PAGE 21 ===
+Ending membership
+Causes for removal:
+1. serious misconduct toward the organization or its people;
+2. misuse or misappropriation of assets;
+3. breach of fiduciary duties as a trustee or officer (RCC Secs. 30–31, 33);
+4. a finding of serious research misconduct under the Research Integrity Policy;
+5. conviction or disqualification that would bar service under RCC Sec. 26.
+Route Proposed rule Label
+Voluntary
+resignation
+Written notice to the
+Secretary; effective on receipt
+or a stated later date. A trustee
+who stops being a member
+stops being a trustee (RCC
+Sec. 22)
+LEGAL REQUIREMENT (trustee
+consequence) + GOVERNANCE
+RECOMMENDATION
+Death Membership ends on death;
+not transferable to heirs (Sec.
+89)
+LEGAL REQUIREMENT unless the
+By-Laws say otherwise
+Incapacity Suspension of voting rights
+while a court-declared or
+medically certified incapacity
+lasts; ends automatically after
+12 months unless members
+decide otherwise
+GOVERNANCE
+RECOMMENDATION
+Sustained
+abandonment
+No participation in member
+meetings or institutional work
+for 12 months, after two written
+reminders at least 60 days
+apart
+GOVERNANCE
+RECOMMENDATION
+Removal for cause Only for the causes below,
+through the due-process steps
+below
+GOVERNANCE
+RECOMMENDATION
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 21 of 53
+=== PAGE 22 ===
+Not a cause: scientific disagreement, disagreement about research direction, voting
+against the majority, publishing a result others dislike, or criticizing the organization in
+good faith.
+Due process for removal
+1. Written notice stating the specific cause and the facts relied on.
+2. At least 30 days to respond in writing and at a hearing.
+3. A written finding by an independent reviewer that the cause is established. The
+reviewer is not a member, not paid by Experimental Machines, and is agreed by all
+members in advance (a standing name, e.g. a lawyer or senior academic), or, failing
+agreement, chosen from a short pre-approved list.
+4. Vote of 2/3 of all members, not counting the respondent. With three members, that
+means both of the other two.
+5. Written decision with reasons, kept in the minute book.
+Why the independent reviewer: with three members, any two can outvote the third on
+anything. The reviewer is the only mechanism that stops two founders removing the third
+for a non-cause reason. It is not perfect: the other two still decide, but only after an
+outsider has found the cause proven.
+8. Trustee structure
+A three-seat board with two-year staggered terms, statutory quorum, remote meetings
+allowed, and a clear path to five seats. Nothing here needs more than three people to
+run.
+Topic Proposed rule Label and authority
+Number 3 DECIDED (GDR-004); stated in
+the Articles
+Eligibility Any member not disqualified
+under RCC Sec. 26;
+researchers are eligible; no
+trustee is paid by the org while
+serving
+LEGAL REQUIREMENT (Secs. 26,
+91) + CONSERVATIVE TAX
+POSITION
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 22 of 53
+=== PAGE 23 ===
+Topic Proposed rule Label and authority
+Term Two years; staggered so one or
+two seats come up each year.
+Initial trustees serve until the
+first annual members' meeting,
+where seats are assigned 1-
+year and 2-year terms by
+agreement or lot
+GOVERNANCE
+RECOMMENDATION within the 3-
+year cap (RCC Secs. 22, 91)
+Re-election Allowed, no limit during the
+founding period; revisit term
+limits when the Board reaches
+five
+GOVERNANCE
+RECOMMENDATION
+Resignation Written notice to the
+Secretary; effective on receipt
+or later stated date
+GOVERNANCE
+RECOMMENDATION
+Removal By members, 2/3 of all
+members (RCC Sec. 27), with
+reasons and a chance to
+respond (Section 4)
+LEGAL REQUIREMENT +
+GOVERNANCE
+RECOMMENDATION
+Vacancies Remaining trustees may fill a
+vacancy if they still form a
+quorum, for the unexpired
+term only. Vacancies from
+removal, term expiry or an
+increase in seats are filled by
+members (RCC Secs. 28, 91;
+verify details)
+LEGAL REQUIREMENT
+Quorum Majority of the number of
+trustees in the Articles: 2 of 3
+(RCC Sec. 52)
+LEGAL REQUIREMENT
+Voting Majority of trustees present at
+a quorate meeting; election of
+officers needs a majority of all
+trustees (RCC Sec. 52; verify)
+LEGAL REQUIREMENT
+Proxies Not allowed at Board meetings LEGAL REQUIREMENT (RCC Sec.
+52)
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 23 of 53
+=== PAGE 24 ===
+Topic Proposed rule Label and authority
+Remote meetings Video or teleconference
+participation counts toward
+quorum and voting; minutes
+record who joined remotely
+Allowed by RCC Sec. 52;
+GOVERNANCE
+RECOMMENDATION to put it in
+the By-Laws
+Regular meetings Quarterly (the Code defaults
+to monthly unless the By-Laws
+say otherwise, RCC Sec. 52)
+GOVERNANCE
+RECOMMENDATION
+Special and
+emergency meetings
+Any trustee or the President
+may call; 3 days' notice, or 24
+hours for an emergency stated
+in the notice; any trustee may
+waive notice
+GOVERNANCE
+RECOMMENDATION
+Written resolutions Unanimous written consent
+without a meeting, if counsel
+confirms SEC acceptance
+CONSERVATIVE WORKING
+ASSUMPTION: confirm with
+counsel
+Conflict recusal Any trustee with a potential
+interest in a related-party
+matter discloses and recuses
+from the vote (RCC Sec. 52);
+for contracts with that trustee,
+presence must not be needed
+for quorum and vote must not
+be needed for approval (Sec.
+31). By policy, the trustee also
+leaves the discussion
+LEGAL REQUIREMENT +
+GOVERNANCE
+RECOMMENDATION
+Deadlock A failed motion leaves the
+status quo. If the Board cannot
+act on an operationally
+necessary matter for 60 days,
+any trustee may request non-
+binding mediation by the
+independent reviewer
+(Section 7)
+GOVERNANCE
+RECOMMENDATION
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 24 of 53
+=== PAGE 25 ===
+How the three-person board handles a conflict
+With one trustee recused, two remain: exactly a quorum. Both must vote yes. If they
+disagree, the matter fails. For an insider contract, failing is the safe outcome. If both of the
+others are also conflicted (for example, a transaction with a company all three founders
+own), the Board cannot approve it and it goes to members for 2/3 ratification with full
+disclosure and a fair-and-reasonable showing (RCC Sec. 31). GOVERNANCE
+RECOMMENDATION: treat such transactions as presumptively not to be done until the
+Board has at least two trustees with no interest in them.
+Growing the Board without rewriting everything
+CONSERVATIVE WORKING ASSUMPTION: the number of trustees is stated in the
+Articles, so changing it needs an Articles amendment (majority of Board + 2/3 of
+members, SEC approval; RCC Sec. 15).
+GOVERNANCE RECOMMENDATION: write the By-Laws so that all Board rules work
+for any odd number from 3 to 7 (quorum, staggering in two cohorts, recusal). Growth
+then needs only the one Articles change.
+Trigger to expand to five: at least five members, or the first paid staff member. The two
+new seats go to unpaid members, ideally researchers, keeping the Board research-
+connected rather than managerial.
+9. Founder transition, future paid work, and a future for-profit
+company
+Founders serve unpaid for about a year. Paid work later is neither promised nor
+forbidden; it is a separate legal and tax decision made when it arises.
+Founder Transition Principle (GDR-022, DEFERRED)
+If a founder later wants to become a paid researcher of Experimental Machines, all of the
+following must happen, in this order:
+1. The role exists on its own merits. The Board approves a research position, description
+and salary band that it would fund for any qualified researcher, within a real budget
+line (for example, a grant that funds the position).
+2. Tax review first. Because founders are conservatively treated as organizers, and RMO
+38-2019 IV.A(1) lists pay to "organizers" as inurement, the organization obtains a BIR
+ruling or written tax advice on the specific arrangement before any pay starts. FUTURE
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 25 of 53
+=== PAGE 26 ===
+LEGAL/TAX DECISION.
+3. Leave the Board first. The founder resigns as trustee (and so as President, if
+applicable) before the employment starts, to remove the trustee-specific risks.
+CONSERVATIVE TAX POSITION. The founder may stay a member.
+4. Disclose and recuse. The founder discloses the interest; approval is by trustees with
+no interest in it. Where the founder is still a trustee or officer at the time of approval,
+RCC Sec. 31 applies. Where the founder is a member only, Sec. 31 does not apply by its
+terms, but the same recusal applies by policy.
+5. Same terms as anyone else. Same band, same benchmarking, same review cycle. No
+founder premium, no back pay for founding work, no pay tied to surplus.
+6. CTE disclosure. If the organization already holds a CTE, the change is disclosed to the
+BIR, since a material change in method of operation can revoke the CTE from that date
+(RMO 38-2019 Sec. VII).
+What this principle does not do: it does not remove the organizer issue. Phase 1.1 found
+no structure that does. It makes any future founder pay honest, documented, and as
+defensible as the law allows.
+Separate Future Company Principle (GDR-023, PROVISIONAL)
+If the founders later create a Philippine stock corporation for commercial work:
+1. Separate entities. Experimental Machines is not converted, merged into, or made a
+subsidiary of the company. The company is incorporated separately.
+2. No ownership of nonprofit assets. Being a founder of both gives no right to
+Experimental Machines' money, compute, data, models, code or other IP. Nonprofit
+assets stay dedicated to the scientific purpose, including on dissolution (RCC Secs. 86,
+93; RMO 38-2019 IV.A(6)).
+3. Every dealing is a related-party transaction. Any contract, license, service, data or
+compute sharing between the two goes through conflict review: written terms, fair
+market value, approval by trustees with no interest in the company. If no such trustees
+exist, the transaction waits (Section 8).
+4. IP needs separate approval. Licensing or assigning Experimental Machines IP to the
+company needs Board approval with conflicted trustees recused and, for anything
+amounting to substantially all of a program's IP, 2/3 member approval (Section 4).
+Open-licensed releases are available to the company on the same public terms as to
+anyone.
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 26 of 53
+=== PAGE 27 ===
+5. No subsidy. Experimental Machines must not exist primarily to do unpaid R&D for a
+founder-owned company, or to pay its costs. Purchases from the company above fair
+value are inurement under RMO 38-2019 IV.A(5).
+6. People are clear about their hat. Founders working for both keep time, resources and
+confidential information separate; the Conflict-of-Interest Policy covers outside roles.
+No subsidiary architecture is designed now. This is a protective principle only.
+10. Hybrid IP framework
+Experimental Machines owns what its programs create; researchers keep what they
+brought, what they do independently, and their credit for everything. Ownership is
+about control and stewardship, not secrecy: the default for program IP is open release. All
+of this is GOVERNANCE RECOMMENDATION, implemented later through an IP Policy
+and individual contributor, employment and fellowship agreements. Ownership only
+transfers through those signed agreements, not through this document or the By-Laws.
+The five categories
+Category Who owns it When it applies Examples
+A. Background IP The researcher Existed before the
+person's formal
+involvement, or was
+created outside any EM
+program
+Code, repos, datasets,
+models, weights,
+libraries, methods,
+papers, tools
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 27 of 53
+=== PAGE 28 ===
+Rules that go with the categories:
+1. No "everything you invent belongs to us" clause. Category B is triggered only by the
+six listed connections.
+Category Who owns it When it applies Examples
+B. EM Program IP Experimental
+Machines
+Created (1) under an
+approved EM research
+program; (2) using
+substantial EM funding;
+(3) using substantial
+EM-owned or EM-
+provided compute or
+equipment; (4) under
+an EM employment or
+funded-research
+agreement; (5) under a
+grant EM administers;
+or (6) specifically
+commissioned for an
+EM project
+Code, weights, datasets,
+benchmarks, evaluation
+harnesses, training
+artifacts,
+documentation,
+inventions, research
+infrastructure
+C. Independent
+Researcher Work
+The researcher Outside any EM
+program, not funded or
+commissioned by EM,
+not materially
+dependent on EM
+resources, not derived
+from EM confidential
+assets
+Personal side projects,
+work for another
+employer or university
+D. Attribution and
+academic rights
+Always the
+researcher
+Applies to all
+categories, including B
+Authorship, attribution,
+CV and portfolio use,
+describing one's
+contribution, academic
+credit, reasonable
+publication rights
+E. Existing IP Whoever owns
+it now
+Assets that predate
+incorporation
+Handled one by one
+through the Register
+below
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 28 of 53
+=== PAGE 29 ===
+2. Open by default. EM may own an asset and release it under Apache-2.0, MIT, BSD,
+Creative Commons, open-weight or open-data terms. Keeping program IP closed
+needs a stated reason (privacy, security, safety, a contract) under Section 6.
+3. Background IP used in a program stays with the researcher. The researcher grants EM
+a non-exclusive, royalty-free license to use it in that program. Open-licensed
+background IP already gives EM that.
+4. Ownership is never authorship. EM owning the weights does not make EM, or any
+officer, an author. Authorship follows contribution under the Research Integrity Policy.
+5. Leaving EM does not remove a researcher's Category D rights.
+6. No payment to founders for IP transfers without conflict review and a fair-value basis;
+a gift or an open license is the cleaner route (Section 9).
+Existing Research Asset Register (GDR-025)
+Most existing assets are already open-licensed, so EM can use them without any
+transfer. Transfer or assignment matters mainly for things EM must control: names,
+domains, accounts, app listings, and anything unlicensed. The rows below are pre-filled
+from what the public sites and repos showed in Phase 1; every row needs founder
+confirmation, and each decision is OPEN.
+Asset Current owner (as
+observed)
+Location License (as
+observed)
+Transfer? License to EM? Keep
+external?
+Terms of
+use by EM
+Domain
+experimentalmach
+ines.org and email
+Registrant not
+verified
+Registrar n/a OPEN
+(recommend
+transfer to EM
+after
+incorporation)
+Domain
+experimentalintelli
+gence.org
+Registrant not
+verified
+Registrar n/a OPEN
+GitHub org
+ExperimentalMac
+hines
+Org admins
+(individuals)
+github.com/Ex
+perimentalMac
+hines
+n/a OPEN
+(recommend EM-
+controlled admin
+accounts)
+Hugging Face org
+experimentalmach
+ines
+Org admins
+(individuals)
+huggingface.co
+/experimental
+machines
+Per model card OPEN
+OpenGrad Arjhine A. Ty
+(personal repo)
+github.com/arj
+hinety/OpenGr
+ad
+Apache-2.0 +
+NOTICE
+OPEN Covered by
+Apache-2.0
+OPEN
+OpenWeights app
+and repo
+Repo in EM
+GitHub org; Play
+Store listing under
+Alpha Romer
+Coma personally
+GitHub; Google
+Play
+Apache-2.0 OPEN
+(recommend
+moving listing to
+an EM developer
+account)
+executorch-
+model-exporter
+Contributors (EM
+org repo)
+GitHub Apache-2.0 OPEN Covered by
+Apache-2.0
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 29 of 53
+=== PAGE 30 ===
+Fields to add when the Register becomes a working sheet: date decided, decision
+reference (Board minute), contributors, third-party components, and whether any
+payment was involved (should be none).
+11. Sponsored research and grants
+Experimental Machines may take money, compute and hardware from almost anyone,
+but never on terms that let the funder decide what the research finds. This is a FUTURE
+POLICY (Sponsored Research & Grants Policy) built on a legal line: income from "activities
+conducted for profit" is taxable even for an exempt organization (NIRC Sec. 30, last
+paragraph), and if such activities become "a substantial part" of operations, the
+operational test fails (RMO 38-2019 Sec. III; CIR v. St. Luke's, G.R. 195909, 2012).
+What EM may accept
+Research grants; donations; compute credits; hardware; academic collaborations;
+corporate research sponsorship; conference and event sponsorship; funded fellowships;
+and research contracts that fit the mission and meet the safeguards below.
+The ten safeguards (GOVERNANCE RECOMMENDATION)
+1. No agreement guarantees or implies a scientific conclusion.
+2. The sponsor cannot dictate findings.
+3. The sponsor cannot suppress unfavorable results indefinitely.
+4. The sponsor may have a confidentiality review of a draft, limited to removing its own
+confidential information: recommend up to 30 days.
+Asset Current owner (as
+observed)
+Location License (as
+observed)
+Transfer? License to EM? Keep
+external?
+Terms of
+use by EM
+tool-choice-
+contrast
+Contributor(s)
+(EM org repo)
+GitHub Apache-2.0
+code; CC-BY-4.0
+data
+OPEN; contributor
+is not a founder
+Covered
+Hardware
+benchmark repos
+(MI300X vs H200,
+Snapdragon vs
+M5, GGUF, etc.)
+Alpha Romer
+Coma (personal
+repos)
+GitHub Mostly MIT;
+some no license
+file
+OPEN Covered where
+MIT; unlicensed
+repos need a
+license first
+Visual-Qwen code,
+weights, dataset
+Personal accounts;
+began as FEU Tech
+thesis with five
+authors
+GitHub; HF;
+Kaggle
+No license on
+code; dataset
+CC-BY-NC-SA
+OPEN; co-authors'
+and possibly
+FEU's rights must
+be checked first
+Likely
+external
+OpenPapers Arjhine A. Ty GitHub Apache-2.0 OPEN Covered
+Public sites
+(source)
+EM GitHub org GitHub No license OPEN
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 30 of 53
+=== PAGE 31 ===
+5. A reasonable delay for patent filing is allowed: recommend up to 90 days.
+6. Funding is disclosed in every resulting paper, report, model card and benchmark page.
+7. Any sponsor involvement in methodology is disclosed.
+8. IP terms are written and agreed before work begins (Section 10).
+9. Researchers keep scientific independence (Section 6).
+10. Results are presumptively publishable; any exception needs Board approval with
+reasons.
+Hardware benchmarking gets two extra rules, because EM already benchmarks vendors'
+chips: (a) a vendor that funds or supplies hardware for a comparison is disclosed on the
+result; (b) the vendor may check facts about its own product's configuration but has no
+say over the comparison's design, competitors chosen, or conclusions.
+Research sponsorship vs commercial consulting
+Where the Sec. 30(E) risk begins
+Low: grants, donations, and sponsorships meeting the ten safeguards. Genuine gifts
+are not income at all (NIRC Sec. 32(B)(3)).
+Taxable but tolerable: occasional fee-for-service work, such as a paid talk or a one-off
+evaluation. The income is taxed; the exemption for other income survives (St. Luke's).
+Exemption at risk: fee-for-service becomes regular or "substantial": ongoing
+consulting, managed inference endpoints, paid private benchmarks, integration work.
+At that point the operational test is in doubt.
+Research sponsorship (fits the mission) Commercial consulting (drift risk)
+The question is a research question; answer
+unknown in advance
+The question is the client's business
+problem
+Results are published Results are delivered privately to the client
+EM or researchers control methodology Client controls scope and methodology
+Output is knowledge, code, data or models
+released openly
+Output is a service, deployment, integration
+or advice
+Funding covers research cost Pricing is set to earn a margin
+Many benefit One client benefits
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 31 of 53
+=== PAGE 32 ===
+Recommended bright line (GDR-027, PROVISIONAL): EM does not offer consulting,
+managed services, paid deployments or private paid benchmarking as an activity. Any
+fee-for-service engagement needs Board approval, a written mission justification, and is
+tracked so the Board can see the share of total revenue. If commercial work is ever
+wanted, it belongs in a separate company under Section 9.
+12. Financial principles and research integrity
+Money: everything belongs to the corporation and is spent on the mission; nobody
+profits and nobody sets their own pay. Integrity: write down what you already do, and
+keep it out of the By-Laws.
+Financial principles (GDR-028)
+# Principle Label and authority
+1 No dividends LEGAL REQUIREMENT, RCC Sec. 86
+2 No distributions to founders, members,
+trustees or officers
+LEGAL REQUIREMENT, RCC Sec. 86;
+NIRC Sec. 30(E)
+3 No surplus sharing; incidental surplus
+goes back into the purpose
+LEGAL REQUIREMENT, RCC Sec. 86
+4 All money and property belong to the
+corporation, not to any person
+LEGAL REQUIREMENT (separate juridical
+personality)
+5 Every expenditure must further the
+mission
+NIRC Sec. 30(E) operational test; RMO 38-
+2019 Sec. III
+6 Reasonable reserves are allowed
+(recommend a target of 3–6 months of
+fixed costs once there are any)
+GOVERNANCE RECOMMENDATION
+7 Researchers and employees may be
+paid for real work, at reasonable,
+benchmarked rates, subject to law
+RMO 38-2019 IV.A(2); founders subject to
+Section 9
+8 Trustee service is unpaid CONSERVATIVE TAX POSITION (GDR-
+010)
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 32 of 53
+=== PAGE 33 ===
+Research integrity (GDR-029)
+Based on how the group already works (pre-registered gates, errata, incident logs,
+"results and retractions"). Each item is FUTURE POLICY for the Research Integrity Policy,
+not a legal requirement.
+# Principle Label and authority
+9 Nobody sets or votes on their own
+compensation
+LEGAL REQUIREMENT for trustees (RCC
+Sec. 29); GOVERNANCE
+RECOMMENDATION for everyone
+10 Documented, actual out-of-pocket
+expenses may be reimbursed, including
+for trustees, with receipts and approval
+by someone other than the claimant
+GOVERNANCE RECOMMENDATION.
+Keep it to true reimbursement, not a flat
+allowance, to stay clear of the per diem
+issue
+11 Related-party transactions are
+disclosed and approved by people
+without an interest
+RCC Secs. 31, 52
+12 Restricted grants are tracked
+separately and spent only on their
+stated purpose
+GOVERNANCE RECOMMENDATION;
+usually a grant condition
+13 Anything bought with EM funds
+belongs to EM, including hardware kept
+at a researcher's home
+GOVERNANCE RECOMMENDATION
+14 Two people involved in every payment
+above a policy threshold
+GOVERNANCE RECOMMENDATION
+(GDR-030)
+15 Keep administrative costs visible; donee
+status later requires them to stay at or
+below 30% of total expenses
+NIRC Sec. 34(H)(2)(c); RR 13-98 Sec. 1(c)
+(ii); relevant only if you seek PCNC
+accreditation
+Principle What it means in practice
+Provenance Every dataset, checkpoint and number traces to a
+source, license and commit
+Reproducibility Code, configs, seeds and environment published
+with results, or a stated reason why not
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 33 of 53
+=== PAGE 34 ===
+What goes in the By-Laws: nothing beyond the Section 6 research-independence clause,
+and a one-line reference that the Board adopts a Research Integrity Policy.
+13. Future Articles of Incorporation: outline
+The Articles should be short: what the law requires, the four BIR clauses, and the
+mission. Everything else goes in the By-Laws or policies. Required contents follow RCC
+Sec. 13 (verify each item against the current SEC form); the BIR clauses come from RMO
+38-2019 VI.A.2.
+Principle What it means in practice
+Pre-registration where useful Hypotheses and pass/fail gates frozen before the
+run for confirmatory work
+Frozen artifacts Released results tagged and immutable; changes
+go in new versions
+Corrections, errata, retractions Public, dated, linked from the original; never silent
+edits
+Negative results Published by default
+Observation vs interpretation Reports separate what was measured from what it
+is taken to mean
+Failed experiments Reported honestly, including in the project log
+Funding and conflicts Disclosed on every output (Section 11)
+No benchmark manipulation No tuning, cherry-picking or selective reporting to
+favor a sponsor, partner or EM itself
+Records Research records kept for a set period
+(recommend at least 5 years)
+Misconduct Fabrication, falsification and plagiarism handled by
+a written process with an outside reviewer where a
+founder is involved
+Consistency of public claims Figures on sites and cards match the underlying
+report; Phase 1 found one mismatch to fix (Visual-
+Qwen accuracy)
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 34 of 53
+=== PAGE 35 ===
+Article Topic Proposed
+substance (plain
+English)
+Feeds from Required?
+First Corporate
+name
+"Experimental
+Machines" plus
+any suffix the SEC
+requires for a non-
+stock corporation
+(e.g. "Inc.");
+subject to SEC
+name verification
+GDR-008 LEGAL
+REQUIREMENT
+Second Primary
+purpose
+Scientific
+research in
+machine learning
+and related fields,
+for the public
+interest, with
+results made
+openly available
+(Section 1 sketch)
+GDR-009,
+GDR-014
+LEGAL
+REQUIREMENT
+Second Secondary
+purposes
+Dissemination;
+open-source
+release;
+researcher
+training;
+collaboration;
+receiving grants
+and property;
+each "in
+furtherance of"
+the primary
+purpose
+GDR-009 Optional but
+recommended
+Third Principal
+office
+A Philippine
+address
+(city/municipality
+and province at
+minimum)
+GDR-034 LEGAL
+REQUIREMENT
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 35 of 53
+=== PAGE 36 ===
+Article Topic Proposed
+substance (plain
+English)
+Feeds from Required?
+Fourth Term Perpetual, unless
+you choose
+otherwise
+GDR-038 Optional (perpetual
+by default, RCC Sec.
+11, verify)
+Fifth Incorporators Names,
+nationalities,
+residence
+addresses of
+Arjhine, Alpha,
+John
+GDR-001 LEGAL
+REQUIREMENT
+Sixth Number of
+trustees
+Three GDR-004,
+GDR-018
+LEGAL
+REQUIREMENT
+Seventh Initial trustees Names,
+nationalities,
+residences; to
+serve until
+successors are
+elected
+GDR-002 LEGAL
+REQUIREMENT
+Eighth Capital and
+contributors
+Amount of initial
+capital; names and
+amounts of each
+contributor
+FOUNDER
+DECISION:
+how much
+each
+founder
+contributes
+LEGAL
+REQUIREMENT for
+non-stock (RCC Sec.
+13, verify). Avoid the
+word "foundation" in
+the name, which
+triggers a ₱ 1,000,000
+minimum
+Ninth Non-stock,
+non-profit
+character
+The corporation is
+non-stock and
+non-profit; no part
+of its income is
+distributable as
+dividends
+GDR-007 LEGAL
+REQUIREMENT (RCC
+Sec. 86) + BIR clause
+(VI.A.2(i))
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 36 of 53
+=== PAGE 37 ===
+Article Topic Proposed
+substance (plain
+English)
+Feeds from Required?
+Tenth No private
+inurement
+No part of net
+income or assets
+shall inure to the
+benefit of any
+member, trustee,
+officer, organizer
+or private
+individual
+GDR-028 CONSERVATIVE TAX
+POSITION (VI.A.2(ii);
+NIRC Sec. 30(E))
+Eleventh Trustee
+compensation
+Trustees receive
+no compensation
+or remuneration
+GDR-010 CONSERVATIVE TAX
+POSITION (VI.A.2(iii)).
+Do not add a clause
+allowing "reasonable
+compensation" to
+trustees or officers
+Twelfth Dissolution On dissolution,
+after liabilities,
+assets go to one
+or more non-profit
+entities with
+similar purposes,
+or to the
+government for a
+public purpose;
+never to members,
+trustees, officers
+or organizers
+GDR-011 CONSERVATIVE TAX
+POSITION (VI.A.2(iv);
+IV.A(6)); consistent
+with RCC Secs. 93–94
+Thirteenth Members One class of
+voting members;
+rights and
+admission
+governed by the
+By-Laws
+GDR-015,
+GDR-033
+Recommended; RCC
+Sec. 88 lets the
+Articles or By-Laws do
+this
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 37 of 53
+=== PAGE 38 ===
+Deliberately left out of the Articles: research areas list, membership criteria, removal
+procedure, research independence detail, IP, compensation bands, sponsored-research
+rules. Each would need a 2/3 member vote and SEC approval to change.
+14. Future By-Laws: outline
+Sixteen short articles. The By-Laws hold the rules of governance; policies hold the rules
+of practice. Sections marked "entrenched" need 2/3 of all members to amend (Section 4).
+Article Topic Proposed
+substance (plain
+English)
+Feeds from Required?
+Fourteenth Open
+research
+statement
+Research is
+conducted for the
+public interest
+and its results are
+published, subject
+to law, privacy,
+security and
+safety
+GDR-014 GOVERNANCE
+RECOMMENDATION;
+could instead sit
+inside the purpose
+clause
+Last Treasurer and
+certifications
+SEC-required
+undertakings and
+treasurer's
+certification of
+contributions
+LEGAL
+REQUIREMENT per
+SEC forms (verify
+current eSPARC
+requirements)
+# Topic Recommended rule Why By-Laws or policy?
+I Name, office, seal Refer to Articles; no
+seal required unless
+you want one
+Housekeeping By-Laws
+II Membership:
+nature
+One class; voting;
+personal and non-
+transferable;
+researchers and
+contributors are not
+members unless
+admitted
+RCC Secs. 88–89;
+GDR-015
+By-Laws,
+entrenched
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 38 of 53
+=== PAGE 39 ===
+# Topic Recommended rule Why By-Laws or policy?
+III Admission Written proposal →
+Board nomination →
+2/3 of all members;
+criteria listed
+GDR-015 By-Laws,
+entrenched
+(criteria detail can
+sit in a policy)
+IV Ending
+membership
+Resignation, death,
+incapacity,
+abandonment,
+removal for cause
+with due process
+and independent
+reviewer
+RCC Sec. 90;
+GDR-016
+By-Laws,
+entrenched
+V Members'
+meetings
+Annual meeting
+(fixed month);
+special meetings on
+request of the
+President, Board, or
+any member; written
+notice at least one
+week before (RCC
+Sec. 49, verify for
+special meetings);
+remote participation
+and voting in
+absentia allowed
+(RCC Sec. 23)
+Workable for a
+dispersed group
+By-Laws
+VI Members' voting
+and reserved
+powers
+Quorum a majority
+of members (RCC
+Sec. 51); thresholds
+from Section 4;
+proxies allowed in
+writing unless you
+prefer not (RCC Sec.
+88)
+GDR-011 By-Laws,
+entrenched
+VII Mission
+protection
+Two-meeting, 60-day
+rule for purpose
+changes
+GDR-012 By-Laws,
+entrenched
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 39 of 53
+=== PAGE 40 ===
+# Topic Recommended rule Why By-Laws or policy?
+VIII Board of Trustees Number per Articles;
+eligibility; unpaid;
+two-year staggered
+terms; resignation;
+removal by
+members; vacancies
+RCC Secs. 22, 27–
+28, 91; GDR-010,
+017
+By-Laws
+IX Board meetings Quarterly; special
+and emergency
+meetings; remote
+participation;
+quorum and voting
+per RCC Sec. 52; no
+proxies; minutes
+GDR-019 By-Laws
+X Officers President (a
+trustee), Treasurer,
+Corporate
+Secretary; elected
+by the Board; no
+other offices unless
+the By-Laws are
+amended; no
+research roles here
+RCC Sec. 24;
+Matling
+By-Laws
+X.1 President Presides at
+meetings; signs
+documents
+authorized by the
+Board; legal
+representative; no
+authority over
+research
+conclusions
+GDR-006 By-Laws
+X.2 Treasurer Custody of funds;
+books of account;
+financial reports to
+the Board; tax and
+regulatory filings
+with the Secretary
+RCC Sec. 24
+residency
+By-Laws
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 40 of 53
+=== PAGE 41 ===
+# Topic Recommended rule Why By-Laws or policy?
+X.3 Corporate
+Secretary
+Minutes; member
+register (RCC Sec.
+92); notices; SEC
+filings; custody of
+corporate records
+RCC Sec. 24
+citizenship and
+residency
+By-Laws
+XI Conflicts of
+interest
+Disclose; recuse
+from discussion and
+vote; Sec. 31
+conditions for
+contracts with
+trustees and
+officers; Board
+adopts a fuller policy
+covering members,
+relatives and outside
+companies
+RCC Secs. 31, 52;
+GDR-020
+By-Laws (short,
+entrenched) +
+Conflict-of-
+Interest Policy
+XII Research
+independence
+Board powers
+exclude altering
+research
+conclusions;
+intervention only on
+grounds in the
+Research
+Independence
+Charter
+GDR-014 By-Laws (short,
+entrenched) +
+Charter
+XIII Committees Board may form
+advisory committees
+(e.g. Research
+Council, audit)
+without delegating
+reserved member
+powers
+GDR-032 By-Laws (one
+clause)
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 41 of 53
+=== PAGE 42 ===
+Deliberately left to policies: membership criteria detail, compensation bands, IP rules,
+sponsored-research terms, integrity procedures, benchmark methodology, expense rules,
+spending thresholds, signatory limits.
+15. Where each rule lives
+Put a rule in the hardest-to-change document only if changing it should be hard.
+Articles need 2/3 of members and SEC approval; By-Laws need member votes; policies
+need a Board vote; agreements bind individuals.
+# Topic Recommended rule Why By-Laws or policy?
+XIV Records, fiscal
+year, finances
+Calendar fiscal year;
+books kept at the
+principal office;
+member inspection
+rights as the Code
+provides; Board
+adopts Financial
+Controls Policy
+GDR-028, 035 By-Laws (short) +
+policy
+XV Related entities No dealings with
+founder-linked
+entities except
+through conflict
+review; no transfer
+of assets for less
+than fair value
+GDR-023 By-Laws (one
+clause,
+entrenched) +
+Related-Party
+Policy
+XVI Amendments Majority of Board +
+majority of
+members; 2/3 of all
+members for
+entrenched articles;
+no delegation to the
+Board
+RCC Sec. 47 By-Laws
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 42 of 53
+=== PAGE 43 ===
+Rule Articles By-Laws Board Policy Research
+Policy
+Employment / IP
+Agreement
+Mission and primary
+purpose
+✓
+Research areas list ✓  (Mission
+Statement)
+Non-stock, non-profit,
+no dividends
+✓
+No private inurement ✓ ✓  (Financial
+Controls)
+Trustees unpaid ✓ ✓
+Dissolution and asset
+distribution
+✓
+Membership nature,
+admission, removal
+✓ criteria detail
+Voting rights and
+thresholds
+✓
+Mission-protection
+procedure
+✓
+Trustee number ✓
+Trustee terms,
+vacancies, meetings,
+quorum
+✓
+Officers and duties ✓
+Conflict rules ✓  (short) ✓  (Conflict-of-
+Interest)
+✓  (disclosure
+clause)
+Related-party and
+future company
+dealings
+✓  (one
+clause)
+✓  (Related-Party)
+Research
+independence
+purpose
+sentence
+✓  (short) ✓  (Charter)
+Publication rights ✓  (Charter) ✓
+Authorship ✓  (Integrity) ✓
+IP ownership
+categories
+✓  (IP Policy) ✓  (binding)
+Existing asset
+decisions
+✓  (Register, Board
+minutes)
+✓  (licence or
+assignment)
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 43 of 53
+=== PAGE 44 ===
+16. Adversarial self-review
+The draft protects well against asset extraction, sponsor capture, IP overreach and
+consulting drift. It protects only partly against founder entrenchment and two-against-
+one conflicts, because three people who are simultaneously all members, all trustees
+and all officers cannot fully check each other. Five items are flagged.
+Rule Articles By-Laws Board Policy Research
+Policy
+Employment / IP
+Agreement
+Salary bands and
+benchmarking
+✓  (Compensation) ✓  (individual
+salary)
+Nobody sets own pay ✓  (for
+trustees)
+✓
+Founder paid-work
+conditions
+✓  (Compensation) ✓
+Benchmark
+methodology
+✓  (project
+level)
+Sponsored research
+safeguards
+✓  (Sponsored
+Research)
+✓  (disclosure) ✓  (sponsor
+agreement)
+Consulting bright line ✓
+Expense
+reimbursement,
+signatories, thresholds
+✓  (Financial
+Controls)
+Research integrity,
+errata, retractions
+✓  (Integrity)
+Non-membership of
+researchers
+✓ ✓  (one
+sentence)
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 44 of 53
+=== PAGE 45 ===
+# Failure mode Protected? How, or what is missing
+1 Founders permanently
+control everything
+Partly. FLAG Staggered terms, an
+admission path and a Board-
+expansion trigger exist, but
+nothing forces the founders
+to admit anyone. Option
+(FOUNDER DECISION):
+commit in the By-Laws or a
+founding resolution to admit
+at least two non-founder
+members, or expand the
+Board, within a set period
+(e.g. 3 years)
+2 Founders extract nonprofit
+assets
+Yes Articles bar dividends and
+inurement; dissolution clause;
+trustees unpaid; related-
+party review; no paid IP
+transfers; expense
+reimbursement approved by
+someone other than the
+claimant; two-person
+payment control
+3 Board disconnected from
+researchers
+Yes, for now All trustees are researchers
+today. New seats go to unpaid
+members, ideally
+researchers; Research
+Council once non-member
+researchers exist
+4 Researchers accidentally
+become voting members
+Yes Membership only by formal
+admission and entry on the
+register; agreements state
+that participation is not
+membership
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 45 of 53
+=== PAGE 46 ===
+# Failure mode Protected? How, or what is missing
+5 One founder deadlocks the
+corporation
+Yes Majority of 2 of 3 decides; no
+unanimity requirements;
+quorum works with one
+absent. With one founder
+recused, the other two must
+agree, and failure leaves the
+status quo
+6 Two founders arbitrarily
+expel the third
+Partly. FLAG Member removal needs an
+enumerated cause, a hearing
+and an independent
+reviewer's finding. But RCC
+Sec. 27 lets 2/3 of members
+remove a trustee "with or
+without cause," so two
+founders could remove the
+third from the Board (not
+from membership) with no
+cause. Whether the By-Laws
+can require cause for trustee
+removal is legally uncertain;
+counsel should advise.
+Mitigation now: written
+reasons and a hearing
+7 Sponsor suppresses bad
+results
+Yes Safeguards 3, 4 and 10;
+explicit prohibition in Section
+6; confidentiality review
+limited to the sponsor's own
+information
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 46 of 53
+=== PAGE 47 ===
+# Failure mode Protected? How, or what is missing
+8 Sponsor buys favorable
+benchmarks
+Mostly. FLAG Disclosure and no sponsor
+say over design, competitors
+or conclusions. Residual
+channel: a sponsor can fund
+only the comparisons it
+expects to win. Fix in policy:
+publish the list of sponsor-
+funded comparisons, and do
+not let sponsors choose
+which configurations are
+tested
+9 A future for-profit captures
+nonprofit assets
+Mostly. FLAG Separate-entity principle;
+related-party review; 2/3
+member approval for major IP
+transfers. Weak point: all
+three members and trustees
+would likely be owners of that
+company, so no one
+disinterested can approve.
+Recommended rule: no
+license, assignment or
+service deal with a founder-
+linked company until the
+Board has at least two
+trustees with no interest in it
+10 EM owns every idea a
+researcher has
+Yes Category B triggered only by
+six defined connections;
+background and independent
+work stay with the
+researcher
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 47 of 53
+=== PAGE 48 ===
+17. Founder Review Required
+Sixteen choices are yours. Five block Articles drafting (marked Yes); the rest can be
+settled while the By-Laws and policies are drafted.
+# Failure mode Protected? How, or what is missing
+11 A researcher privately owns
+org-funded IP
+Only once
+agreements exist.
+FLAG
+Ownership transfers only
+through signed agreements.
+Today, contributors (including
+non-founders) have none. Fix:
+contributor and fellowship
+agreements before the first
+funded program; Register
+decisions for existing assets
+12 Corporate officers overrule
+scientific evidence
+Yes Board powers exclude
+conclusions; officer duties
+exclude research authority;
+interventions only on listed
+grounds, in writing
+13 Research policies
+overstuffed into By-Laws
+Yes By-Laws carry two short
+hooks; detail goes to the
+Charter and Integrity Policy
+14 Nonprofit drifts into
+consulting
+Yes Bright line against consulting
+and managed services; Board
+approval and revenue-share
+tracking for any fee-for-
+service
+15 Governance too complex for
+three people
+Partly The full design has many
+policies. Fix: phase them. At
+incorporation, only Articles,
+By-Laws and one-page
+Conflict-of-Interest and
+Research Independence
+documents. Everything else
+within the first 12 months, as
+needs arise
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 48 of 53
+=== PAGE 49 ===
+# Question My
+recommendation
+Alternatives Practical
+consequence
+Legal
+consequence
+Blocks
+Articles?
+1 Do you accept
+the purpose-
+clause
+approach
+(RMO
+"scientific"
+wording +
+machine
+learning +
+open
+results)?
+Yes Broader tech
+purpose;
+narrower ML-
+only wording
+Sets what the
+org can do
+without
+amending
+Organizational
+test for the
+CTE
+Yes
+2 What is the
+principal
+office
+address?
+A Philippine
+address you can
+keep for years;
+avoid a home
+address if
+another option
+exists
+Founder's home;
+co-working or
+university
+address
+Appears in
+public SEC
+records
+Required in
+Articles
+Yes
+3 How much
+initial capital,
+and who
+contributes
+what?
+A modest, equal
+contribution
+from each
+founder
+Unequal
+amounts; one
+contributor
+Contributors
+are listed
+publicly;
+contribution
+gives no
+ownership
+Required in
+Articles for
+non-stock
+(verify)
+Yes
+4 Confirm John
+is a Philippine
+resident and
+Arjhine a
+Philippine
+citizen and
+resident
+Confirm Swap offices if
+not
+None if
+confirmed
+RCC Sec. 24
+requirements
+Yes
+5 Should
+trustees be
+able to claim
+documented
+out-of-pocket
+expenses?
+Yes, true
+reimbursement
+only, approved
+by another
+trustee
+No
+reimbursements
+at all in year one
+Founders bear
+costs
+personally if
+no
+Shapes the
+wording of the
+trustee no-
+compensation
+clause; flat
+per diems
+carry BIR risk
+Yes
+(clause
+wording)
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 49 of 53
+=== PAGE 50 ===
+# Question My
+recommendation
+Alternatives Practical
+consequence
+Legal
+consequence
+Blocks
+Articles?
+6 What is
+"Experimental
+Intelligence"
+going
+forward?
+A research
+program or
+brand of
+Experimental
+Machines
+Retire it;
+separate entity
+later
+Affects sites
+and repos
+A program
+needs no filing
+No
+7 Mission
+change: 2/3 at
+two meetings,
+or unanimity
+while fewer
+than 5
+members?
+2/3 at two
+meetings
+Unanimity
+during founding
+period
+Unanimity
+gives one
+founder a veto
+Both are
+above the 2/3
+legal floor
+No (By-
+Laws)
+8 Commit to
+broadening
+membership
+or the Board
+within a set
+period?
+Yes: at least two
+non-founder
+members, or a
+five-seat Board,
+within 3 years
+No
+commitment;
+longer period
+Addresses
+entrenchment
+(Section 16,
+item 1)
+None No (By-
+Laws or
+founding
+resolution)
+9 Trustee terms:
+two-year
+staggered, or
+three-year
+staggered?
+Two-year Three-year (one
+seat per year)
+Two-year
+keeps
+accountability
+higher
+Both within
+RCC Sec. 91
+No (By-
+Laws)
+10 Officers
+elected by the
+Board, or
+directly by
+members?
+By the Board Direct member
+election (RCC
+Sec. 91)
+Same people
+today;
+matters when
+the groups
+diverge
+Either lawful No (By-
+Laws)
+11 Allow member
+proxies?
+Yes, in writing,
+for a single
+meeting
+No proxies Helps with
+travel
+Allowed
+unless the By-
+Laws say
+otherwise
+(RCC Sec. 88)
+No
+12 Who is the
+standing
+independent
+reviewer?
+Agree on one or
+two trusted
+outsiders now
+Decide only
+when needed
+Deciding in a
+dispute is
+much harder
+None No
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 50 of 53
+=== PAGE 51 ===
+18. Decision summary
+Eight decided, twenty-seven for review (including three open), three deferred. Nothing
+I recommended has been moved into DECIDED.
+DECIDED
+GDR-001 Founding Members: Arjhine A. Ty, Alpha Romer Coma, John Andrew
+Balbarrossa
+GDR-002 Initial Trustees: the same three
+GDR-003 Initial Officers: President Alpha, Treasurer John, Corporate Secretary Arjhine
+GDR-004 Initial Board Size: three
+GDR-005 Founders Initially Unpaid: about the first year
+# Question My
+recommendation
+Alternatives Practical
+consequence
+Legal
+consequence
+Blocks
+Articles?
+13 Payment
+threshold for
+two-person
+approval, and
+bank
+signatories
+Two signatures
+above a set
+amount;
+President and
+Treasurer as
+signatories
+Single signatory Speed vs
+control
+AML
+expectations
+for non-
+profits (SEC
+MC 15-2018,
+verify)
+No (bank
+opening)
+14 Adopt the
+consulting
+bright line?
+Yes Allow limited
+consulting
+under Board
+approval
+Forgoes easy
+revenue
+Protects the
+operational
+test
+No
+15 Adopt "no
+dealings with
+a founder-
+linked
+company until
+two
+disinterested
+trustees
+exist"?
+Yes Allow member
+ratification
+under RCC Sec.
+31
+May delay a
+spinout
+collaboration
+Reduces
+related-party
+and inurement
+risk
+No
+16 Decide each
+existing asset
+in the
+Register
+Case by case;
+start with
+domains,
+accounts and
+the Play Store
+listing
+Leave all
+external for now
+Clarifies who
+controls what
+Avoids paid or
+disguised
+transfers
+No
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 51 of 53
+=== PAGE 52 ===
+GDR-006 Researcher-First Organizational Principle
+GDR-007 Non-stock, non-profit scientific corporation targeting NIRC Sec. 30(E) (from
+your legal assumption set)
+GDR-010 No trustee compensation while serving (from your legal assumption set)
+PROVISIONAL — REVIEW REQUIRED
+GDR-009 Primary purpose clause
+GDR-011 Member reserved powers and thresholds
+GDR-012 Mission-protection rule
+GDR-013 Board powers
+GDR-014 Research independence
+GDR-015 Member admission
+GDR-016 Member removal and due process
+GDR-017 Trustee terms
+GDR-018 Board expansion path
+GDR-019 Meetings, quorum, voting
+GDR-020 Conflicts of interest
+GDR-021 Compensation framework
+GDR-023 Separate Future Company Principle
+GDR-024 Hybrid IP framework
+GDR-025 Existing Research Asset Register (process; each asset open)
+GDR-026 Sponsored research and grants
+GDR-027 Consulting bright line
+GDR-028 Financial principles
+GDR-029 Research integrity
+GDR-031 Deadlock handling
+GDR-032 Research Council
+GDR-035 Fiscal year
+GDR-037 Public legal-status statements
+GDR-038 Corporate term
+OPEN: GDR-008 Status of "Experimental Intelligence"
+OPEN: GDR-030 Bank signatories and spending approvals
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 52 of 53
+=== PAGE 53 ===
+OPEN: GDR-034 Principal office address
+DEFERRED
+GDR-022 Founder paid work: only after BIR ruling or tax advice, after leaving the Board,
+on role-based terms
+GDR-033 Membership classes
+GDR-036 CTE and PCNC timing
+Next step when you are ready: meet, work through Founder Review Required items 1–5
+(they block the Articles), and mark each PROVISIONAL item accept, change or reject.
+This draft stops here; no Articles, By-Laws or policies have been drafted.
+Experimental Machines — Founding Governance Design Draft v0.1
+Page 53 of 53

@@ -1,0 +1,29 @@
+# Qwen3-TTS adapter environment (run: py/tts/qwen3/.venv/Scripts/python py/tts/qwen3/run.py job.json).
+# Python 3.10 + torch 2.10.0+cu128 so uv hardlinks the same cached torch wheel as the Irodori env.
+[project]
+name = "tts-qwen3"
+version = "0.1.0"
+description = "Qwen3-TTS (Apache-2.0) adapter env: faster-qwen3-tts (MIT, CUDA-graph decode) over qwen-tts-hf"
+requires-python = "==3.10.*"
+dependencies = [
+  "torch==2.10.0",
+  "torchaudio==2.10.0",
+  "faster-qwen3-tts==0.5.2",
+  "transformers==5.15.1",  # qwen-tts-hf 0.1.1.post1 breaks on 5.17 (MimiConfig has no rope_theta)
+  "soundfile>=0.12",
+  "numpy>=1.26",
+]
+
+[tool.uv]
+package = false
+# gradio is only used by the upstream demo apps; drop it (saves ~300 MB).
+override-dependencies = ["gradio; python_version < '0'"]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
+torchaudio = { index = "pytorch-cu128" }
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true

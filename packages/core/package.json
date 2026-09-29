@@ -1,0 +1,12 @@
+{
+  "name": "@vid/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Project/narration schemas, cue parsing, timeline assembly, captions. Renderer-agnostic.",
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": {
+    "yaml": "^2.8.0",
+    "zod": "^4.1.0"
+  }
+}

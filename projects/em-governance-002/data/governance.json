@@ -1,0 +1,362 @@
+{
+ "source": "sources/governance-draft-v0.1.pdf",
+ "source_title": "Experimental Machines — Founding Governance Design Draft v0.1 (Sep 26, 2026)",
+ "source_sha256": "72c680b899597cb033303f6339adc64e93095c689b23302c8ee4d9faa1003a8a",
+ "pages": {
+  "v": 53,
+  "src": "p.1: “Page 1 of 53”"
+ },
+ "status": {
+  "v": "proposal",
+  "src": "p.1: “This is a design proposal for three founders to argue with, not a legal document.”"
+ },
+ "founders": {
+  "v": 3,
+  "src": "p.2: “three founding members, three unpaid trustees, and three officers”"
+ },
+ "officers": {
+  "v": {
+   "President": "Alpha",
+   "Treasurer": "John",
+   "Corporate Secretary": "Arjhine"
+  },
+  "src": "p.51: “GDR-003 Initial Officers: President Alpha, Treasurer John, Corporate Secretary Arjhine”"
+ },
+ "unpaid_period": {
+  "v": "about a year",
+  "src": "p.25: “Founders serve unpaid for about a year.”"
+ },
+ "decided": {
+  "v": 8,
+  "src": "p.6: “Eight decisions are DECIDED”"
+ },
+ "provisional": {
+  "v": 24,
+  "src": "p.6: “Twenty-four are PROVISIONAL”"
+ },
+ "open": {
+  "v": 3,
+  "src": "p.6: “Three are OPEN and three DEFERRED”"
+ },
+ "deferred": {
+  "v": 3,
+  "src": "p.6: “Three are OPEN and three DEFERRED”"
+ },
+ "for_review": {
+  "v": 27,
+  "src": "p.51: “Eight decided, twenty-seven for review (including three open), three deferred.”"
+ },
+ "decisions_total": {
+  "v": 38,
+  "src": "p.6 (the four counts above); the record's ids run GDR-001 to GDR-038 (p.11)",
+  "derived": "8 decided + 24 provisional + 3 open + 3 deferred"
+ },
+ "two_thirds_of_three": {
+  "v": 2,
+  "src": "p.11: “With three members, \"2/3 of all members\" means two of three”"
+ },
+ "quorum": {
+  "v": 2,
+  "src": "p.25: “With one trustee recused, two remain: exactly a quorum. Both must vote yes.”"
+ },
+ "mission_notice_days": {
+  "v": 30,
+  "src": "p.15: “circulated to all members at least 30 days before the first vote”"
+ },
+ "unanimity_alt_members": {
+  "v": 5,
+  "src": "p.15: “require unanimity for purpose changes only while there are fewer than five members”"
+ },
+ "mission_gap_days": {
+  "v": 60,
+  "src": "p.15: “Approval by 2/3 of all members at two meetings held at least 60 days apart.”"
+ },
+ "intervention_grounds": {
+  "v": [
+   "Law",
+   "Privacy",
+   "Security",
+   "Safety",
+   "Research misconduct",
+   "Contract",
+   "Budget",
+   "IP constraints",
+   "Material institutional risk"
+  ],
+  "src": "p.18: “When the Board may intervene Only on these grounds, and only as far as the ground requires”",
+  "derived": "the nine row heads of the table that follows the quote"
+ },
+ "intervention_rules": {
+  "v": [
+   "written",
+   "gives reasons",
+   "names the ground",
+   "time-limited"
+  ],
+  "src": "p.19: “Every intervention is written, gives reasons, names the ground, and is time-limited.”"
+ },
+ "disinterested_needed": {
+  "v": 2,
+  "src": "p.25: “until the Board has at least two trustees with no interest in them”"
+ },
+ "deadlock_days": {
+  "v": 60,
+  "src": "p.24: “operationally necessary matter for 60 days”"
+ },
+ "removal_response_days": {
+  "v": 30,
+  "src": "p.22: “At least 30 days to respond in writing and at a hearing.”"
+ },
+ "not_causes": {
+  "v": [
+   "scientific disagreement",
+   "voting against the majority",
+   "publishing a result others dislike",
+   "good-faith criticism"
+  ],
+  "src": "p.22: “Not a cause: scientific disagreement, disagreement about research direction, voting against the majority, publishing a result others dislike, or criticizing the organization in good faith.”"
+ },
+ "removal_causes": {
+  "v": [
+   "serious misconduct",
+   "misuse of assets",
+   "breach of a trustee's duties",
+   "serious research misconduct",
+   "legal disqualification"
+  ],
+  "src": "p.21: “Causes for removal: 1. serious misconduct toward the organization or its people; 2. misuse or misappropriation of assets; 3. breach of fiduciary duties as a trustee or officer (RCC Secs. 30–31, 33); 4. a finding of serious research misconduct under the Research Integrity Policy; 5. conviction or disqualification that would bar service under RCC Sec. 26.”"
+ },
+ "removal_other_two": {
+  "v": 2,
+  "src": "p.22: “With three members, that means both of the other two.”"
+ },
+ "trustee_removal_gap": {
+  "v": "2/3 of members may remove a trustee with or without cause",
+  "src": "p.46: “But RCC Sec. 27 lets 2/3 of members remove a trustee \"with or without cause,\" so two founders could remove the third from the Board (not from membership) with no cause.”"
+ },
+ "safeguards": {
+  "v": 10,
+  "src": "p.30: “The ten safeguards (GOVERNANCE RECOMMENDATION)”"
+ },
+ "sponsor_review_days": {
+  "v": 30,
+  "src": "p.30: “limited to removing its own confidential information: recommend up to 30 days”"
+ },
+ "patent_delay_days": {
+  "v": 90,
+  "src": "p.31: “A reasonable delay for patent filing is allowed: recommend up to 90 days.”"
+ },
+ "ip_categories": {
+  "v": 5,
+  "src": "p.27: “The five categories”"
+ },
+ "ip_program_triggers": {
+  "v": 6,
+  "src": "p.28: “Category B is triggered only by the six listed connections.”"
+ },
+ "flags": {
+  "v": 5,
+  "src": "p.44: “Five items are flagged.”"
+ },
+ "founder_choices": {
+  "v": 16,
+  "src": "p.48: “Sixteen choices are yours.”"
+ },
+ "blocking_choices": {
+  "v": 5,
+  "src": "p.48: “Five block Articles drafting”"
+ },
+ "broaden_members": {
+  "v": 2,
+  "src": "p.45: “admit at least two non-founder members”"
+ },
+ "board_expand_to": {
+  "v": 5,
+  "src": "p.25: “Trigger to expand to five”"
+ },
+ "broaden_years": {
+  "v": 3,
+  "src": "p.45: “within a set period (e.g. 3 years)”"
+ },
+ "foundation_minimum_php": {
+  "v": 1000000,
+  "src": "p.36: “triggers a ₱ 1,000,000 minimum”"
+ },
+ "residency_rule": {
+  "v": {
+   "Treasurer": "Philippine resident",
+   "Secretary": "Philippine citizen and resident"
+  },
+  "src": "p.3: “Treasurer must be a Philippine resident; Secretary must be a Philippine citizen and resident.”"
+ },
+ "term_recommended_years": {
+  "v": 2,
+  "src": "p.8: “Two-year staggered terms”"
+ },
+ "term_cap_years": {
+  "v": 3,
+  "src": "p.8: “up to three years”"
+ },
+ "proxy_rule": {
+  "v": "in writing, for a single meeting",
+  "src": "p.50: “Yes, in writing, for a single meeting”"
+ },
+ "visual_qwen_authors": {
+  "v": 5,
+  "src": "p.30: “began as FEU Tech thesis with five authors”"
+ },
+ "signatories": {
+  "v": [
+   "President",
+   "Treasurer"
+  ],
+  "src": "p.51: “President and Treasurer as signatories”"
+ },
+ "trustees_must_be_members": {
+  "v": true,
+  "src": "p.2: “Trustees must be members (RCC Sec. 91).”"
+ },
+ "contribution_months": {
+  "v": 12,
+  "src": "p.20: “sustained research contribution over roughly 12 months or more”"
+ },
+ "odd_board_range": {
+  "v": [
+   3,
+   7
+  ],
+  "src": "p.25: “all Board rules work for any odd number from 3 to 7”"
+ },
+ "articles_amendment_rule": {
+  "v": "majority of Board + 2/3 of members, SEC approval",
+  "src": "p.25: “changing it needs an Articles amendment (majority of Board + 2/3 of members, SEC approval; RCC Sec. 15)”"
+ },
+ "two_thirds_of_four": {
+  "v": 3,
+  "src": "p.11 rule (“2/3 of all members”) applied to 4 members",
+  "derived": "ceil(2/3 × 4) = 3: two of four is 50 %, short of two thirds"
+ },
+ "quorum_of_four": {
+  "v": 3,
+  "src": "p.23 rule (quorum = majority of the number of trustees in the Articles, RCC Sec. 52) applied to 4 seats",
+  "derived": "majority of 4 = 3"
+ },
+ "provisional_list": {
+  "v": [
+   {
+    "id": "GDR-009",
+    "name": "Primary purpose clause"
+   },
+   {
+    "id": "GDR-011",
+    "name": "Member reserved powers and thresholds"
+   },
+   {
+    "id": "GDR-012",
+    "name": "Mission-protection rule"
+   },
+   {
+    "id": "GDR-013",
+    "name": "Board powers"
+   },
+   {
+    "id": "GDR-014",
+    "name": "Research independence"
+   },
+   {
+    "id": "GDR-015",
+    "name": "Member admission"
+   },
+   {
+    "id": "GDR-016",
+    "name": "Member removal and due process"
+   },
+   {
+    "id": "GDR-017",
+    "name": "Trustee terms"
+   },
+   {
+    "id": "GDR-018",
+    "name": "Board expansion path"
+   },
+   {
+    "id": "GDR-019",
+    "name": "Meetings, quorum, voting"
+   },
+   {
+    "id": "GDR-020",
+    "name": "Conflicts of interest"
+   },
+   {
+    "id": "GDR-021",
+    "name": "Compensation framework"
+   },
+   {
+    "id": "GDR-023",
+    "name": "Separate Future Company Principle"
+   },
+   {
+    "id": "GDR-024",
+    "name": "Hybrid IP framework"
+   },
+   {
+    "id": "GDR-025",
+    "name": "Existing Research Asset Register"
+   },
+   {
+    "id": "GDR-026",
+    "name": "Sponsored research and grants"
+   },
+   {
+    "id": "GDR-027",
+    "name": "Consulting bright line"
+   },
+   {
+    "id": "GDR-028",
+    "name": "Financial principles"
+   },
+   {
+    "id": "GDR-029",
+    "name": "Research integrity"
+   },
+   {
+    "id": "GDR-031",
+    "name": "Deadlock handling"
+   },
+   {
+    "id": "GDR-032",
+    "name": "Research Council"
+   },
+   {
+    "id": "GDR-035",
+    "name": "Fiscal year"
+   },
+   {
+    "id": "GDR-037",
+    "name": "Public legal-status statements"
+   },
+   {
+    "id": "GDR-038",
+    "name": "Corporate term"
+   }
+  ],
+  "src": "p.52: “PROVISIONAL — REVIEW REQUIRED” list"
+ },
+ "deferred_list": {
+  "v": [
+   {
+    "id": "GDR-022",
+    "name": "Founder paid work"
+   },
+   {
+    "id": "GDR-033",
+    "name": "Membership classes"
+   },
+   {
+    "id": "GDR-036",
+    "name": "CTE and PCNC timing"
+   }
+  ],
+  "src": "p.53: DEFERRED list"
+ }
+}

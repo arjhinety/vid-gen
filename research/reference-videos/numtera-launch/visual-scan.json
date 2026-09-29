@@ -1,0 +1,517 @@
+{
+ "video": "C:\\Users\\arro\\Downloads\\Best AI SaaS Product Launch Video  Numtera.mp4",
+ "scan_fps": 10.0,
+ "duration_s": 95.3,
+ "hard_cuts": [
+  7.8,
+  7.9,
+  8.0,
+  9.9,
+  10.1,
+  10.2,
+  22.9,
+  29.2,
+  39.6,
+  44.6,
+  44.9,
+  47.4,
+  49.5,
+  49.6,
+  49.7,
+  54.8,
+  55.0,
+  55.1,
+  60.1,
+  74.7,
+  76.5,
+  78.4,
+  83.1,
+  86.5
+ ],
+ "n_hard_cuts": 24,
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 7.7,
+   "kind": "cut",
+   "dur": 7.7
+  },
+  {
+   "start": 7.7,
+   "end": 8.8,
+   "kind": "drift",
+   "dur": 1.1
+  },
+  {
+   "start": 8.8,
+   "end": 9.9,
+   "kind": "drift",
+   "dur": 1.1
+  },
+  {
+   "start": 9.9,
+   "end": 10.9,
+   "kind": "cut",
+   "dur": 1.0
+  },
+  {
+   "start": 10.9,
+   "end": 11.9,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 11.9,
+   "end": 13.1,
+   "kind": "drift",
+   "dur": 1.2
+  },
+  {
+   "start": 13.1,
+   "end": 16.3,
+   "kind": "drift",
+   "dur": 3.2
+  },
+  {
+   "start": 16.3,
+   "end": 17.3,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 17.3,
+   "end": 18.5,
+   "kind": "drift",
+   "dur": 1.2
+  },
+  {
+   "start": 18.5,
+   "end": 19.5,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 19.5,
+   "end": 20.5,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 20.5,
+   "end": 21.5,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 21.5,
+   "end": 22.7,
+   "kind": "drift",
+   "dur": 1.2
+  },
+  {
+   "start": 22.7,
+   "end": 23.7,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 23.7,
+   "end": 28.9,
+   "kind": "drift",
+   "dur": 5.2
+  },
+  {
+   "start": 28.9,
+   "end": 29.9,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 29.9,
+   "end": 31.5,
+   "kind": "drift",
+   "dur": 1.6
+  },
+  {
+   "start": 31.5,
+   "end": 32.5,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 32.5,
+   "end": 33.5,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 33.5,
+   "end": 34.9,
+   "kind": "drift",
+   "dur": 1.4
+  },
+  {
+   "start": 34.9,
+   "end": 37.8,
+   "kind": "drift",
+   "dur": 2.9
+  },
+  {
+   "start": 37.8,
+   "end": 39.6,
+   "kind": "drift",
+   "dur": 1.8
+  },
+  {
+   "start": 39.6,
+   "end": 41.5,
+   "kind": "cut",
+   "dur": 1.9
+  },
+  {
+   "start": 41.5,
+   "end": 44.6,
+   "kind": "drift",
+   "dur": 3.1
+  },
+  {
+   "start": 44.6,
+   "end": 45.6,
+   "kind": "cut",
+   "dur": 1.0
+  },
+  {
+   "start": 45.6,
+   "end": 47.2,
+   "kind": "drift",
+   "dur": 1.6
+  },
+  {
+   "start": 47.2,
+   "end": 48.2,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 48.2,
+   "end": 49.5,
+   "kind": "drift",
+   "dur": 1.3
+  },
+  {
+   "start": 49.5,
+   "end": 50.5,
+   "kind": "cut",
+   "dur": 1.0
+  },
+  {
+   "start": 50.5,
+   "end": 51.5,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 51.5,
+   "end": 52.8,
+   "kind": "drift",
+   "dur": 1.3
+  },
+  {
+   "start": 52.8,
+   "end": 53.8,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 53.8,
+   "end": 54.8,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 54.8,
+   "end": 55.8,
+   "kind": "cut",
+   "dur": 1.0
+  },
+  {
+   "start": 55.8,
+   "end": 57.4,
+   "kind": "drift",
+   "dur": 1.6
+  },
+  {
+   "start": 57.4,
+   "end": 58.4,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 58.4,
+   "end": 60.1,
+   "kind": "drift",
+   "dur": 1.7
+  },
+  {
+   "start": 60.1,
+   "end": 61.3,
+   "kind": "cut",
+   "dur": 1.2
+  },
+  {
+   "start": 61.3,
+   "end": 64.5,
+   "kind": "drift",
+   "dur": 3.2
+  },
+  {
+   "start": 64.5,
+   "end": 69.0,
+   "kind": "drift",
+   "dur": 4.5
+  },
+  {
+   "start": 69.0,
+   "end": 71.9,
+   "kind": "drift",
+   "dur": 2.9
+  },
+  {
+   "start": 71.9,
+   "end": 72.9,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 72.9,
+   "end": 74.3,
+   "kind": "drift",
+   "dur": 1.4
+  },
+  {
+   "start": 74.3,
+   "end": 75.3,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 75.3,
+   "end": 76.3,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 76.3,
+   "end": 77.3,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 77.3,
+   "end": 78.4,
+   "kind": "drift",
+   "dur": 1.1
+  },
+  {
+   "start": 78.4,
+   "end": 79.4,
+   "kind": "cut",
+   "dur": 1.0
+  },
+  {
+   "start": 79.4,
+   "end": 80.4,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 80.4,
+   "end": 81.4,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 81.4,
+   "end": 82.4,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 82.4,
+   "end": 83.4,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 83.4,
+   "end": 86.5,
+   "kind": "drift",
+   "dur": 3.1
+  },
+  {
+   "start": 86.5,
+   "end": 87.5,
+   "kind": "cut",
+   "dur": 1.0
+  },
+  {
+   "start": 87.5,
+   "end": 90.0,
+   "kind": "drift",
+   "dur": 2.5
+  },
+  {
+   "start": 90.0,
+   "end": 91.0,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 91.0,
+   "end": 92.0,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 92.0,
+   "end": 93.0,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 93.0,
+   "end": 95.3,
+   "kind": "drift",
+   "dur": 2.3
+  }
+ ],
+ "n_segments": 59,
+ "segment_stats": {
+  "mean_s": 1.62,
+  "median_s": 1.0,
+  "p10_s": 1.0,
+  "p90_s": 3.1,
+  "changes_per_min": 37.15
+ },
+ "activity_per_s": [
+  2.34,
+  2.18,
+  3.77,
+  1.02,
+  2.97,
+  1.11,
+  5.07,
+  35.32,
+  3.98,
+  9.32,
+  17.43,
+  3.79,
+  4.37,
+  6.94,
+  2.14,
+  1.54,
+  8.21,
+  3.19,
+  6.9,
+  4.19,
+  11.31,
+  1.68,
+  14.01,
+  4.18,
+  1.32,
+  0.93,
+  2.23,
+  2.43,
+  3.65,
+  19.35,
+  1.42,
+  4.39,
+  1.35,
+  4.5,
+  3.05,
+  1.88,
+  3.23,
+  1.86,
+  2.58,
+  23.28,
+  2.62,
+  1.12,
+  2.22,
+  0.98,
+  27.1,
+  4.4,
+  1.64,
+  25.39,
+  1.16,
+  15.54,
+  8.64,
+  3.67,
+  4.94,
+  1.55,
+  17.08,
+  4.19,
+  1.04,
+  6.21,
+  2.11,
+  2.52,
+  8.37,
+  8.77,
+  8.13,
+  4.17,
+  3.95,
+  3.09,
+  1.16,
+  2.3,
+  2.22,
+  1.02,
+  0.65,
+  3.59,
+  9.11,
+  1.46,
+  11.57,
+  1.67,
+  7.87,
+  0.47,
+  10.96,
+  1.96,
+  7.89,
+  5.22,
+  7.3,
+  6.61,
+  0.97,
+  0.27,
+  24.81,
+  2.83,
+  1.4,
+  1.67,
+  4.12,
+  2.68,
+  2.58,
+  0.0,
+  0.0,
+  0.0
+ ],
+ "still_fraction": 0.052,
+ "keyframes": [
+  "kf_00m03.85s.jpg",
+  "kf_00m14.70s.jpg",
+  "kf_00m26.30s.jpg",
+  "kf_00m30.70s.jpg",
+  "kf_00m36.35s.jpg",
+  "kf_00m38.70s.jpg",
+  "kf_00m40.55s.jpg",
+  "kf_00m43.05s.jpg",
+  "kf_00m46.40s.jpg",
+  "kf_00m56.60s.jpg",
+  "kf_00m59.25s.jpg",
+  "kf_01m02.90s.jpg",
+  "kf_01m06.75s.jpg",
+  "kf_01m10.45s.jpg",
+  "kf_01m24.95s.jpg",
+  "kf_01m28.75s.jpg",
+  "kf_01m34.15s.jpg"
+ ],
+ "contact_sheets": [
+  "sheet_00.jpg"
+ ]
+}

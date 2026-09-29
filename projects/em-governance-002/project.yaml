@@ -1,0 +1,303 @@
+# Experimental Machines — governance film 2: the founders' decisions, the first outside trustee, and "the OpenAI move".
+# ~15 minutes. Same house format and the same bean cast as em-governance-001 (scenes/shared/cast.tsx, copied so this
+# project stands alone; Xynil added).
+# Sources: sources/governance-draft-v0.1.pdf (every decision); sources/research-openai.md and research-ph-law.md
+# (the company part: primary URLs quoted there); the owner's instruction for Xynil's role. Numbers: data/governance.json
+# (data/extract.py) and data/web.json (data/extract_web.py). Claims: sources/claims.yaml. Not legal advice; the film says so.
+id: em-governance-002
+title: "Sixteen cards and a company"
+description: >-
+  The decisions only the founders can make under the governance draft v0.1 (the five that block the Articles, the other
+  eleven, the review pass), how Xynil Jhed Lacap would join as the first outside trustee, and what "the OpenAI move"
+  (a for-profit beside the non-profit) would mean, with its legal caveats in the Philippines.
+format: { width: 1920, height: 1080, fps: 30 }
+brand: { name: Experimental Machines, place: Philippines, crumbs: [Governance · decisions] }
+headline: { enabled: false }
+languages:
+  en: { voice: narrator-en, subtitles: [en] }
+script: script/narration.yaml
+claims: sources/claims.yaml
+audio:
+  target_lufs: -16
+  line_gap: 0.35
+  beat_gap: 1.0
+  music:
+    path: projects/opengrad-study-001/assets/music/graph-paper-learning.wav
+    gain_db: -9
+    duck_db: -7
+  sfx:
+    - { at: "five-first:settled", offset: 0.9, sound: stamp, gain_db: -16 }
+    - { at: "proposals:protects", offset: 0.3, sound: impact, gain_db: -13 }
+    - { at: "here-three:no", offset: 0.1, sound: stamp, gain_db: -15 }
+    - { at: "sister-traps:traps", offset: 0.2, sound: thump, gain_db: -16 }
+scenes:
+  - id: cold-open
+    renderer: web
+    entry: scenes/ColdOpen.tsx
+    section: [The decisions]
+    lead: 1.4
+    hold: 1.0
+    question: [{ at: choices, text: "What do the three of us have to decide?" }]
+    beats: [b01, b02]
+    claims: [founder-choices]
+  - id: five-first
+    renderer: web
+    entry: scenes/FiveFirst.tsx
+    section: [01 · The first five]
+    lead: 0.6
+    hold: 1.0
+    question: "Which choices come first?"
+    beats: [b03]
+    claims: [founder-blocking]
+  - id: d1-purpose
+    renderer: web
+    entry: scenes/D1Purpose.tsx
+    section: [01 · The first five, Purpose wording]
+    lead: 0.5
+    hold: 1.2
+    question: "How should we say what the lab is for?"
+    beats: [b04]
+    claims: [d1-why, d1-rec, ph-scientific]
+  - id: d2-office
+    renderer: web
+    entry: scenes/D2Office.tsx
+    section: [01 · The first five, Office address]
+    lead: 0.5
+    hold: 1.2
+    question: "Where does the lab officially live?"
+    beats: [b05]
+    claims: [d2]
+  - id: d3-money
+    renderer: web
+    entry: scenes/D3Money.tsx
+    section: [01 · The first five, Starting money]
+    lead: 0.5
+    hold: 1.2
+    question: "Who puts in the starting money?"
+    beats: [b06]
+    claims: [d3, d3-foundation]
+  - id: d4-residency
+    renderer: web
+    entry: scenes/D4Residency.tsx
+    section: [01 · The first five, Who lives where]
+    lead: 0.5
+    hold: 1.2
+    question: "Do the officers meet the law’s rules?"
+    beats: [b07]
+    claims: [d4]
+  - id: d5-expenses
+    renderer: web
+    entry: scenes/D5Expenses.tsx
+    section: [01 · The first five, Expense claims]
+    lead: 0.5
+    hold: 1.4
+    question: "Can unpaid trustees get their costs back?"
+    beats: [b08]
+    claims: [d5, d5-risk]
+  - id: names-assets
+    renderer: web
+    entry: scenes/NamesAssets.tsx
+    section: [02 · The other eleven, Names and assets]
+    lead: 0.6
+    hold: 1.2
+    question: "What happens to the names and things we already made?"
+    beats: [b09]
+    claims: [d6, d16, d16-vq]
+  - id: protect
+    renderer: web
+    entry: scenes/Protect.tsx
+    section: [02 · The other eleven, Protecting each other]
+    lead: 0.6
+    hold: 1.2
+    question: "How do we protect ourselves from each other?"
+    beats: [b10]
+    claims: [d7, d8, d12]
+  - id: mechanics
+    renderer: web
+    entry: scenes/Mechanics.tsx
+    section: [02 · The other eleven, Mechanics]
+    lead: 0.6
+    hold: 1.2
+    question: "Which settings do the By-Laws need?"
+    beats: [b11]
+    claims: [d9, d10, d11, d13, extra-titles, extra-threshold]
+  - id: lines
+    renderer: web
+    entry: scenes/Lines.tsx
+    section: [02 · The other eleven, Lines around money]
+    lead: 0.6
+    hold: 1.0
+    question: "Where are the lines around money?"
+    beats: [b12]
+    claims: [d14, d15]
+  - id: proposals
+    renderer: web
+    entry: scenes/Proposals.tsx
+    section: [03 · The review pass]
+    lead: 0.6
+    hold: 1.4
+    question: "How do we review the other twenty-four?"
+    beats: [b15]
+    claims: [status-provisional, provisional-list, next-step, film-test]
+  - id: worst-day
+    renderer: web
+    entry: scenes/WorstDay.tsx
+    section: [03 · The review pass, The worst-day test]
+    lead: 0.6
+    hold: 1.6
+    question: "What if two of us want the third one out?"
+    beats: [b17]
+    claims: [removal-process, removal-not-cause, removal-gap]
+  - id: deferred
+    renderer: web
+    entry: scenes/Deferred.tsx
+    section: [03 · The review pass, What can wait]
+    lead: 0.6
+    hold: 1.2
+    question: "What can wait until later?"
+    beats: [b16]
+    claims: [deferred-list, founder-transition]
+  - id: xynil-join
+    renderer: web
+    entry: scenes/XynilJoin.tsx
+    section: [04 · The first outside trustee]
+    lead: 0.6
+    hold: 1.2
+    question: [{ at: member, text: "How does Xynil join the Board?" }]
+    beats: [b13]
+    claims: [xynil-fact, x-member-first, members-admission, x-criteria, x-accept]
+  - id: xynil-when
+    renderer: web
+    entry: scenes/XynilWhen.tsx
+    section: [04 · The first outside trustee, Now or later]
+    lead: 0.6
+    hold: 1.4
+    question: "Should Xynil join now, or later?"
+    beats: [b14]
+    claims: [x-now, x-four-math, x-even, x-later, x-stake, coi-all]
+  - id: why-company
+    renderer: web
+    entry: scenes/WhyCompany.tsx
+    section: [05 · Why a company at all]
+    lead: 0.6
+    hold: 1.4
+    question: "Why would the lab want a company beside it?"
+    beats: [b19]
+    claims: [why-company, why-lab-pay, founder-transition, ph-articles-four, why-grants, d14, why-company-fit]
+  - id: openai-start
+    renderer: web
+    entry: scenes/OpenAIStart.tsx
+    section: [06 · The OpenAI move]
+    lead: 0.6
+    hold: 1.2
+    question: [{ at: oa, text: "How did OpenAI do it?" }]
+    beats: [b20]
+    claims: [oa-founding, oa-cash, oa-lp, oa-conflict]
+  - id: openai-turns
+    renderer: web
+    entry: scenes/OpenAITurns.tsx
+    section: [06 · The OpenAI move, The twists]
+    lead: 0.6
+    hold: 1.4
+    question: "What happened next?"
+    beats: [b21]
+    claims: [oa-fired, oa-pbc-plan, oa-ag, oa-reversal, oa-recap, oa-verdict]
+  - id: openai-today
+    renderer: web
+    entry: scenes/OpenAIToday.tsx
+    section: [06 · The OpenAI move, Today]
+    lead: 0.6
+    hold: 1.6
+    question: "What does OpenAI look like today?"
+    beats: [b27]
+    claims: [oa-recap, oa-de-conditions, oa-classn]
+  - id: openai-lessons
+    renderer: web
+    entry: scenes/OpenAILessons.tsx
+    section: [06 · The OpenAI move, Three lessons]
+    lead: 0.6
+    hold: 1.4
+    question: "What carries over to us?"
+    beats: [b22]
+    claims: [oa-lesson-control, oa-conflict, oa-fair]
+  - id: ground-rules
+    renderer: web
+    entry: scenes/GroundRules.tsx
+    section: [07 · Here in the Philippines, Ground rules]
+    lead: 0.6
+    hold: 1.6
+    question: "What does the tax office look for?"
+    beats: [b28]
+    claims: [ph-articles-four, ph-inurement-list, ph-organizers-pay]
+  - id: here-three
+    renderer: web
+    entry: scenes/HereThree.tsx
+    section: [07 · Here in the Philippines, Three versions]
+    lead: 0.6
+    hold: 2.0
+    question: "Could the lab do the same here?"
+    beats: [b23]
+    claims: [ph-no-conversion, ph-dissolution, ph-invest, ph-tax, future-company]
+  - id: sister-traps
+    renderer: web
+    entry: scenes/SisterTraps.tsx
+    section: [07 · Here in the Philippines, The traps]
+    lead: 0.6
+    hold: 1.4
+    question: "Where are the traps in a sister company?"
+    beats: [b24]
+    claims: [ph-interlock, ph-ratify, ph-ratify-weak, ph-gift, ph-substantially-all, ph-pcnc, ph-public, ph-opportunity]
+  - id: money-back
+    renderer: web
+    entry: scenes/MoneyBack.tsx
+    section: [07 · Here in the Philippines, Money coming back]
+    lead: 0.6
+    hold: 1.6
+    question: "If the company pays the lab, what gets taxed?"
+    beats: [b29]
+    claims: [ph-rent, ph-royalty, ph-business-income, ph-dividends, ph-reallocate]
+  - id: safe-path
+    renderer: web
+    entry: scenes/SafePath.tsx
+    section: [07 · Here in the Philippines, A careful version]
+    lead: 0.6
+    hold: 1.4
+    question: "What would a careful version look like?"
+    beats: [b25]
+    claims: [future-company, d15, x-stake, ph-tax, why-company-fit, ph-held-in-trust]
+  - id: counsel-questions
+    renderer: web
+    entry: scenes/CounselQuestions.tsx
+    section: [07 · Here in the Philippines, For the lawyer]
+    lead: 0.6
+    hold: 1.4
+    question: "What does a lawyer need to settle?"
+    beats: [b26]
+    claims: [q-counsel]
+  - id: one-picture
+    renderer: web
+    entry: scenes/OnePicture.tsx
+    section: [08 · The whole picture]
+    lead: 0.6
+    hold: 2.0
+    question: "What does it all look like together?"
+    beats: [b92]
+    claims: [ph-articles-four, founder-blocking, why-grants, x-member-first, x-stake, why-company-fit, ph-no-conversion, d15, ph-held-in-trust]
+  - id: agenda
+    renderer: web
+    entry: scenes/Agenda.tsx
+    section: [09 · The meeting]
+    lead: 0.6
+    hold: 1.2
+    question: "So what’s on the agenda?"
+    beats: [b90]
+    claims: [next-step, counsel]
+  - id: close
+    renderer: web
+    entry: scenes/Close.tsx
+    section: [The decisions]
+    lead: 0.8
+    hold: 5.0
+    question: null
+    beats: [b91]
+    claims: [close-summary]

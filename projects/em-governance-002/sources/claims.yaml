@@ -1,0 +1,462 @@
+# Claims this film makes.
+# Sources:
+#   sources/governance-draft-v0.1.pdf — the founders' draft v0.1 (Sep 26, 2026; sha256 in data/governance.json).
+#   sources/research-openai.md, sources/research-ph-law.md — web research (primary URLs quoted there); claims taken
+#     from them name the primary URL as source_path.
+#   owner instruction (2026-09-29) — facts the owner told us that are not in any document (Xynil's role).
+# Classes, as used here:
+#   design                 the draft's decisions and proposals (none adopted yet), or a plan stated by the owner.
+#   author-interpretation  the draft's reading of Philippine law; or this film's own derivation from the draft's rules
+#                          (e.g. two thirds of four members); or a summary of research that a lawyer should confirm.
+#   limitation             a weakness or an open legal question the sources themselves flag.
+#   measured               a documented, dated fact from a primary source (the OpenAI timeline).
+claims:
+  # ------------------------------------------------------------------ the decisions
+  - id: founder-choices
+    text: "The draft lists sixteen founder decisions; five block Articles drafting; the rest can be settled while the By-Laws and policies are drafted."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§17 opening, p.48"
+  - id: founder-blocking
+    text: "Items 1-5 of Founder Review Required block the Articles: purpose-clause approach, principal office address, initial capital and contributors, residency/citizenship confirmation, trustee expense reimbursement."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§17 items 1-5, pp.49"
+  - id: d1-why
+    text: "The BIR's organizational test looks for a Sec. 30 'scientific' purpose in the Articles; a purpose that is too narrow forces amendments, too broad invites BIR doubt."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§1 p.3; GDR-009 consequences, p.7"
+  - id: d1-rec
+    text: "Recommendation: accept the purpose-clause approach (RMO 'scientific' wording + machine learning + open results). Alternatives: broader tech purpose; narrower ML-only wording."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§17 item 1, p.49"
+  - id: d2
+    text: "Principal office: a Philippine address you can keep for years; avoid a home address if another option exists. Alternatives: a founder's home; co-working or university address. It appears in public SEC records."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§17 item 2, p.49; GDR-034 p.10"
+  - id: d3
+    text: "Initial capital: a modest, equal contribution from each founder recommended; alternatives unequal amounts or one contributor; contributors are listed publicly; contribution gives no ownership."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§17 item 3, p.49"
+  - id: d3-foundation
+    text: "Avoid the word 'foundation' in the name, which triggers a PHP 1,000,000 minimum (marked 'verify')."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§13 Articles outline, Eighth article, p.36"
+  - id: d4
+    text: "The Treasurer must be a Philippine resident and the Secretary a Philippine citizen and resident (RCC Sec. 24, as the draft reads it); founders to confirm John is resident and Arjhine a citizen and resident, else swap offices."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "p.3; §17 item 4, p.49"
+  - id: d5
+    text: "Trustees may claim documented out-of-pocket expenses: true reimbursement only, approved by another trustee (recommended); alternative: no reimbursements in year one."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§17 item 5, p.49; §12 principle 10, p.33"
+  - id: d5-risk
+    text: "Flat per diems carry BIR risk; keep it to true reimbursement, not a flat allowance, to stay clear of the per diem issue."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§17 item 5, p.49; §12 principle 10, p.33"
+  - id: d6
+    text: "'Experimental Intelligence': recommended as a research program or brand of Experimental Machines; a program needs no filing."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§17 item 6, p.50; GDR-008"
+  - id: d16
+    text: "Decide each existing asset case by case (transfer, license to EM, or keep external); start with domains, accounts and the Play Store listing. Most assets are already open-licensed; some benchmark repos have no licence file."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§17 item 16, p.51; §10 Register, pp.29-30"
+  - id: d16-vq
+    text: "Visual-Qwen began as an FEU Tech thesis with five authors; co-authors' and possibly FEU's rights must be checked first."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§10 Register, p.30"
+  - id: d7
+    text: "Mission change: 2/3 at two meetings at least 60 days apart (recommended), or unanimity while fewer than five members (gives one founder a veto)."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§17 item 7, p.50; §4 p.15"
+  - id: d8
+    text: "Commit to at least two non-founder members, or a five-seat Board, within 3 years (recommended), addressing founder entrenchment."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§17 item 8, p.50; §16 item 1, p.45"
+  - id: d12
+    text: "Agree now on one or two trusted outsiders as the standing independent reviewer (not a member, not paid by EM, e.g. a lawyer or senior academic); deciding in a dispute is much harder."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§17 item 12, p.50; §7 p.22"
+  - id: d9
+    text: "Trustee terms: two-year staggered (recommended) or three-year; both within RCC Sec. 91's three-year cap."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§17 item 9, p.50; GDR-017 p.8"
+  - id: d10
+    text: "Officers elected by the Board (recommended) or directly by members."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§17 item 10, p.50"
+  - id: d11
+    text: "Member proxies: yes, in writing, for a single meeting (recommended)."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§17 item 11, p.50"
+  - id: d13
+    text: "Bank: two signatures above a set amount; President and Treasurer as signatories (recommended); the amount is open (GDR-030)."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§17 item 13, p.51"
+  - id: extra-titles
+    text: "What each founder is called on the research side is a FOUNDER DECISION; public sites show 'Founder' and 'Co-Founder' only."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§2, p.5"
+  - id: extra-threshold
+    text: "The threshold above which the Board approves expenditures, equipment and compute is a FOUNDER DECISION."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§5 table, p.16"
+  - id: d14
+    text: "Adopt the consulting bright line (recommended): no consulting, managed services, paid deployments or private paid benchmarking as an activity."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§17 item 14, p.51; GDR-027 p.32"
+  - id: d15
+    text: "Adopt 'no dealings with a founder-linked company until two disinterested trustees exist' (recommended); alternative: member ratification under RCC Sec. 31."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§17 item 15, p.51"
+  - id: status-provisional
+    text: "Twenty-four items are PROVISIONAL recommendations for the founders to accept, change or reject; nothing recommended was moved into DECIDED."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§3 p.6; §18 pp.51-52"
+  - id: provisional-list
+    text: "The PROVISIONAL items include purpose, member powers, mission protection, Board powers, research independence, admission, removal, terms, expansion, meetings, conflicts, compensation, the separate-company principle, IP, the asset register, sponsored research, consulting, finance, integrity, deadlock, Research Council, fiscal year, public statements and corporate term."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§18 list, p.52"
+  - id: film-test
+    text: "Suggested review test: imagine a real fight between two founders and ask whether each rule still protects the one who is outvoted. This is the film's suggestion, drawn from the draft's own concern about two-against-one (§16 items 1, 6); it is not in the draft."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§16 opening and items 1, 6, pp.44-46"
+  - id: deferred-list
+    text: "Deferred (not needed before incorporation): founder paid work (GDR-022), membership classes (GDR-033), CTE and PCNC timing (GDR-036)."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§18 DEFERRED, p.53"
+  - id: founder-transition
+    text: "Founder paid work, if ever: the role exists on its own merits; BIR ruling or written tax advice first; the founder resigns as trustee before employment starts; disclose and recuse; same terms as anyone; CTE disclosure."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§9 Founder Transition Principle, pp.25-26"
+  - id: next-step
+    text: "Next step: meet, work through Founder Review items 1-5, and mark each PROVISIONAL item accept, change or reject."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "p.53"
+  - id: counsel
+    text: "Claude is not a lawyer; counsel should check the legal requirements before the Articles are drafted. The film adds: the for-profit questions (see the research notes) also need counsel."
+    class: limitation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "p.2 'Legal basis'; sources/research-ph-law.md 'Open questions for counsel'"
+  - id: close-summary
+    text: "The film's closing advice: settle the hard choices while the founders agree, echoing the draft's reason for naming the reviewer now (§17 item 12)."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§17 item 12, p.50"
+
+  # ------------------------------------------------------------------ Xynil
+  - id: xynil-fact
+    text: "Xynil Jhed Lacap is set to be the lab's first trustee beyond the three founders. He is not named in the draft; the owner stated this on 2026-09-29."
+    class: design
+    source_path: owner instruction (2026-09-29)
+    source_locator: "chat: 'add a new person, Xynil Jhed Lacap, the first trustee'"
+  - id: x-member-first
+    text: "Trustees must be members (RCC Sec. 91, as the draft reads it), so a new trustee must first be admitted as a member."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "p.2 premise 5; GDR-002"
+  - id: members-admission
+    text: "Admission: a member proposes in writing; the Board nominates; members approve by 2/3 of all members; the Secretary enters the new member on the register."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§7 'Admission', p.20; GDR-015"
+  - id: x-criteria
+    text: "Eligibility: at least one of sustained research contribution over roughly 12 months, sustained research-engineering contribution, scientific leadership of a program, long-term institutional service, or governance contribution."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§7 'Admission', p.20"
+  - id: x-accept
+    text: "Also required: written acceptance of the Articles, By-Laws, Research Independence Charter and Conflict-of-Interest Policy; disclosure of interests; no disqualification under RCC Sec. 26; trustees are unpaid while serving."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§7 p.20; GDR-010 p.7"
+  - id: x-now
+    text: "If Xynil joins before filing, the Articles would name four incorporator-members and four initial trustees, reopening DECIDED items GDR-001, GDR-002 and GDR-004 (three members, three trustees, Board of three). Derived from the draft's Articles outline."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§13 Articles outline, Fifth-Seventh, p.36; §18 DECIDED, p.51"
+  - id: x-four-math
+    text: "With four members, 2/3 of all members is three (two of four is 50%), so no two people can act alone on a two-thirds vote. Derived by applying the draft's thresholds to four members."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§4 p.11 ('2/3 of all members'); data/governance.json two_thirds_of_four"
+  - id: x-even
+    text: "An even Board can split 2-2; a failed motion leaves the status quo; the draft recommends By-Laws that work for any odd number from 3 to 7."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§8 'Deadlock' p.24; 'Growing the Board' p.25"
+  - id: x-later
+    text: "The number of trustees is stated in the Articles, so a new seat needs an Articles amendment (majority of Board + 2/3 of members, SEC approval); the draft's trigger to expand to five is at least five members or the first paid staff member."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§8 'Growing the Board without rewriting everything', p.25"
+  - id: x-stake
+    text: "A trustee counts as having no interest in a founder-linked company only if he holds no stake in it and has no role there; the draft's conflict rules treat any interest as requiring recusal. Applied to Xynil."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§8 conflict recusal p.24-25; §9 p.26 item 3; GDR-020"
+  - id: coi-all
+    text: "No license, assignment or service deal with a founder-linked company until the Board has at least two trustees with no interest in it."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§8 p.25; §16 item 9, p.47; §17 item 15, p.51"
+
+  # ------------------------------------------------------------------ the OpenAI move (research-openai.md; every row VERIFIED there)
+  - id: oa-founding
+    text: "OpenAI, Inc. was incorporated in Delaware on December 8, 2015 as a charitable nonstock corporation; at launch its funders 'have committed $1 billion'."
+    class: measured
+    source_path: https://openai.com/index/introducing-openai/
+    source_locator: "launch post (2015-12-11); incorporation date from the Delaware AG amicus, Musk v. Altman ECF 77-1 p.3; see sources/research-openai.md"
+  - id: oa-cash
+    text: "By OpenAI's own account, cash donations over 2015-2019 were $137M (plus compute credits)."
+    class: measured
+    source_path: https://openai.com/index/why-our-structure-must-evolve-to-advance-our-mission/
+    source_locator: "2024-12-27 post"
+  - id: oa-lp
+    text: "In March 2019 OpenAI created OpenAI LP, a 'capped-profit' company controlled by the nonprofit's board, to raise capital for compute and talent; first-round returns 'capped at 100x their investment'."
+    class: measured
+    source_path: https://openai.com/index/openai-lp/
+    source_locator: "2019-03-11 post"
+  - id: oa-conflict
+    text: "Only a minority of OpenAI's board could hold financial stakes, and only members without stakes voted on conflicts."
+    class: measured
+    source_path: https://openai.com/index/openai-lp/
+    source_locator: "2019-03-11 post"
+  - id: oa-fired
+    text: "On November 17, 2023 the OpenAI, Inc. board removed its CEO; it decided to rehire him on November 21, 2023 (four days later)."
+    class: measured
+    source_path: https://openai.com/index/review-completed-altman-brockman-to-continue-to-lead-openai/
+    source_locator: "'the November 21 decision to rehire'; removal: openai.com/index/openai-announces-leadership-transition/"
+  - id: oa-pbc-plan
+    text: "In December 2024 OpenAI proposed turning its for-profit into a Delaware PBC that would 'run and control OpenAI's operations and business'."
+    class: measured
+    source_path: https://openai.com/index/why-our-structure-must-evolve-to-advance-our-mission/
+    source_locator: "2024-12-27 post"
+  - id: oa-ag
+    text: "The Delaware Attorney General began her review on October 9, 2024 and completed it on October 28, 2025 ('over a year'); California's investigation ran about a year and a half."
+    class: measured
+    source_path: https://news.delaware.gov/2025/10/28/ag-jennings-completes-review-of-openai-recapitalization/
+    source_locator: "DE AG release; CA: oag.ca.gov press release 2025-10-28"
+  - id: oa-reversal
+    text: "On May 5, 2025 OpenAI announced the nonprofit would keep control, after 'constructive dialogue' with the Delaware and California AG offices."
+    class: measured
+    source_path: https://openai.com/index/evolving-our-structure/
+    source_locator: "2025-05-05 post"
+  - id: oa-recap
+    text: "Recapitalization completed October 28, 2025: the OpenAI Foundation holds about 26% (about $130B) of OpenAI Group PBC, Microsoft about 27%, employees and investors 47%; the Foundation appoints all PBC directors and 'can replace directors at any time'."
+    class: measured
+    source_path: https://openai.com/our-structure/
+    source_locator: "our-structure page; Microsoft share: openai.com/index/next-chapter-of-microsoft-openai-partnership/"
+  - id: oa-verdict
+    text: "In Musk v. Altman, a unanimous advisory jury found on May 18, 2026 that the breach-of-charitable-trust and unjust-enrichment claims were barred by the statute of limitations; the judge adopted the verdict on May 20, 2026. Other claims and counterclaims remained on the docket."
+    class: measured
+    source_path: https://www.courtlistener.com/docket/69013420/572/musk-v-altman/
+    source_locator: "ECF 572 (verdict form), ECF 580 (order)"
+  - id: oa-lesson-control
+    text: "Lesson (film's summary): OpenAI's nonprofit control rested on written documents (the 2019 operating agreement putting the Charter first; in 2025, Class N stock and sole power to appoint and remove directors)."
+    class: author-interpretation
+    source_path: https://openai.com/our-structure/
+    source_locator: "summary of research-openai.md lessons 2; CA AG MOU 'Class N Common Stock'"
+  - id: oa-fair
+    text: "Regulators required fair value: California's non-objection rests on the deal being 'fair or reasonable from a financial point of view to the NFP'; Delaware hired an independent financial advisor (Moelis & Company); the Foundation board used independent financial advisors."
+    class: measured
+    source_path: https://news.delaware.gov/2025/10/28/ag-jennings-completes-review-of-openai-recapitalization/
+    source_locator: "DE AG release; CA AG MOU item 22; openai.com/index/built-to-benefit-everyone/"
+
+  # ------------------------------------------------------------------ Philippine law (research-ph-law.md; research, not legal advice)
+  - id: ph-no-conversion
+    text: "The SEC's position: 'a non-stock corporation cannot be converted into a stock corporation by mere amendment of the articles of incorporation' (SEC-OGC Opinion 22-14, 2022, adopting 1995 and 1989 opinions). SEC-OGC opinions are not binding precedent but reflect consistent practice."
+    class: author-interpretation
+    source_path: https://www.sec.gov.ph/wp-content/uploads/2022/10/2022OpinionNo22-14_Legalityofconvertinganon-stock_non-profittoastockcorporation.pdf
+    source_locator: "Opinion 22-14 (7 Oct 2022); research-ph-law.md Q1"
+  - id: ph-dissolution
+    text: "To become a stock company it must first dissolve and liquidate under the non-stock rules; members then may form a new stock corporation. Donor-restricted assets must go to similar organisations (RCC Sec. 93(c)); the draft's Articles dissolution clause (required for tax exemption, RMO 38-2019 IV.A.6/VI.A.2) sends all remaining assets to similar non-profits or the government, never to founders."
+    class: author-interpretation
+    source_path: https://www.sec.gov.ph/wp-content/uploads/2022/10/2022OpinionNo22-14_Legalityofconvertinganon-stock_non-profittoastockcorporation.pdf
+    source_locator: "Opinion 22-14 (quoting 1989 Roxas opinion); research-ph-law.md Q6 and caveat 1; governance draft §13 Twelfth article"
+  - id: ph-invest
+    text: "A non-stock corporation may invest in another corporation or business (RCC Secs. 35(g), 41): outside the primary purpose this needs a trustee majority plus ratification by 2/3 of members; business activity must be 'incidental, necessary or essential' to its stated purpose (SEC-OGC 24-21, 24-33, 26-08). No SEC opinion squarely covers controlling a for-profit subsidiary."
+    class: author-interpretation
+    source_path: https://www.sec.gov.ph/wp-content/uploads/2024/10/2024Opinion-No-24-21-re-Non-Stock-Non-Profit-Org-to-Establish-Income-Generating-Activity-Contact-Call-Center.pdf
+    source_locator: "research-ph-law.md Q2; RCC Sec. 41 (Supreme Court E-Library text)"
+  - id: ph-tax
+    text: "Income from for-profit activities of a Sec. 30 organisation is taxable (NIRC Sec. 30 last paragraph; CIR v. St. Luke's, 2012); if a 'substantial part' of operations becomes for-profit, the operational test fails (RMO 38-2019 III) and the exemption ruling is deemed revoked as of the date of the material change (RMO 38-2019 VII). How St. Luke's and the RMO fit together is an open question for counsel."
+    class: author-interpretation
+    source_path: https://www.pcnc.com.ph (BIR RMO 38-2019, PCNC-hosted copy)
+    source_locator: "research-ph-law.md Q3, Q4; lawphil St. Luke's G.R. 195909"
+  - id: ph-interlock
+    text: "Under RCC Sec. 32, stockholdings over 20% are 'substantial' for interlocking directors; contracts between the two corporations then fall under Sec. 31 on the nonprofit side; with three conflicted trustees Sec. 31's quorum and vote conditions cannot be met."
+    class: author-interpretation
+    source_path: https://elibrary.judiciary.gov.ph (RA 11232 Secs. 31-32)
+    source_locator: "research-ph-law.md Q5"
+  - id: ph-ratify
+    text: "Such a contract is voidable unless ratified by at least 2/3 of the members at a meeting called for the purpose, with full disclosure, and the contract is fair and reasonable (RCC Sec. 31)."
+    class: author-interpretation
+    source_path: https://elibrary.judiciary.gov.ph (RA 11232 Sec. 31)
+    source_locator: "research-ph-law.md Q5, caveat 6"
+  - id: ph-gift
+    text: "Transferring assets or IP below fair value is a deemed gift (NIRC Secs. 98-100) taxed at 6% donor's tax (Sec. 99(A)), and is inurement (RMO 38-2019 IV.A.4)."
+    class: author-interpretation
+    source_path: https://lawphil.net (NIRC Secs. 98-100 as amended by TRAIN)
+    source_locator: "research-ph-law.md Q7, caveat 7"
+  - id: ph-pcnc
+    text: "For PCNC-accredited donee institutions, any sale or lease to 'any corporation controlled directly or indirectly by' founders or trustees is a prohibited transaction regardless of price (RR 13-98 Sec. 10(d)); whether it covers IP licences is a question for counsel."
+    class: author-interpretation
+    source_path: https://www.pcnc.com.ph (BIR RR 13-98, PCNC-hosted copy)
+    source_locator: "research-ph-law.md Q7, caveat 7, counsel question 6"
+  - id: ph-public
+    text: "Scientific research counts as public-interest when results are 'available to the public on a non-discriminatory basis' (RR 13-98 Sec. 1(g)(iii); RMO 38-2019 II.E.2.c), which exclusive licensing to a founder-owned company works against."
+    class: author-interpretation
+    source_path: https://www.pcnc.com.ph (BIR RR 13-98, PCNC-hosted copy)
+    source_locator: "research-ph-law.md caveat 9"
+  - id: ph-opportunity
+    text: "Corporate-opportunity rules (RCC Sec. 30 para. 2; Sec. 33 applied to non-stock corporations via Sec. 86) make trustees account for profits from opportunities that belonged to the corporation."
+    class: author-interpretation
+    source_path: https://elibrary.judiciary.gov.ph (RA 11232 Secs. 30, 33, 86)
+    source_locator: "research-ph-law.md Q5, caveat 6"
+  - id: ph-held-in-trust
+    text: "'A non-stock, non-profit corporation only holds its funds in trust for carrying out the objectives and purposes expressed in its charter'; members have no beneficial interest in its assets before dissolution (SEC opinion of 20 March 1995, quoted in SEC-OGC 22-14)."
+    class: author-interpretation
+    source_path: https://www.sec.gov.ph/wp-content/uploads/2022/10/2022OpinionNo22-14_Legalityofconvertinganon-stock_non-profittoastockcorporation.pdf
+    source_locator: "research-ph-law.md Q1, caveat 2"
+  - id: future-company
+    text: "The draft's Separate Future Company Principle: a founder-owned company is a separate entity with no right to EM's assets; every dealing is a related-party transaction; open-licensed releases are available to it on the same public terms as to anyone (PROVISIONAL, GDR-023)."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§9, pp.26-27"
+  - id: q-counsel
+    text: "Open questions for counsel: tax treatment of dividends from a subsidiary to a Sec. 30(E) parent; how much licensing or service income is safe; whether founders who are organizers can be paid; whether RR 13-98 Sec. 10(d) bars all deals with a founder-controlled company; exact Articles and By-Laws wording."
+    class: limitation
+    source_path: sources/research-ph-law.md
+    source_locator: "'Open questions for counsel' 1-3, 6, 11"
+
+  # ------------------------------------------------------------------ expansion to ~15 min (2026-09-30)
+  - id: ph-scientific
+    text: "RMO 38-2019 II.E.2.c defines 'scientific purposes' by a list of fields (agriculture, forestry, fisheries, industry, engineering, energy development, food and nutrition, medicine, environment and biological, physical and natural sciences) 'for the public interest'; computer science and machine learning are not named. Whether ML research fits is unverified: counsel should advise on the purpose wording."
+    class: limitation
+    source_path: https://www.pcnc.com.ph/wp-content/uploads/2022/03/BIR-RMO-38-2019.pdf
+    source_locator: "research-ph-law.md Q4 item 1"
+  - id: removal-process
+    text: "Member removal for cause (proposed): one of five listed causes; written notice with the facts; at least 30 days to respond in writing and at a hearing; a written finding by an independent reviewer; a vote of 2/3 of all members not counting the respondent (with three members, both of the other two); a written decision."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§7 'Ending membership' and 'Due process for removal', pp.21-22"
+  - id: removal-not-cause
+    text: "Not a cause for removal: scientific disagreement, disagreement about research direction, voting against the majority, publishing a result others dislike, or good-faith criticism."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "p.22"
+  - id: removal-gap
+    text: "The draft's own flag: RCC Sec. 27 lets 2/3 of members remove a trustee 'with or without cause', so two founders could remove the third from the Board (not from membership) with no cause; whether the By-Laws can require cause is legally uncertain and counsel should advise."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§16 failure mode 6, p.46"
+  - id: why-company
+    text: "The founders' reason for considering a for-profit sister company: as grants grow the research becomes full-time work, and the founders doing it may need to earn from it, including profit. Stated by the owner on 2026-09-30; not in the draft."
+    class: design
+    source_path: owner instruction (2026-09-30)
+    source_locator: "chat: 'when grants grow, we may need to also earn profit as founders doing active research'"
+  - id: why-lab-pay
+    text: "The draft allows the lab to pay researchers and employees for real work at reasonable, benchmarked rates; founders are subject to the Founder Transition Principle (§9)."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "Financial principles 7-8, p.32"
+  - id: why-grants
+    text: "Restricted grants are tracked separately and spent only on their stated purpose (proposed; usually a grant condition)."
+    class: design
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "Financial principle 12, p.33"
+  - id: why-company-fit
+    text: "The draft anticipates that the founders may 'later create a Philippine stock corporation for commercial work', incorporated separately; a stock corporation may sell products and services and distribute profit to its owners, which the non-stock lab may not (RCC Sec. 86)."
+    class: author-interpretation
+    source_path: sources/governance-draft-v0.1.pdf
+    source_locator: "§9 Separate Future Company Principle, p.26; RCC Sec. 86 in research-ph-law.md Q6"
+  - id: oa-de-conditions
+    text: "The Delaware AG's conditions (2025-10-28): the nonprofit has sole power to appoint and remove PBC directors; the PBC's mission is identical; the Safety and Security Committee stays at the nonprofit and can require mitigations 'up to and including halting the release of models'; within one year at least two nonprofit directors are not on the PBC board; the AG gets advance notice of significant governance changes."
+    class: measured
+    source_path: https://news.delaware.gov/2025/10/28/ag-jennings-completes-review-of-openai-recapitalization/
+    source_locator: "research-openai.md § DE conditions"
+  - id: oa-classn
+    text: "Under the California AG MOU (2025-10-27), control of the PBC lasts 'so long as the NFP holds Class N Common Stock'; the nonprofit board alone appoints and removes PBC directors."
+    class: measured
+    source_path: https://oag.ca.gov/system/files/attachments/press-docs/Final%20Executed%20MOU%20Between%20OpenAI%20and%20California%20AG%20re%20Notice%20of%20Conditions%20of%20Non-Objection%20%2810.27.2025%29%20%28Signed%20by%20OpenAI%29%20%28Signed%20by%20CA%20DOJ%29.pdf
+    source_locator: "MOU item 2; research-openai.md § CA MOU"
+  - id: ph-articles-four
+    text: "For a Sec. 30 exemption the Articles must expressly state: (i) non-stock, non-profit; (ii) no part of net income inures to any private individual; (iii) trustees receive no compensation; (iv) on dissolution, assets go to entities with similar purposes or to the government (RMO 38-2019 VI.A.2)."
+    class: author-interpretation
+    source_path: https://www.pcnc.com.ph/wp-content/uploads/2022/03/BIR-RMO-38-2019.pdf
+    source_locator: "research-ph-law.md Q4 item 6"
+  - id: ph-inurement-list
+    text: "RMO 38-2019 IV.A lists six inurements, including 'payment of compensation, salaries, or honorarium to its trustees or organizers' and buying goods or services above fair market value 'from an entity in which one or more of its trustees, officers or fiduciaries have an interest'."
+    class: author-interpretation
+    source_path: https://www.pcnc.com.ph/wp-content/uploads/2022/03/BIR-RMO-38-2019.pdf
+    source_locator: "research-ph-law.md Q4 item 5"
+  - id: ph-organizers-pay
+    text: "On the RMO's plain words, any salary to the founders (as organizers) is listed inurement, even as employee-researchers; RCC Sec. 29 bars trustee pay only 'in their capacity as such'. Open question for counsel."
+    class: author-interpretation
+    source_path: sources/research-ph-law.md
+    source_locator: "Q4 item 5 note; caveat 8"
+  - id: ph-ratify-weak
+    text: "If the three founders are also the only members, a Sec. 31 ratification would be the founders ratifying their own deal: not forbidden, but it defeats the purpose; adding independent people means admitting them as members (RCC Sec. 91)."
+    class: author-interpretation
+    source_path: sources/research-ph-law.md
+    source_locator: "Q5 'How these bite' item 3"
+  - id: ph-substantially-all
+    text: "A transfer of 'all or substantially all' assets needs at least 2/3 of the members (RCC Sec. 39); moving the core model, IP or compute into the for-profit could qualify (the research's inference)."
+    class: author-interpretation
+    source_path: https://lawphil.net (RA 11232 Sec. 39)
+    source_locator: "research-ph-law.md Q5 item 6"
+  - id: ph-rent
+    text: "Rent earned by a Sec. 30 organisation is taxable regardless of how it is used (CIR v. CA, CTA and YMCA, 1998; RMO 38-2019 V)."
+    class: author-interpretation
+    source_path: https://lawphil.net/judjuris/juri1998/oct1998/gr_124043_1998.html
+    source_locator: "research-ph-law.md Q3"
+  - id: ph-royalty
+    text: "Royalties earned as passive income by a Sec. 30 organisation carry a 20% final tax (RMO 38-2019 V.A.3; NIRC Sec. 27(D)(6) after CMEPA). Whether a given licence is passive royalty or business income is fact-dependent."
+    class: author-interpretation
+    source_path: https://www.pcnc.com.ph/wp-content/uploads/2022/03/BIR-RMO-38-2019.pdf
+    source_locator: "research-ph-law.md Q3 table"
+  - id: ph-business-income
+    text: "Licence or service fees from an active business (e.g. selling model access) are income from an activity conducted for profit: taxable (St. Luke's 2012; RMO 38-2019 V), and the activity must stay incidental to the purpose (SEC-OGC 24-21)."
+    class: author-interpretation
+    source_path: https://lawphil.net/judjuris/juri2012/sep2012/gr_195909_2012.html
+    source_locator: "research-ph-law.md Q3 table, Q2"
+  - id: ph-dividends
+    text: "Dividends from a Philippine subsidiary: NIRC Sec. 27(D)(3) exempts dividends received by 'a domestic corporation', which on the text includes a non-stock one; no BIR ruling, RMO or court decision was found applying it to a Sec. 30(E) parent. Uncertain."
+    class: author-interpretation
+    source_path: sources/research-ph-law.md
+    source_locator: "Q3 'Intercorporate dividends'"
+  - id: ph-reallocate
+    text: "For organisations owned or controlled by the same interests, the Commissioner may allocate gross income or deductions between them to prevent tax evasion or clearly reflect income (NIRC Sec. 50)."
+    class: author-interpretation
+    source_path: https://lawphil.net (NIRC Sec. 50)
+    source_locator: "research-ph-law.md Q7 item 6"

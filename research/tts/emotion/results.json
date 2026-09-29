@@ -1,0 +1,1352 @@
+[
+ {
+  "group": "irodori-ja",
+  "cond": "emoji-a",
+  "lang": "ja",
+  "n": 6,
+  "pooled_sd_st": 4.27,
+  "range_10_90_st": 10.85,
+  "mean_line_sd_st": 4.25,
+  "err_mean": 0.0,
+  "err_max": 0.0,
+  "rate_mean": 6.26,
+  "f0_med": 350.0,
+  "rows": [
+   {
+    "line": "L1",
+    "dur_s": 4.48,
+    "span_s": 3.83,
+    "hyp": "私たちが訓練したモデルは答えようとすらしません",
+    "err": 0.0,
+    "rate": 7.57,
+    "sd_st": 4.84,
+    "f0_med": 314.0
+   },
+   {
+    "line": "L2",
+    "dur_s": 5.84,
+    "span_s": 5.19,
+    "hyp": "それでも昇格に使ったスコアではこちらの方が優れたモデルでした",
+    "err": 0.0,
+    "rate": 6.74,
+    "sd_st": 3.82,
+    "f0_med": 361.0
+   },
+   {
+    "line": "L3",
+    "dur_s": 5.36,
+    "span_s": 4.74,
+    "hyp": "訓練した2つのチェックポイントは一問残らず拒否しました",
+    "err": 0.0,
+    "rate": 6.75,
+    "sd_st": 4.38,
+    "f0_med": 353.0
+   },
+   {
+    "line": "L4",
+    "dur_s": 5.56,
+    "span_s": 4.94,
+    "hyp": "拒否は消えました同じ問題同じ重み",
+    "err": 0.0,
+    "rate": 4.25,
+    "sd_st": 4.08,
+    "f0_med": 347.0
+   },
+   {
+    "line": "L5",
+    "dur_s": 5.08,
+    "span_s": 4.38,
+    "hyp": "統計の問題ではありません空っぽの箱です",
+    "err": 0.0,
+    "rate": 5.71,
+    "sd_st": 4.16,
+    "f0_med": 373.0
+   },
+   {
+    "line": "L6",
+    "dur_s": 5.68,
+    "span_s": 5.03,
+    "hyp": "すべての購買は仮説であり、すべてのチェックポイントは証拠である。",
+    "err": 0.0,
+    "rate": 6.56,
+    "sd_st": 4.22,
+    "f0_med": 336.0
+   }
+  ]
+ },
+ {
+  "group": "irodori-ja",
+  "cond": "emoji-b",
+  "lang": "ja",
+  "n": 6,
+  "pooled_sd_st": 4.32,
+  "range_10_90_st": 10.62,
+  "mean_line_sd_st": 4.25,
+  "err_mean": 0.0,
+  "err_max": 0.0,
+  "rate_mean": 6.63,
+  "f0_med": 350.0,
+  "rows": [
+   {
+    "line": "L1",
+    "dur_s": 4.48,
+    "span_s": 3.84,
+    "hyp": "私たちが訓練したモデルは答えようとすらしません",
+    "err": 0.0,
+    "rate": 7.55,
+    "sd_st": 4.78,
+    "f0_med": 313.0
+   },
+   {
+    "line": "L2",
+    "dur_s": 5.88,
+    "span_s": 5.23,
+    "hyp": "それでも昇格に使ったスコアではこちらの方が優れたモデルでした",
+    "err": 0.0,
+    "rate": 6.69,
+    "sd_st": 3.96,
+    "f0_med": 357.0
+   },
+   {
+    "line": "L3",
+    "dur_s": 4.92,
+    "span_s": 4.3,
+    "hyp": "訓練した2つのチェックポイントは一問残らず拒否しました",
+    "err": 0.0,
+    "rate": 7.44,
+    "sd_st": 4.42,
+    "f0_med": 353.0
+   },
+   {
+    "line": "L4",
+    "dur_s": 5.32,
+    "span_s": 4.66,
+    "hyp": "拒否は消えました同じ問題同じ重み",
+    "err": 0.0,
+    "rate": 4.51,
+    "sd_st": 3.59,
+    "f0_med": 326.0
+   },
+   {
+    "line": "L5",
+    "dur_s": 4.48,
+    "span_s": 3.79,
+    "hyp": "統計の問題ではありません空っぽの箱です",
+    "err": 0.0,
+    "rate": 6.6,
+    "sd_st": 4.37,
+    "f0_med": 404.0
+   },
+   {
+    "line": "L6",
+    "dur_s": 5.36,
+    "span_s": 4.72,
+    "hyp": "すべての購買は仮説であり、すべてのチェックポイントは証拠である。",
+    "err": 0.0,
+    "rate": 6.99,
+    "sd_st": 4.35,
+    "f0_med": 346.0
+   }
+  ]
+ },
+ {
+  "group": "irodori-ja",
+  "cond": "neutral",
+  "lang": "ja",
+  "n": 6,
+  "pooled_sd_st": 4.2,
+  "range_10_90_st": 10.78,
+  "mean_line_sd_st": 4.13,
+  "err_mean": 0.0,
+  "err_max": 0.0,
+  "rate_mean": 6.72,
+  "f0_med": 350.0,
+  "rows": [
+   {
+    "line": "L1",
+    "dur_s": 4.44,
+    "span_s": 3.81,
+    "hyp": "私たちが訓練したモデルは答えようとすらしません",
+    "err": 0.0,
+    "rate": 7.61,
+    "sd_st": 4.64,
+    "f0_med": 307.0
+   },
+   {
+    "line": "L2",
+    "dur_s": 5.8,
+    "span_s": 5.15,
+    "hyp": "それでも昇格に使ったスコアではこちらの方が優れたモデルでした",
+    "err": 0.0,
+    "rate": 6.8,
+    "sd_st": 3.83,
+    "f0_med": 372.0
+   },
+   {
+    "line": "L3",
+    "dur_s": 4.88,
+    "span_s": 4.26,
+    "hyp": "訓練した2つのチェックポイントは一問残らず拒否しました",
+    "err": 0.0,
+    "rate": 7.51,
+    "sd_st": 4.28,
+    "f0_med": 352.0
+   },
+   {
+    "line": "L4",
+    "dur_s": 5.24,
+    "span_s": 4.63,
+    "hyp": "拒否は消えました同じ問題同じ重み",
+    "err": 0.0,
+    "rate": 4.54,
+    "sd_st": 3.29,
+    "f0_med": 335.0
+   },
+   {
+    "line": "L5",
+    "dur_s": 4.4,
+    "span_s": 3.71,
+    "hyp": "統計の問題ではありません。空っぽの箱です。",
+    "err": 0.0,
+    "rate": 6.74,
+    "sd_st": 4.46,
+    "f0_med": 392.0
+   },
+   {
+    "line": "L6",
+    "dur_s": 5.28,
+    "span_s": 4.63,
+    "hyp": "全ての購買は仮説であり、全てのチェックポイントは証拠である。",
+    "err": 0.0,
+    "rate": 7.13,
+    "sd_st": 4.27,
+    "f0_med": 348.0
+   }
+  ]
+ },
+ {
+  "group": "irodori-ja-c",
+  "cond": "emoji-c-stacked",
+  "lang": "ja",
+  "n": 6,
+  "pooled_sd_st": 5.44,
+  "range_10_90_st": 12.64,
+  "mean_line_sd_st": 5.09,
+  "err_mean": 0.008,
+  "err_max": 0.045,
+  "rate_mean": 5.78,
+  "f0_med": 358.0,
+  "rows": [
+   {
+    "line": "L1",
+    "dur_s": 4.52,
+    "span_s": 3.87,
+    "hyp": "私たちが訓練したモデルは答えようとすらしません",
+    "err": 0.0,
+    "rate": 7.49,
+    "sd_st": 4.57,
+    "f0_med": 308.0
+   },
+   {
+    "line": "L2",
+    "dur_s": 6.04,
+    "span_s": 5.39,
+    "hyp": "それでも昇格に使ったスコアではこちらの方が優れたモデルでした",
+    "err": 0.0,
+    "rate": 6.49,
+    "sd_st": 4.59,
+    "f0_med": 359.0
+   },
+   {
+    "line": "L3",
+    "dur_s": 5.48,
+    "span_s": 4.85,
+    "hyp": "訓練した2つのチェックポイントは一問残らず拒否しました",
+    "err": 0.0,
+    "rate": 6.6,
+    "sd_st": 4.22,
+    "f0_med": 364.0
+   },
+   {
+    "line": "L4",
+    "dur_s": 6.04,
+    "span_s": 5.39,
+    "hyp": "拒否は消えましたー!同じ問題、同じ重み",
+    "err": 0.0455,
+    "rate": 3.9,
+    "sd_st": 4.69,
+    "f0_med": 354.0
+   },
+   {
+    "line": "L5",
+    "dur_s": 7.16,
+    "span_s": 6.45,
+    "hyp": "統計の問題ではありません空っぽの箱です",
+    "err": 0.0,
+    "rate": 3.88,
+    "sd_st": 7.78,
+    "f0_med": 381.0
+   },
+   {
+    "line": "L6",
+    "dur_s": 5.88,
+    "span_s": 5.24,
+    "hyp": "全ての購買は仮説であり、全てのチェックポイントは証拠である。",
+    "err": 0.0,
+    "rate": 6.3,
+    "sd_st": 4.71,
+    "f0_med": 356.0
+   }
+  ]
+ },
+ {
+  "group": "irodori-ja-x",
+  "cond": "caption",
+  "lang": "ja",
+  "n": 6,
+  "pooled_sd_st": 4.19,
+  "range_10_90_st": 10.82,
+  "mean_line_sd_st": 4.15,
+  "err_mean": 0.0,
+  "err_max": 0.0,
+  "rate_mean": 6.49,
+  "f0_med": 336.0,
+  "rows": [
+   {
+    "line": "L1",
+    "dur_s": 4.56,
+    "span_s": 3.93,
+    "hyp": "私たちが訓練したモデルは答えようとすらしません",
+    "err": 0.0,
+    "rate": 7.38,
+    "sd_st": 4.36,
+    "f0_med": 315.0
+   },
+   {
+    "line": "L2",
+    "dur_s": 5.84,
+    "span_s": 5.19,
+    "hyp": "それでも昇格に使ったスコアではこちらの方が優れたモデルでした",
+    "err": 0.0,
+    "rate": 6.74,
+    "sd_st": 3.94,
+    "f0_med": 373.0
+   },
+   {
+    "line": "L3",
+    "dur_s": 5.24,
+    "span_s": 4.61,
+    "hyp": "訓練した2つのチェックポイントは一問残らず拒否しました",
+    "err": 0.0,
+    "rate": 6.94,
+    "sd_st": 4.57,
+    "f0_med": 277.0
+   },
+   {
+    "line": "L4",
+    "dur_s": 5.12,
+    "span_s": 4.48,
+    "hyp": "拒否は消えました同じ問題、同じ重み",
+    "err": 0.0,
+    "rate": 4.69,
+    "sd_st": 3.89,
+    "f0_med": 332.0
+   },
+   {
+    "line": "L5",
+    "dur_s": 4.72,
+    "span_s": 4.02,
+    "hyp": "統計の問題ではありません空っぽの箱です",
+    "err": 0.0,
+    "rate": 6.22,
+    "sd_st": 3.97,
+    "f0_med": 386.0
+   },
+   {
+    "line": "L6",
+    "dur_s": 5.36,
+    "span_s": 4.72,
+    "hyp": "すべての購買は仮説であり、すべてのチェックポイントは証拠である。",
+    "err": 0.0,
+    "rate": 6.99,
+    "sd_st": 4.15,
+    "f0_med": 341.0
+   }
+  ]
+ },
+ {
+  "group": "irodori-ja-x",
+  "cond": "caption+emoji-a",
+  "lang": "ja",
+  "n": 6,
+  "pooled_sd_st": 4.25,
+  "range_10_90_st": 10.39,
+  "mean_line_sd_st": 4.18,
+  "err_mean": 0.0,
+  "err_max": 0.0,
+  "rate_mean": 6.21,
+  "f0_med": 359.0,
+  "rows": [
+   {
+    "line": "L1",
+    "dur_s": 4.6,
+    "span_s": 3.96,
+    "hyp": "私たちが訓練したモデルは答えようとすらしません",
+    "err": 0.0,
+    "rate": 7.32,
+    "sd_st": 4.54,
+    "f0_med": 308.0
+   },
+   {
+    "line": "L2",
+    "dur_s": 5.88,
+    "span_s": 5.23,
+    "hyp": "それでも昇格に使ったスコアではこちらの方が優れたモデルでした",
+    "err": 0.0,
+    "rate": 6.69,
+    "sd_st": 3.95,
+    "f0_med": 370.0
+   },
+   {
+    "line": "L3",
+    "dur_s": 5.72,
+    "span_s": 5.12,
+    "hyp": "訓練した2つのチェックポイントは一問残らず拒否しました",
+    "err": 0.0,
+    "rate": 6.25,
+    "sd_st": 4.83,
+    "f0_med": 282.0
+   },
+   {
+    "line": "L4",
+    "dur_s": 5.36,
+    "span_s": 4.7,
+    "hyp": "拒否は消えました同じ問題同じ重み",
+    "err": 0.0,
+    "rate": 4.47,
+    "sd_st": 3.7,
+    "f0_med": 364.0
+   },
+   {
+    "line": "L5",
+    "dur_s": 4.96,
+    "span_s": 4.31,
+    "hyp": "統計の問題ではありません空っぽの箱です",
+    "err": 0.0,
+    "rate": 5.8,
+    "sd_st": 3.99,
+    "f0_med": 372.0
+   },
+   {
+    "line": "L6",
+    "dur_s": 5.56,
+    "span_s": 4.91,
+    "hyp": "全ての購買は仮説であり、全てのチェックポイントは証拠である。",
+    "err": 0.0,
+    "rate": 6.72,
+    "sd_st": 4.06,
+    "f0_med": 354.0
+   }
+  ]
+ },
+ {
+  "group": "kokoro-en",
+  "cond": "neutral",
+  "lang": "en",
+  "n": 6,
+  "pooled_sd_st": 5.32,
+  "range_10_90_st": 10.1,
+  "mean_line_sd_st": 5.31,
+  "err_mean": 0.024,
+  "err_max": 0.143,
+  "rate_mean": 2.96,
+  "f0_med": 204.0,
+  "rows": [
+   {
+    "line": "L1",
+    "dur_s": 2.77,
+    "span_s": 1.96,
+    "hyp": "The model we trained doesn't even try.",
+    "err": 0.0,
+    "rate": 3.57,
+    "sd_st": 5.53,
+    "f0_med": 196.0
+   },
+   {
+    "line": "L2",
+    "dur_s": 3.55,
+    "span_s": 2.72,
+    "hyp": "By the score we promoted on, it was the better model.",
+    "err": 0.0,
+    "rate": 4.04,
+    "sd_st": 5.31,
+    "f0_med": 196.0
+   },
+   {
+    "line": "L3",
+    "dur_s": 3.5,
+    "span_s": 2.67,
+    "hyp": "Both train checkpoints refused every single one.",
+    "err": 0.1429,
+    "rate": 2.62,
+    "sd_st": 5.01,
+    "f0_med": 205.0
+   },
+   {
+    "line": "L4",
+    "dur_s": 3.83,
+    "span_s": 3.08,
+    "hyp": "The refusals vanished. Same questions, same weights.",
+    "err": 0.0,
+    "rate": 2.27,
+    "sd_st": 5.43,
+    "f0_med": 210.0
+   },
+   {
+    "line": "L5",
+    "dur_s": 3.2,
+    "span_s": 2.42,
+    "hyp": "Not a statistics problem, an empty bin.",
+    "err": 0.0,
+    "rate": 2.89,
+    "sd_st": 5.17,
+    "f0_med": 206.0
+   },
+   {
+    "line": "L6",
+    "dur_s": 4.55,
+    "span_s": 3.78,
+    "hyp": "Every gradient is a hypothesis, every checkpoint is evidence.",
+    "err": 0.0,
+    "rate": 2.38,
+    "sd_st": 5.4,
+    "f0_med": 204.0
+   }
+  ]
+ },
+ {
+  "group": "qwen3-cv17-en",
+  "cond": "directed",
+  "lang": "en",
+  "n": 6,
+  "pooled_sd_st": 5.85,
+  "range_10_90_st": 10.76,
+  "mean_line_sd_st": 5.44,
+  "err_mean": 0.0,
+  "err_max": 0.0,
+  "rate_mean": 2.21,
+  "f0_med": 232.0,
+  "rows": [
+   {
+    "line": "L1",
+    "dur_s": 2.64,
+    "span_s": 2.53,
+    "hyp": "The model we trained doesn't even try.",
+    "err": 0.0,
+    "rate": 2.77,
+    "sd_st": 4.95,
+    "f0_med": 230.0
+   },
+   {
+    "line": "L2",
+    "dur_s": 3.6,
+    "span_s": 3.45,
+    "hyp": "By the score we promoted on, it was the better model.",
+    "err": 0.0,
+    "rate": 3.19,
+    "sd_st": 3.43,
+    "f0_med": 225.0
+   },
+   {
+    "line": "L3",
+    "dur_s": 4.0,
+    "span_s": 3.88,
+    "hyp": "Both trained checkpoints refused every single one.",
+    "err": 0.0,
+    "rate": 1.8,
+    "sd_st": 5.92,
+    "f0_med": 214.0
+   },
+   {
+    "line": "L4",
+    "dur_s": 4.48,
+    "span_s": 4.31,
+    "hyp": "The refusals vanished, same questions, same weights.",
+    "err": 0.0,
+    "rate": 1.62,
+    "sd_st": 8.32,
+    "f0_med": 339.0
+   },
+   {
+    "line": "L5",
+    "dur_s": 3.6,
+    "span_s": 3.45,
+    "hyp": "not a statistics problem, an empty bin.",
+    "err": 0.0,
+    "rate": 2.03,
+    "sd_st": 3.79,
+    "f0_med": 243.0
+   },
+   {
+    "line": "L6",
+    "dur_s": 5.04,
+    "span_s": 4.88,
+    "hyp": "every gradient is a hypothesis, every checkpoint is evidence.",
+    "err": 0.0,
+    "rate": 1.84,
+    "sd_st": 6.22,
+    "f0_med": 234.0
+   }
+  ]
+ },
+ {
+  "group": "qwen3-cv17-en",
+  "cond": "neutral",
+  "lang": "en",
+  "n": 6,
+  "pooled_sd_st": 5.17,
+  "range_10_90_st": 10.16,
+  "mean_line_sd_st": 4.92,
+  "err_mean": 0.0,
+  "err_max": 0.0,
+  "rate_mean": 2.2,
+  "f0_med": 244.0,
+  "rows": [
+   {
+    "line": "L1",
+    "dur_s": 3.04,
+    "span_s": 2.92,
+    "hyp": "The model we trained doesn't even try.",
+    "err": 0.0,
+    "rate": 2.4,
+    "sd_st": 5.22,
+    "f0_med": 260.0
+   },
+   {
+    "line": "L2",
+    "dur_s": 3.36,
+    "span_s": 3.23,
+    "hyp": "By the score we promoted on, it was the better model.",
+    "err": 0.0,
+    "rate": 3.41,
+    "sd_st": 3.47,
+    "f0_med": 244.0
+   },
+   {
+    "line": "L3",
+    "dur_s": 3.6,
+    "span_s": 3.49,
+    "hyp": "Both trained checkpoints refused every single one.",
+    "err": 0.0,
+    "rate": 2.01,
+    "sd_st": 5.01,
+    "f0_med": 260.0
+   },
+   {
+    "line": "L4",
+    "dur_s": 4.32,
+    "span_s": 4.21,
+    "hyp": "The refusals vanished, same questions, same weights.",
+    "err": 0.0,
+    "rate": 1.66,
+    "sd_st": 6.52,
+    "f0_med": 244.0
+   },
+   {
+    "line": "L5",
+    "dur_s": 4.32,
+    "span_s": 4.18,
+    "hyp": "Not a statistics problem, an empty bin.",
+    "err": 0.0,
+    "rate": 1.67,
+    "sd_st": 3.67,
+    "f0_med": 233.0
+   },
+   {
+    "line": "L6",
+    "dur_s": 4.48,
+    "span_s": 4.37,
+    "hyp": "Every gradient is a hypothesis. Every checkpoint is evidence.",
+    "err": 0.0,
+    "rate": 2.06,
+    "sd_st": 5.63,
+    "f0_med": 239.0
+   }
+  ]
+ },
+ {
+  "group": "qwen3-cv17-ja",
+  "cond": "directed",
+  "lang": "ja",
+  "n": 6,
+  "pooled_sd_st": 3.62,
+  "range_10_90_st": 7.68,
+  "mean_line_sd_st": 3.42,
+  "err_mean": 0.012,
+  "err_max": 0.045,
+  "rate_mean": 6.27,
+  "f0_med": 270.0,
+  "rows": [
+   {
+    "line": "L1",
+    "dur_s": 4.4,
+    "span_s": 4.25,
+    "hyp": "私たちが訓練したモデルは答えようとすらしません。",
+    "err": 0.0,
+    "rate": 6.82,
+    "sd_st": 2.93,
+    "f0_med": 249.0
+   },
+   {
+    "line": "L2",
+    "dur_s": 5.12,
+    "span_s": 4.97,
+    "hyp": "それでも昇格に使ったスコアではこちらの方が優れたモデルでした。",
+    "err": 0.0,
+    "rate": 7.04,
+    "sd_st": 3.37,
+    "f0_med": 272.0
+   },
+   {
+    "line": "L3",
+    "dur_s": 4.56,
+    "span_s": 4.42,
+    "hyp": "分練した2つのチェックポイントは1問残らず拒否しました",
+    "err": 0.0294,
+    "rate": 7.24,
+    "sd_st": 4.75,
+    "f0_med": 269.0
+   },
+   {
+    "line": "L4",
+    "dur_s": 4.4,
+    "span_s": 4.26,
+    "hyp": "拒否は消えました。同じ問題、同じ思い。",
+    "err": 0.0455,
+    "rate": 4.93,
+    "sd_st": 4.11,
+    "f0_med": 309.0
+   },
+   {
+    "line": "L5",
+    "dur_s": 4.4,
+    "span_s": 4.27,
+    "hyp": "統計の問題ではありません。空っぽの箱です。",
+    "err": 0.0,
+    "rate": 5.85,
+    "sd_st": 2.18,
+    "f0_med": 270.0
+   },
+   {
+    "line": "L6",
+    "dur_s": 5.92,
+    "span_s": 5.77,
+    "hyp": "すべての勾配は仮説であり、すべてのチェックポイントは証拠である。",
+    "err": 0.0,
+    "rate": 5.72,
+    "sd_st": 3.19,
+    "f0_med": 245.0
+   }
+  ]
+ },
+ {
+  "group": "qwen3-cv17-ja",
+  "cond": "neutral",
+  "lang": "ja",
+  "n": 6,
+  "pooled_sd_st": 3.56,
+  "range_10_90_st": 7.64,
+  "mean_line_sd_st": 3.45,
+  "err_mean": 0.008,
+  "err_max": 0.045,
+  "rate_mean": 6.1,
+  "f0_med": 260.0,
+  "rows": [
+   {
+    "line": "L1",
+    "dur_s": 4.72,
+    "span_s": 4.56,
+    "hyp": "私たちが訓練したモデルは答えようとすらしません",
+    "err": 0.0,
+    "rate": 6.36,
+    "sd_st": 3.56,
+    "f0_med": 247.0
+   },
+   {
+    "line": "L2",
+    "dur_s": 4.96,
+    "span_s": 4.85,
+    "hyp": "それでも昇格に使ったスコアではこちらの方が優れたモデルでした",
+    "err": 0.0,
+    "rate": 7.22,
+    "sd_st": 4.67,
+    "f0_med": 280.0
+   },
+   {
+    "line": "L3",
+    "dur_s": 4.4,
+    "span_s": 4.25,
+    "hyp": "訓練した2つのチェックポイントは1問残らず拒否しました。",
+    "err": 0.0,
+    "rate": 7.53,
+    "sd_st": 3.98,
+    "f0_med": 272.0
+   },
+   {
+    "line": "L4",
+    "dur_s": 4.56,
+    "span_s": 4.39,
+    "hyp": "拒否は消えました。同じ問題、同じ思…。",
+    "err": 0.0455,
+    "rate": 4.78,
+    "sd_st": 4.08,
+    "f0_med": 254.0
+   },
+   {
+    "line": "L5",
+    "dur_s": 4.72,
+    "span_s": 4.54,
+    "hyp": "統計の問題ではありません。空っぽの箱です。",
+    "err": 0.0,
+    "rate": 5.51,
+    "sd_st": 2.28,
+    "f0_med": 266.0
+   },
+   {
+    "line": "L6",
+    "dur_s": 6.4,
+    "span_s": 6.31,
+    "hyp": "全ての勾配は仮説であり、全てのチェックポイントは証拠である。",
+    "err": 0.0,
+    "rate": 5.23,
+    "sd_st": 2.15,
+    "f0_med": 237.0
+   }
+  ]
+ },
+ {
+  "group": "voxcpm-clone-en",
+  "cond": "directed",
+  "lang": "en",
+  "n": 6,
+  "pooled_sd_st": 5.09,
+  "range_10_90_st": 10.14,
+  "mean_line_sd_st": 4.94,
+  "err_mean": 0.021,
+  "err_max": 0.125,
+  "rate_mean": 2.19,
+  "f0_med": 262.0,
+  "rows": [
+   {
+    "line": "L1",
+    "dur_s": 2.72,
+    "span_s": 2.54,
+    "hyp": "The model we train doesn't even try.",
+    "err": 0.125,
+    "rate": 2.76,
+    "sd_st": 6.22,
+    "f0_med": 343.0
+   },
+   {
+    "line": "L2",
+    "dur_s": 4.64,
+    "span_s": 4.35,
+    "hyp": "By the score we promoted on, it was the better model.",
+    "err": 0.0,
+    "rate": 2.53,
+    "sd_st": 3.96,
+    "f0_med": 257.0
+   },
+   {
+    "line": "L3",
+    "dur_s": 4.64,
+    "span_s": 4.48,
+    "hyp": "Both trained checkpoints refused every single one.",
+    "err": 0.0,
+    "rate": 1.56,
+    "sd_st": 6.38,
+    "f0_med": 232.0
+   },
+   {
+    "line": "L4",
+    "dur_s": 4.48,
+    "span_s": 4.31,
+    "hyp": "The refusals vanished. Same questions, same weights.",
+    "err": 0.0,
+    "rate": 1.62,
+    "sd_st": 4.18,
+    "f0_med": 430.0
+   },
+   {
+    "line": "L5",
+    "dur_s": 3.04,
+    "span_s": 2.75,
+    "hyp": "Not a statistics problem, an empty bin.",
+    "err": 0.0,
+    "rate": 2.55,
+    "sd_st": 4.86,
+    "f0_med": 264.0
+   },
+   {
+    "line": "L6",
+    "dur_s": 4.48,
+    "span_s": 4.27,
+    "hyp": "Every gradient is a hypothesis. Every checkpoint is evidence.",
+    "err": 0.0,
+    "rate": 2.11,
+    "sd_st": 4.05,
+    "f0_med": 259.0
+   }
+  ]
+ },
+ {
+  "group": "voxcpm-clone-en",
+  "cond": "neutral",
+  "lang": "en",
+  "n": 6,
+  "pooled_sd_st": 4.77,
+  "range_10_90_st": 10.73,
+  "mean_line_sd_st": 4.69,
+  "err_mean": 0.068,
+  "err_max": 0.143,
+  "rate_mean": 2.32,
+  "f0_med": 264.0,
+  "rows": [
+   {
+    "line": "L1",
+    "dur_s": 2.56,
+    "span_s": 2.38,
+    "hyp": "The model we train doesn't even try.",
+    "err": 0.125,
+    "rate": 2.94,
+    "sd_st": 4.3,
+    "f0_med": 268.0
+   },
+   {
+    "line": "L2",
+    "dur_s": 3.04,
+    "span_s": 2.8,
+    "hyp": "By the score we promoted on, it was the better model.",
+    "err": 0.0,
+    "rate": 3.93,
+    "sd_st": 4.01,
+    "f0_med": 265.0
+   },
+   {
+    "line": "L3",
+    "dur_s": 4.0,
+    "span_s": 3.87,
+    "hyp": "Both trained checkpoints refused every single one.",
+    "err": 0.0,
+    "rate": 1.81,
+    "sd_st": 4.2,
+    "f0_med": 244.0
+   },
+   {
+    "line": "L4",
+    "dur_s": 4.0,
+    "span_s": 3.79,
+    "hyp": "The refusals vanished. Same questions, same waits.",
+    "err": 0.1429,
+    "rate": 1.85,
+    "sd_st": 5.74,
+    "f0_med": 262.0
+   },
+   {
+    "line": "L5",
+    "dur_s": 5.12,
+    "span_s": 5.07,
+    "hyp": "not a statistics problem, an empty bin. Laban",
+    "err": 0.1429,
+    "rate": 1.38,
+    "sd_st": 4.63,
+    "f0_med": 276.0
+   },
+   {
+    "line": "L6",
+    "dur_s": 4.64,
+    "span_s": 4.45,
+    "hyp": "Every gradient is a hypothesis. Every checkpoint is evidence.",
+    "err": 0.0,
+    "rate": 2.02,
+    "sd_st": 5.26,
+    "f0_med": 230.0
+   }
+  ]
+ },
+ {
+  "group": "voxcpm-en",
+  "cond": "directed",
+  "lang": "en",
+  "n": 6,
+  "pooled_sd_st": 6.0,
+  "range_10_90_st": 11.59,
+  "mean_line_sd_st": 5.72,
+  "err_mean": 0.045,
+  "err_max": 0.143,
+  "rate_mean": 2.57,
+  "f0_med": 254.0,
+  "rows": [
+   {
+    "line": "L1",
+    "dur_s": 2.56,
+    "span_s": 2.33,
+    "hyp": "The model we train doesn't even try!",
+    "err": 0.125,
+    "rate": 3.0,
+    "sd_st": 6.29,
+    "f0_med": 279.0
+   },
+   {
+    "line": "L2",
+    "dur_s": 3.04,
+    "span_s": 2.85,
+    "hyp": "By the score we promoted on, it was the better model.",
+    "err": 0.0,
+    "rate": 3.86,
+    "sd_st": 3.85,
+    "f0_med": 200.0
+   },
+   {
+    "line": "L3",
+    "dur_s": 3.84,
+    "span_s": 3.65,
+    "hyp": "Both train checkpoints refused every single one!",
+    "err": 0.1429,
+    "rate": 1.92,
+    "sd_st": 7.51,
+    "f0_med": 462.0
+   },
+   {
+    "line": "L4",
+    "dur_s": 3.68,
+    "span_s": 3.52,
+    "hyp": "The refusals vanished! Same questions, same weights!",
+    "err": 0.0,
+    "rate": 1.99,
+    "sd_st": 7.16,
+    "f0_med": 429.0
+   },
+   {
+    "line": "L5",
+    "dur_s": 2.88,
+    "span_s": 2.73,
+    "hyp": "Not a statistics problem, an empty bin.",
+    "err": 0.0,
+    "rate": 2.56,
+    "sd_st": 4.44,
+    "f0_med": 229.0
+   },
+   {
+    "line": "L6",
+    "dur_s": 4.48,
+    "span_s": 4.24,
+    "hyp": "Every gradient is a hypothesis. Every checkpoint is evidence.",
+    "err": 0.0,
+    "rate": 2.12,
+    "sd_st": 5.09,
+    "f0_med": 202.0
+   }
+  ]
+ },
+ {
+  "group": "voxcpm-en",
+  "cond": "neutral",
+  "lang": "en",
+  "n": 6,
+  "pooled_sd_st": 5.74,
+  "range_10_90_st": 12.04,
+  "mean_line_sd_st": 5.68,
+  "err_mean": 0.024,
+  "err_max": 0.143,
+  "rate_mean": 2.44,
+  "f0_med": 232.0,
+  "rows": [
+   {
+    "line": "L1",
+    "dur_s": 2.88,
+    "span_s": 2.53,
+    "hyp": "The model we trained doesn't even try.",
+    "err": 0.0,
+    "rate": 2.77,
+    "sd_st": 7.53,
+    "f0_med": 251.0
+   },
+   {
+    "line": "L2",
+    "dur_s": 3.04,
+    "span_s": 2.79,
+    "hyp": "By the score we promoted on, it was the better model.",
+    "err": 0.0,
+    "rate": 3.94,
+    "sd_st": 4.54,
+    "f0_med": 191.0
+   },
+   {
+    "line": "L3",
+    "dur_s": 3.68,
+    "span_s": 3.52,
+    "hyp": "Both train checkpoints refused every single one.",
+    "err": 0.1429,
+    "rate": 1.99,
+    "sd_st": 4.69,
+    "f0_med": 241.0
+   },
+   {
+    "line": "L4",
+    "dur_s": 4.16,
+    "span_s": 3.9,
+    "hyp": "The refusals vanished. Same questions, same weights.",
+    "err": 0.0,
+    "rate": 1.79,
+    "sd_st": 6.33,
+    "f0_med": 223.0
+   },
+   {
+    "line": "L5",
+    "dur_s": 3.68,
+    "span_s": 3.49,
+    "hyp": "Not a statistics problem, an empty bin.",
+    "err": 0.0,
+    "rate": 2.01,
+    "sd_st": 6.36,
+    "f0_med": 260.0
+   },
+   {
+    "line": "L6",
+    "dur_s": 5.12,
+    "span_s": 4.24,
+    "hyp": "Every gradient is a hypothesis. Every checkpoint is evidence.",
+    "err": 0.0,
+    "rate": 2.12,
+    "sd_st": 4.61,
+    "f0_med": 199.0
+   }
+  ]
+ },
+ {
+  "group": "voxcpm-ja",
+  "cond": "directed",
+  "lang": "ja",
+  "n": 6,
+  "pooled_sd_st": 5.19,
+  "range_10_90_st": 10.4,
+  "mean_line_sd_st": 4.91,
+  "err_mean": 0.05,
+  "err_max": 0.147,
+  "rate_mean": 7.24,
+  "f0_med": 411.0,
+  "rows": [
+   {
+    "line": "L1",
+    "dur_s": 3.68,
+    "span_s": 3.49,
+    "hyp": "私たちが訓練したモデルは、答えようとすらしません!",
+    "err": 0.0,
+    "rate": 8.31,
+    "sd_st": 7.06,
+    "f0_med": 365.0
+   },
+   {
+    "line": "L2",
+    "dur_s": 5.44,
+    "span_s": 5.18,
+    "hyp": "そうだね、昇格に使ったスコアではこちらの方が優れたモデルでした。",
+    "err": 0.0833,
+    "rate": 6.76,
+    "sd_st": 4.02,
+    "f0_med": 520.0
+   },
+   {
+    "line": "L3",
+    "dur_s": 6.08,
+    "span_s": 5.19,
+    "hyp": "騒動電した。2つのチェックポイントは1問残らず拒否しました。",
+    "err": 0.1471,
+    "rate": 6.17,
+    "sd_st": 5.98,
+    "f0_med": 411.0
+   },
+   {
+    "line": "L4",
+    "dur_s": 3.36,
+    "span_s": 3.08,
+    "hyp": "拒否は消えました。同じ問題、同じ重み。",
+    "err": 0.0,
+    "rate": 6.82,
+    "sd_st": 4.88,
+    "f0_med": 400.0
+   },
+   {
+    "line": "L5",
+    "dur_s": 3.52,
+    "span_s": 3.19,
+    "hyp": "造形の問題ではありません。空っぽの箱です。",
+    "err": 0.04,
+    "rate": 7.84,
+    "sd_st": 3.95,
+    "f0_med": 526.0
+   },
+   {
+    "line": "L6",
+    "dur_s": 4.48,
+    "span_s": 4.37,
+    "hyp": "すべての交配は仮説であり、すべてのチェックポイントは証拠である。",
+    "err": 0.0286,
+    "rate": 7.55,
+    "sd_st": 3.55,
+    "f0_med": 411.0
+   }
+  ]
+ },
+ {
+  "group": "voxcpm-ja",
+  "cond": "neutral",
+  "lang": "ja",
+  "n": 6,
+  "pooled_sd_st": 4.53,
+  "range_10_90_st": 10.06,
+  "mean_line_sd_st": 4.42,
+  "err_mean": 0.153,
+  "err_max": 0.529,
+  "rate_mean": 6.45,
+  "f0_med": 454.0,
+  "rows": [
+   {
+    "line": "L1",
+    "dur_s": 4.64,
+    "span_s": 4.23,
+    "hyp": "私たちが訓練したモデルはご対応とすらしません",
+    "err": 0.1034,
+    "rate": 6.86,
+    "sd_st": 4.52,
+    "f0_med": 497.0
+   },
+   {
+    "line": "L2",
+    "dur_s": 6.24,
+    "span_s": 6.22,
+    "hyp": "ソードアメ、昇格に使ったスコアではこちらの方が優れたモデルでした。",
+    "err": 0.1111,
+    "rate": 5.63,
+    "sd_st": 3.54,
+    "f0_med": 454.0
+   },
+   {
+    "line": "L3",
+    "dur_s": 9.12,
+    "span_s": 8.04,
+    "hyp": "騒動にした2つのチェックポイントは、1問残らず拒否しました。あ、シャノンワインが茶なや。",
+    "err": 0.5294,
+    "rate": 3.98,
+    "sd_st": 4.53,
+    "f0_med": 448.0
+   },
+   {
+    "line": "L4",
+    "dur_s": 3.04,
+    "span_s": 2.85,
+    "hyp": "拒否は消えました。同じ問題、同じ重み。",
+    "err": 0.0,
+    "rate": 7.37,
+    "sd_st": 4.48,
+    "f0_med": 396.0
+   },
+   {
+    "line": "L5",
+    "dur_s": 3.52,
+    "span_s": 3.19,
+    "hyp": "統計の問題ではありません。空っぽの箱です。",
+    "err": 0.0,
+    "rate": 7.84,
+    "sd_st": 3.92,
+    "f0_med": 525.0
+   },
+   {
+    "line": "L6",
+    "dur_s": 5.76,
+    "span_s": 4.7,
+    "hyp": "そのように全ての公害は仮説であり、全てのチェックポイントは証拠である。",
+    "err": 0.1714,
+    "rate": 7.02,
+    "sd_st": 5.51,
+    "f0_med": 454.0
+   }
+  ]
+ },
+ {
+  "group": "baseline-irodori-heroine",
+  "cond": "baseline",
+  "lang": "ja",
+  "n": 6,
+  "pooled_sd_st": 4.2,
+  "range_10_90_st": 10.78,
+  "mean_line_sd_st": 4.13,
+  "err_mean": 0.0,
+  "err_max": 0.0,
+  "rate_mean": 6.72,
+  "f0_med": 350.0,
+  "rows": [
+   {
+    "line": "L1",
+    "dur_s": 3.9,
+    "span_s": 3.81,
+    "hyp": "私たちが訓練したモデルは答えようとすらしません。",
+    "err": 0.0,
+    "rate": 7.61,
+    "sd_st": 4.64,
+    "f0_med": 307.0
+   },
+   {
+    "line": "L2",
+    "dur_s": 5.36,
+    "span_s": 5.15,
+    "hyp": "それでも昇格に使ったスコアではこちらの方が優れたモデルでした。",
+    "err": 0.0,
+    "rate": 6.8,
+    "sd_st": 3.83,
+    "f0_med": 372.0
+   },
+   {
+    "line": "L3",
+    "dur_s": 4.34,
+    "span_s": 4.26,
+    "hyp": "訓練した2つのチェックポイントは一問残らず拒否しました。",
+    "err": 0.0,
+    "rate": 7.51,
+    "sd_st": 4.28,
+    "f0_med": 352.0
+   },
+   {
+    "line": "L4",
+    "dur_s": 4.72,
+    "span_s": 4.63,
+    "hyp": "拒否は消えました。同じ問題、同じ重み。",
+    "err": 0.0,
+    "rate": 4.54,
+    "sd_st": 3.29,
+    "f0_med": 335.0
+   },
+   {
+    "line": "L5",
+    "dur_s": 3.94,
+    "span_s": 3.71,
+    "hyp": "統計の問題ではありません空っぽの箱です",
+    "err": 0.0,
+    "rate": 6.74,
+    "sd_st": 4.46,
+    "f0_med": 392.0
+   },
+   {
+    "line": "L6",
+    "dur_s": 4.84,
+    "span_s": 4.63,
+    "hyp": "すべての勾配は仮説であり、すべてのチェックポイントは証拠である。",
+    "err": 0.0,
+    "rate": 7.13,
+    "sd_st": 4.27,
+    "f0_med": 348.0
+   }
+  ]
+ }
+]

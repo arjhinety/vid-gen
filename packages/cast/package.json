@@ -1,0 +1,12 @@
+{
+  "name": "@vid/cast",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Rigged 2D characters (cel-shaded chibi SVG), drawn as pure functions of a pose.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./sheet": "./src/sheet/main.tsx",
+    "./live2d": "./live2d/main.ts"
+  }
+}

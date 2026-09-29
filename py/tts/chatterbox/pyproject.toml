@@ -1,0 +1,34 @@
+# Chatterbox adapter environment (Turbo / Multilingual V3 / original). MIT code + weights.
+# Upstream pins torch==2.6.0 (cu124); we override to torch 2.10.0+cu128 so uv hardlinks the same
+# cached torch wheel as the Irodori and Qwen3 envs (Python 3.10). The git pin is needed for
+# Multilingual V3 (not in the 0.1.7 PyPI release).
+[project]
+name = "tts-chatterbox"
+version = "0.1.0"
+description = "Chatterbox TTS adapter env"
+requires-python = "==3.10.*"
+dependencies = [
+  "chatterbox-tts @ git+https://github.com/resemble-ai/chatterbox.git@5de7a54aa4e5e2baadb0182dde554908b48b85c2",
+  "torch==2.10.0",
+  "torchaudio==2.10.0",
+  "setuptools<82",  # resemble-perth imports pkg_resources (removed in setuptools 82)
+  "soundfile>=0.12",
+]
+
+[tool.uv]
+package = false
+override-dependencies = [
+  "torch==2.10.0",
+  "torchaudio==2.10.0",
+  "gradio; python_version < '0'",  # demo UI only
+  "resemble-perth==1.0.1",  # PyPI release instead of the git master pin (the git fetch hangs on Windows); needs setuptools<82
+]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
+torchaudio = { index = "pytorch-cu128" }
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true

@@ -1,0 +1,9 @@
+{
+  "name": "@vid/motion",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Deterministic frame runtime for web scenes: frame context, cues, easing, interpolation, springs.",
+  "exports": { ".": "./src/index.ts" },
+  "peerDependencies": { "react": "^19.0.0" }
+}

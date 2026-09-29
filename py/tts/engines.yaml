@@ -1,0 +1,30 @@
+# TTS engine registry. Each engine runs in its own Python environment (CUDA/torch pins
+# differ), speaking the job protocol in py/tts/_protocol.py.
+#
+#   python: interpreter of the engine's environment (repo-relative)
+#   runner: adapter script
+#   setup:  command that creates the environment (documented in docs/audio.md)
+#   langs:  languages the engine can speak
+engines:
+  irodori:
+    python: third_party/irodori-tts/.venv/Scripts/python.exe
+    runner: py/tts/irodori/run.py
+    setup: "git clone https://github.com/Aratako/Irodori-TTS third_party/irodori-tts && cd third_party/irodori-tts && git checkout 89f9d8fbd4d51ea019867ee1197725ede1df13c5 && uv sync --extra cu128"
+    langs: [ja]
+  # Added by the TTS benchmark (research/tts/benchmark.md). Each env is Python 3.10 + torch 2.10.0+cu128,
+  # so uv hard-links the same cached torch build as the Irodori env.
+  qwen3:
+    python: py/tts/qwen3/.venv/Scripts/python.exe
+    runner: py/tts/qwen3/run.py
+    setup: "cd py/tts/qwen3 && uv sync"
+    langs: [en, ja]
+  chatterbox:
+    python: py/tts/chatterbox/.venv/Scripts/python.exe
+    runner: py/tts/chatterbox/run.py
+    setup: "cd py/tts/chatterbox && uv sync"
+    langs: [en, ja]
+  kokoro:
+    python: py/tts/kokoro/.venv/Scripts/python.exe
+    runner: py/tts/kokoro/run.py
+    setup: "cd py/tts/kokoro && uv sync"
+    langs: [en]

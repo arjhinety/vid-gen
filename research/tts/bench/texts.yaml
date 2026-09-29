@@ -1,0 +1,124 @@
+# TTS benchmark corpus. Every engine speaks exactly these passages.
+#
+# WARNING: the numbers below (0.412, 0.771, 41.3%, etc.) are SYNTHETIC
+# pronunciation probes. They are not Study 001 results and must never be quoted
+# as such. Real figures live in projects/*/sources/claims.yaml.
+#
+# `raw` is how a script author would naturally write the line (digits, acronyms,
+# symbols). `spoken` is what the pipeline's normaliser (packages/audio lexicon)
+# would send. Testing both tells us which engines need normalisation and how badly
+# they fail without it. The ASR round-trip WER is scored against `reference`
+# (the words a listener should hear).
+
+passages:
+  - id: p1_opening
+    purpose: calm documentary opening; baseline naturalness and pacing
+    raw: >-
+      Every model we train is a bet about what the data means. In Study 001, we
+      made that bet carefully, measured it honestly, and still lost it.
+      This is the story of how.
+    spoken: >-
+      Every model we train is a bet about what the data means. In Study zero zero one, we
+      made that bet carefully, measured it honestly, and still lost it.
+      This is the story of how.
+    reference: >-
+      every model we train is a bet about what the data means in study zero zero one we
+      made that bet carefully measured it honestly and still lost it this is the story of how
+
+  - id: p2_terms
+    purpose: ML acronyms and decimals as a script author would type them
+    raw: >-
+      We compared the base model, the SFT checkpoint, and the DPO checkpoint on a
+      held-out split. F1 rose from 0.412 to 0.771, but on general prompts the
+      refusal rate jumped to 41.3%.
+    spoken: >-
+      We compared the base model, the S F T checkpoint, and the D P O checkpoint on a
+      held-out split. F one rose from zero point four one two to zero point seven seven one,
+      but on general prompts the refusal rate jumped to forty one point three percent.
+    reference: >-
+      we compared the base model the s f t checkpoint and the d p o checkpoint on a
+      held out split f one rose from zero point four one two to zero point seven seven one
+      but on general prompts the refusal rate jumped to forty one point three percent
+
+  - id: p3_acronyms
+    purpose: dense technical vocabulary
+    raw: >-
+      The adapter is a LoRA on a 0.5B-parameter model, trained in BF16 on one GPU
+      with 6 GB of VRAM. Each JSON tool call is scored for precision, recall, and the
+      KL divergence from the reference policy.
+    spoken: >-
+      The adapter is a Laura on a half-billion parameter model, trained in B F sixteen on one G P U
+      with six gigabytes of V RAM. Each Jason tool call is scored for precision, recall, and the
+      K L divergence from the reference policy.
+    reference: >-
+      the adapter is a lora on a half billion parameter model trained in b f sixteen on one g p u
+      with six gigabytes of v ram each json tool call is scored for precision recall and the
+      k l divergence from the reference policy
+
+  - id: p4_equation
+    purpose: an equation read aloud, slowly and clearly
+    raw: >-
+      The DPO loss is L = -log σ(β · (Δ_chosen - Δ_rejected)), where each Δ is a
+      log-probability ratio against the reference model.
+    spoken: >-
+      The D P O loss is the negative log of sigma, applied to beta times the difference
+      between two log ratios: one for the chosen answer, one for the rejected answer.
+      Each ratio compares the policy to the frozen reference model.
+    reference: >-
+      the d p o loss is the negative log of sigma applied to beta times the difference
+      between two log ratios one for the chosen answer one for the rejected answer
+      each ratio compares the policy to the frozen reference model
+
+  - id: p5_restraint
+    purpose: gravity and restraint on the negative result; must not sound like an advert
+    raw: >-
+      The numbers went up. That was the problem. The model had not learned when to
+      call a tool. It had learned that saying no was almost never punished.
+    spoken: >-
+      The numbers went up. That was the problem. The model had not learned when to
+      call a tool. It had learned that saying no was almost never punished.
+    reference: >-
+      the numbers went up that was the problem the model had not learned when to
+      call a tool it had learned that saying no was almost never punished
+
+  - id: p6_long
+    purpose: long-form consistency, drift, repetition and truncation behaviour (~70 s)
+    raw: >-
+      Before any training run, we froze the evaluation set and put it somewhere the
+      training code could not reach. That separation matters more than any single
+      hyperparameter. A held-out set is a promise: these examples will tell us the
+      truth, because the model has never seen them. We then trained two systems. The
+      first used supervised fine-tuning, where the model imitates annotated answers
+      one token at a time. The second used direct preference optimisation, where the
+      model sees a better and a worse answer to the same prompt and is nudged toward
+      the better one. On the tool-policy metrics, both looked like progress. The
+      overcall rate fell, the F1 score rose, and the curves were smooth. It was only
+      when we asked ordinary questions, the kind with no tool involved at all, that the
+      picture changed. The model had started to refuse. Not occasionally, and not at
+      random, but systematically, as if refusal were a place it kept falling back into.
+    spoken: >-
+      Before any training run, we froze the evaluation set and put it somewhere the
+      training code could not reach. That separation matters more than any single
+      hyperparameter. A held-out set is a promise: these examples will tell us the
+      truth, because the model has never seen them. We then trained two systems. The
+      first used supervised fine-tuning, where the model imitates annotated answers
+      one token at a time. The second used direct preference optimisation, where the
+      model sees a better and a worse answer to the same prompt and is nudged toward
+      the better one. On the tool-policy metrics, both looked like progress. The
+      over-call rate fell, the F one score rose, and the curves were smooth. It was only
+      when we asked ordinary questions, the kind with no tool involved at all, that the
+      picture changed. The model had started to refuse. Not occasionally, and not at
+      random, but systematically, as if refusal were a place it kept falling back into.
+    reference: >-
+      before any training run we froze the evaluation set and put it somewhere the
+      training code could not reach that separation matters more than any single
+      hyperparameter a held out set is a promise these examples will tell us the
+      truth because the model has never seen them we then trained two systems the
+      first used supervised fine tuning where the model imitates annotated answers
+      one token at a time the second used direct preference optimisation where the
+      model sees a better and a worse answer to the same prompt and is nudged toward
+      the better one on the tool policy metrics both looked like progress the
+      over call rate fell the f one score rose and the curves were smooth it was only
+      when we asked ordinary questions the kind with no tool involved at all that the
+      picture changed the model had started to refuse not occasionally and not at
+      random but systematically as if refusal were a place it kept falling back into

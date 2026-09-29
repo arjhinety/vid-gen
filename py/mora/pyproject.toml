@@ -1,0 +1,34 @@
+[project]
+name = "vidmora"
+version = "0.1.0"
+description = "Japanese mora-level lip-sync timings from phoneme-CTC forced alignment (analysis of our own audio only)."
+requires-python = ">=3.11,<3.12"
+dependencies = [
+  "torch==2.10.0",
+  "transformers>=5.15,<6",
+  "pyopenjtalk-plus",
+  "numpy>=1.26,<2.3",
+  "scipy>=1.13",
+  "soundfile>=0.12",
+]
+
+[dependency-groups]
+dev = ["pytest>=9.1.1"]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vidmora"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

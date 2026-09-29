@@ -1,0 +1,31 @@
+# Generated
+build/
+.cache/
+node_modules/
+**/__pycache__/
+*.pyc
+.venv/
+**/.venv/
+.pytest_cache/
+
+# Third-party engines are cloned + installed by `py/tts/engines.yaml` setup commands
+third_party/
+
+# Reference videos are copyrighted: keep derived transcripts/keyframes local and private
+research/reference-videos/*/audio.16k.wav
+research/reference-videos/*/keyframes/
+research/reference-videos/*/transcript.*
+research/reference-videos/*/transcript/
+research/reference-videos/*/bursts/
+
+# Claude Code session transcript dumps
+/20*-this-session-is-being-continued-*.txt
+
+# TTS benchmark audio (regenerable; large)
+research/tts/samples/
+research/tts/bench/out/
+
+# Tool caches
+.impeccable/
+.vite/
+*.log

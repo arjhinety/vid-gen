@@ -1,0 +1,505 @@
+# Experimental Machines — founding governance, explained ("Every seat, three friends").
+#
+# Source: sources/governance-draft-v0.1.pdf (the founders' draft v0.1, Sep 26, 2026). Every line that states a rule
+# carries a claim id in ../sources/claims.yaml with the page it comes from. The draft is a PROPOSAL: the film says
+# "the draft proposes" / "the rule" for its recommendations and never presents them as adopted or as legal advice.
+#
+# Written to be heard (docs/design-system.md): connected sentences of about 8 to 14 words; every term defined the
+# first time; about three spoken numbers a minute; authored pauses (0.5-0.8 s after a question, 1-1.6 s after a
+# definition, 2.5-3 s after the big turns). The tone is warm and a little playful: three friends and a rulebook.
+# `tone:` words come from voices/narrator-en.yaml. English only for now.
+# The founders are never given pronouns in the script.
+
+beats:
+  # ---------------------------------------------------------------- cold open
+  - id: b01
+    intent: "Three friends, one lab; they wrote down how it should run."
+    lines:
+      - en: "Meet three friends: [[arjhine]]Arjhine, [[alpha]]Alpha, and [[john]]John."
+        tone: warm
+        pause: 0.8
+      - en: "They're starting a [[lab]]research lab for machine learning, here in the Philippines."
+        claims: [em-purpose]
+        pause: 0.6
+      - en: "And they've written down how it should be run: [[draft]]fifty-three pages of it."
+        claims: [draft-scope]
+        pause: 1.4
+  - id: b02
+    intent: "The puzzle, and the promise to take it apart; it is a proposal."
+    lines:
+      - en: "Here's the puzzle at the heart of it."
+        tone: curious
+        pause: 0.5
+      - en: "When the same three people hold every seat, [[honest]]how do they keep each other *honest*?"
+        tone: curious
+        pause: 2.2
+      - en: "Let's take the draft apart, [[apart]]one piece at a time."
+        tone: warm
+        pause: 0.5
+      - en: "It's a proposal to argue with, [[notlegal]]not a legal document yet."
+        claims: [draft-status]
+        pause: 1.6
+
+  # ---------------------------------------------------------------- what it is
+  - id: b03
+    intent: "Non-stock, non-profit: no owners, no dividends; money in, surplus back to research."
+    lines:
+      - en: "First, what kind of thing is [[em]]Experimental Machines?"
+        tone: curious
+        pause: 0.6
+      - en: "It's a [[nonstock]]non-stock, non-profit corporation."
+        claims: [em-form]
+        pause: 0.4
+      - en: "Non-stock means nobody owns shares. Non-profit means nobody gets [[dividend]]*dividends*."
+        claims: [em-form, fin-no-dividends]
+        pause: 1.3
+      - en: "Money comes in as [[in]]grants, donations, and compute, and anything left over [[back]]goes back into research."
+        claims: [spon-accept, fin-surplus]
+        pause: 1.4
+  - id: b04
+    intent: "The purpose clause, why its wording matters, and what the lab is not."
+    lines:
+      - en: "Its purpose is [[purpose]]scientific research in machine learning, for the public, with the results made open."
+        claims: [em-purpose-clause]
+        pause: 0.8
+      - en: "That wording matters, because the tax exemption depends on a [[scientific]]scientific purpose."
+        claims: [em-tax-test]
+        pause: 0.6
+      - en: "So the draft is just as clear about what the lab is [[not]]*not*."
+        pause: 0.3
+      - en: "Not a consultancy, not an automation agency, not an incubator."
+        tone: resolve
+        claims: [em-not]
+        pause: 1.8
+
+  # ---------------------------------------------------------------- three hats
+  - id: b05
+    intent: "Same three people, three hats: members, trustees, officers."
+    lines:
+      - en: "So who's in charge? The same three people wear [[hats]]three *hats*."
+        tone: warm
+        claims: [facts-roles]
+        pause: 0.6
+      - en: "As [[members]]members, they vote on the big things that change what the lab is."
+        claims: [members-change]
+        pause: 0.8
+      - en: "As [[trustees]]trustees, they form the Board, which actually runs it."
+        claims: [members-change]
+        pause: 0.8
+      - en: "And as [[officers]]officers, they do the legal paperwork."
+        pause: 0.4
+      - en: "Alpha is [[president]]President, John is Treasurer, and Arjhine is Corporate Secretary."
+        claims: [officers]
+        pause: 1.2
+  - id: b06
+    intent: "Who elects whom; two legal checks; unpaid; titles are jobs, not rank."
+    lines:
+      - en: "Members [[elect]]elect the Board, and the Board [[appoints]]appoints the officers."
+        claims: [layers-flow]
+        pause: 1.0
+      - en: "The law adds a couple of checks: nobody can be both [[combo]]President and Treasurer,"
+        tone: gravity
+        claims: [law-combo]
+        pause: 0.3
+      - en: "and, to be safe, the President [[mustbe]]is also a trustee."
+        claims: [law-president]
+        pause: 1.2
+      - en: "All three are [[unpaid]]unpaid for about the first year, and these titles are legal jobs, not scientific rank."
+        tone: warm
+        claims: [unpaid, titles-legal]
+        pause: 1.6
+
+  # ---------------------------------------------------------------- two layers
+  - id: b07
+    intent: "Two layers, same people: lawful/funded/safe vs true; neither outranks the other."
+    lines:
+      - en: "That last part is the heart of the design: [[two]]two layers, sharing the same people."
+        claims: [layers]
+        pause: 0.6
+      - en: "The [[corp]]corporate layer asks: is this lawful, funded, and safe?"
+        claims: [layers]
+        pause: 0.8
+      - en: "The [[research]]research layer asks: is this *true*, and how do we find out?"
+        claims: [layers]
+        pause: 1.0
+      - en: "The Board sends down [[resources]]money, compute, and limits. Research sends back [[evidence]]evidence and conclusions."
+        claims: [layers]
+        pause: 1.0
+      - en: "And neither one outranks the other [[own]]in its own domain."
+        tone: resolve
+        claims: [layers]
+        pause: 1.4
+  - id: b08
+    intent: "No CEO; research titles; a corporate office gives no authority over conclusions."
+    lines:
+      - en: "[[nochief]]So there's no CEO, no CTO, no Chief Scientist."
+        say_en: "[[nochief]]So there's no C E O, no C T O, no Chief Scientist."
+        claims: [titles]
+        pause: 0.4
+      - en: "Researchers use research titles, and a [[lead]]Project Lead only leads while the project lasts."
+        claims: [titles]
+        pause: 1.0
+      - en: "A corporate office gives [[noauth]]*no* authority over what the science concludes."
+        tone: gravity
+        claims: [titles-noauth]
+        pause: 2.6
+
+  # ---------------------------------------------------------------- member powers
+  - id: b09
+    intent: "Members' big powers; most need two thirds; two thirds of three is two."
+    lines:
+      - en: "Let's zoom in on the members. They hold the powers that [[change]]change what the lab is:"
+        claims: [members-change]
+        pause: 0.4
+      - en: "[[electp]]electing trustees, [[amend]]rewriting the founding papers, [[merge]]merging, or [[dissolve]]closing the lab for good."
+        claims: [members-table]
+        pause: 1.2
+      - en: "Most of these big moves need [[twothirds]]two thirds of all members."
+        claims: [members-table]
+        pause: 0.6
+      - en: "But here's the catch. Two thirds of three people is [[justtwo]]just *two*."
+        tone: reveal
+        claims: [members-twothirds]
+        pause: 2.8
+  - id: b10
+    intent: "Any two can outvote the third, so the draft leans on process; no unanimity."
+    lines:
+      - en: "Any two founders can always [[outvote]]outvote the third."
+        claims: [members-twothirds]
+        pause: 0.8
+      - en: "So counting votes can't protect anyone on its own. The draft leans on [[process]]process instead:"
+        claims: [members-process]
+        pause: 0.4
+      - en: "[[notice]]advance notice, [[delay]]time to wait, [[reasons]]written reasons, and [[outsider]]an outside reviewer."
+        claims: [members-process]
+        pause: 1.2
+      - en: "And it never asks for [[unanimity]]everyone to agree, because that would hand one founder a veto."
+        tone: resolve
+        claims: [members-unanimity]
+        pause: 1.8
+
+  # ---------------------------------------------------------------- mission lock
+  - id: b11
+    intent: "The mission-protection rule as a timeline: slower, not impossible."
+    lines:
+      - en: "Here's that process in action: [[mission]]changing the lab's mission."
+        tone: curious
+        claims: [mission-rule]
+        pause: 0.6
+      - en: "First, a [[proposal]]written proposal goes to every member, at least thirty days before any vote."
+        claims: [mission-rule]
+        pause: 0.8
+      - en: "Then two thirds must agree at [[vote1]]two separate meetings, at least [[gap]]sixty days apart."
+        claims: [mission-rule]
+        pause: 1.0
+      - en: "And the new mission has to [[stay]]stay scientific and non-profit."
+        claims: [mission-rule]
+        pause: 1.2
+      - en: "It makes a change [[slower]]*slower*, not impossible."
+        tone: resolve
+        claims: [mission-effect]
+        pause: 1.0
+      - en: "The third founder gets [[months]]two months and a public record to argue."
+        tone: warm
+        claims: [mission-effect]
+        pause: 2.0
+
+  # ---------------------------------------------------------------- the board
+  - id: b12
+    intent: "What the Board governs; the hard line around results."
+    lines:
+      - en: "Now the Board. It governs [[money]]money, [[people]]people, contracts, and risk:"
+        claims: [board-powers]
+        pause: 0.4
+      - en: "budgets, bank accounts, compute, hiring, and whether a program [[opens]]opens or closes."
+        claims: [board-powers]
+        pause: 1.0
+      - en: "But the draft draws a hard line around [[results]]*results*."
+        tone: gravity
+        claims: [board-limits]
+        pause: 0.8
+  - id: b13
+    intent: "What the Board may not do, including the disguised version."
+    lines:
+      - en: "The Board may not [[soften]]change, soften, or hide a result because somebody dislikes it."
+        claims: [board-limits]
+        pause: 0.8
+      - en: "It can't [[bury]]bury a negative result, or [[authors]]pick who gets to be an author."
+        claims: [board-limits]
+        pause: 0.8
+      - en: "And it can't use a [[budget]]budget cut, or closing a program, as a sneaky way to do the same thing."
+        tone: irony
+        claims: [prohibit-disguise]
+        pause: 2.4
+
+  # ---------------------------------------------------------------- intervene
+  - id: b14
+    intent: "The short list of grounds, and the four conditions on every intervention."
+    lines:
+      - en: "So [[when]]when may the Board step in?"
+        tone: curious
+        pause: 0.6
+      - en: "Only on a short list of [[grounds]]grounds: the law, privacy, security, safety, misconduct,"
+        claims: [intervene-grounds]
+        pause: 0.2
+      - en: "a signed contract, [[broke]]running out of money, licence terms, or serious risk to the lab."
+        claims: [intervene-grounds]
+        pause: 1.0
+      - en: "Even then, it must be [[written]]written down, give reasons, name the ground, and [[limited]]end by a set time."
+        claims: [intervene-procedure]
+        pause: 1.6
+  - id: b15
+    intent: "Scientific disagreements: evidence, a recorded dissent, no tie-breaking officer."
+    lines:
+      - en: "And when researchers disagree with [[each]]each other?"
+        tone: curious
+        pause: 0.6
+      - en: "They settle it with evidence. A dissenter can [[dissent]]write their view into the paper, or step off as an author."
+        claims: [science-disputes]
+        pause: 1.0
+      - en: "[[tie]]No officer breaks the tie."
+        tone: resolve
+        claims: [science-disputes]
+        pause: 2.4
+
+  # ---------------------------------------------------------------- conflicts
+  - id: b16
+    intent: "Recusal on a three-person board: both others must agree; failing is safe."
+    lines:
+      - en: "What if a trustee has a [[stake]]personal stake in a decision?"
+        tone: curious
+        claims: [coi-rule]
+        pause: 0.6
+      - en: "That trustee [[disclose]]says so, [[leave]]leaves the room, and doesn't vote."
+        claims: [coi-rule]
+        pause: 0.8
+      - en: "The Board needs [[quorum]]two of three to decide, so the other two must [[both]]*both* say yes."
+        claims: [coi-quorum]
+        pause: 1.0
+      - en: "If they split, the deal simply [[fails]]fails. For an insider deal, that's the safe outcome."
+        tone: resolve
+        claims: [coi-quorum]
+        pause: 1.6
+  - id: b17
+    intent: "All three conflicted: wait for two disinterested trustees; deadlock: status quo, then mediation."
+    lines:
+      - en: "And if [[all]]all three have a stake, like a company all three own?"
+        tone: curious
+        claims: [coi-all]
+        pause: 0.6
+      - en: "Then nobody is left to judge it fairly, so the deal [[wait]]waits until the Board has two trustees with no interest in it."
+        claims: [coi-all]
+        pause: 1.4
+      - en: "A stuck vote works the same way: [[status]]nothing changes, and after sixty days, any trustee can ask an [[mediate]]outsider to mediate."
+        claims: [deadlock]
+        pause: 1.8
+
+  # ---------------------------------------------------------------- membership
+  - id: b18
+    intent: "Membership is granted on purpose; the four-step admission."
+    lines:
+      - en: "Who else can [[join]]join as a member?"
+        tone: curious
+        pause: 0.5
+      - en: "Doing research here doesn't make you one: [[notmember]]researchers, fellows, and donors aren't members unless they're admitted."
+        claims: [members-not]
+        pause: 1.0
+      - en: "A member [[propose]]proposes someone, the Board [[nominate]]nominates, two thirds of members [[approve]]approve, and the Secretary [[register]]writes it in the register."
+        claims: [members-admission]
+        pause: 1.4
+  - id: b19
+    intent: "Removal: listed causes only, what never counts, due process, and why the reviewer."
+    lines:
+      - en: "Removing a member is where it gets [[serious]]serious."
+        tone: gravity
+        pause: 0.6
+      - en: "Only listed causes count, like [[misuse]]misusing the lab's assets, or serious misconduct."
+        claims: [removal-causes]
+        pause: 0.6
+      - en: "[[disagree]]Disagreeing, voting against the majority, or publishing an unpopular result [[never]]*never* counts."
+        claims: [removal-notcause]
+        pause: 1.2
+      - en: "The member facing removal gets written notice, [[respond]]thirty days to respond, and a hearing."
+        claims: [removal-process]
+        pause: 0.6
+      - en: "Then an [[reviewer]]independent reviewer must find the cause proven before the other two can vote."
+        claims: [removal-process]
+        pause: 1.0
+      - en: "With three members, that outsider is the one thing that stops [[twoone]]two friends pushing out the third."
+        tone: reveal
+        claims: [removal-why]
+        pause: 3.0
+
+  # ---------------------------------------------------------------- money
+  - id: b20
+    intent: "Money belongs to the corporation; the pay and payment rules."
+    lines:
+      - en: "Next, [[coin]]money. Every peso belongs to the corporation, not to any person."
+        claims: [fin-principles]
+        pause: 0.8
+      - en: "No [[div]]dividends, no sharing the surplus, and trustees aren't [[trusteepay]]paid at all while they serve."
+        claims: [fin-principles]
+        pause: 1.0
+      - en: "[[ownpay]]Nobody sets their own pay. Expenses need receipts, approved by [[someone]]someone else."
+        claims: [fin-ownpay, fin-reimburse]
+        pause: 0.8
+      - en: "And bigger payments need [[twopeople]]two people."
+        claims: [fin-twoperson]
+        pause: 1.4
+  - id: b21
+    intent: "Founder pay later, in order; a future company stays separate."
+    lines:
+      - en: "Could a founder get [[paid]]paid later? Maybe, but only in this order."
+        tone: curious
+        claims: [founder-transition]
+        pause: 0.6
+      - en: "The job has to [[merit]]exist on its own merits. Tax advice comes [[tax]]first."
+        claims: [founder-transition]
+        pause: 0.6
+      - en: "The founder [[leaveboard]]leaves the Board before the job starts, and gets the [[sameterms]]same pay band as anyone else."
+        claims: [founder-transition]
+        pause: 1.0
+      - en: "And if the founders ever start a [[company]]company, it stays separate, with no claim on anything the lab owns."
+        tone: resolve
+        claims: [future-company]
+        pause: 1.8
+
+  # ---------------------------------------------------------------- IP
+  - id: b22
+    intent: "The hybrid IP framework in five categories; ownership is never authorship."
+    lines:
+      - en: "Which brings us to [[whose]]who owns the work."
+        tone: curious
+        pause: 0.6
+      - en: "What a researcher [[brought]]brought with them, or made [[independent]]on their own, stays [[theirs]]theirs."
+        claims: [ip-a-c]
+        pause: 0.8
+      - en: "What's made [[inside]]inside a lab program, with the lab's money or compute, belongs to the lab, and it's released [[open]]openly by default."
+        claims: [ip-b]
+        pause: 1.2
+      - en: "There's no [[everything]]“everything you invent belongs to us” clause."
+        tone: irony
+        claims: [ip-rule]
+        pause: 1.0
+      - en: "And [[credit]]credit always stays with the researcher. Owning the weights never makes the lab an author."
+        tone: warm
+        claims: [ip-d]
+        pause: 2.0
+
+  # ---------------------------------------------------------------- sponsors
+  - id: b23
+    intent: "Can money buy a result? The principle and the key safeguards."
+    lines:
+      - en: "Now, [[sponsors]]sponsors. Can money buy a result?"
+        tone: curious
+        pause: 0.8
+      - en: "The lab can take grants, compute, and hardware from [[anyone]]almost anyone,"
+        claims: [spon-accept]
+        pause: 0.3
+      - en: "but [[never]]*never* on terms that let the funder decide what the research finds."
+        tone: gravity
+        claims: [spon-principle]
+        pause: 1.2
+      - en: "A sponsor may check a draft for its own secrets, for up to [[review]]thirty days,"
+        claims: [spon-safeguards]
+        pause: 0.3
+      - en: "or hold it up to ninety days to [[patent]]file a patent."
+        claims: [spon-safeguards]
+        pause: 0.8
+      - en: "Funding is [[disclosed]]disclosed on every paper, and results are publishable by default."
+        claims: [spon-safeguards]
+        pause: 1.4
+  - id: b24
+    intent: "The consulting bright line: research vs consulting, and why."
+    lines:
+      - en: "There's one more line: the lab doesn't do [[consulting]]consulting."
+        claims: [consulting-line]
+        pause: 0.6
+      - en: "Research answers an [[openq]]open question and publishes it. Consulting solves [[client]]one client's problem, in private."
+        claims: [consulting-vs]
+        pause: 1.2
+      - en: "Too much of that could cost the lab its [[exempt]]tax exemption, so it belongs in a separate company."
+        claims: [consulting-risk]
+        pause: 1.8
+
+  # ---------------------------------------------------------------- where rules live
+  - id: b25
+    intent: "Four documents, from hardest to easiest to change; the rule of thumb."
+    lines:
+      - en: "So where does each rule [[live]]live?"
+        tone: curious
+        pause: 0.6
+      - en: "The [[articles]]Articles of Incorporation are the hardest to change. They need two thirds of members, and a sign-off from the government."
+        claims: [where-rules]
+        pause: 0.8
+      - en: "The [[bylaws]]By-Laws need a member vote. [[policies]]Policies need a Board vote. [[agreements]]Agreements bind each person."
+        claims: [where-rules]
+        pause: 1.2
+      - en: "The rule of thumb: put a rule somewhere hard to change only if [[should]]changing it *should* be hard."
+        tone: resolve
+        claims: [where-rules]
+        pause: 2.2
+
+  # ---------------------------------------------------------------- weak spots
+  - id: b26
+    intent: "The draft's self-review: what it guards, and the two weak spots."
+    lines:
+      - en: "Does it all work? The draft [[grades]]grades itself."
+        tone: curious
+        claims: [review-summary]
+        pause: 0.6
+      - en: "It guards well against [[taking]]taking the lab's assets, [[capture]]sponsors bending results, and [[drift]]drifting into consulting."
+        claims: [review-summary]
+        pause: 1.0
+      - en: "But it's honest about its [[weak]]weak spots."
+        tone: gravity
+        pause: 0.4
+      - en: "Nothing forces the founders to ever [[admit]]let anyone else in."
+        claims: [review-entrench]
+        pause: 0.6
+      - en: "And the law lets two of three [[remove]]remove the third from the Board, with or without cause."
+        claims: [review-twoone]
+        pause: 1.0
+      - en: "Three people who hold every seat [[cant]]can't fully check each other."
+        tone: reveal
+        claims: [review-summary]
+        pause: 2.8
+
+  # ---------------------------------------------------------------- next
+  - id: b27
+    intent: "Where the draft stands, and the five choices that block the Articles."
+    lines:
+      - en: "So where does it stand? Of thirty-eight decisions, [[decided]]eight are decided."
+        claims: [draft-scope, status-counts]
+        pause: 0.6
+      - en: "[[forreview]]Twenty-seven are up for review, and [[deferred]]three can wait."
+        claims: [status-counts]
+        pause: 1.0
+      - en: "Five choices block the founding papers:"
+        claims: [founder-blocking]
+        pause: 0.3
+      - en: "the [[purposew]]purpose wording, the [[office]]office address, the [[capital]]starting money, [[residency]]who lives where, and [[expenses]]expense claims."
+        claims: [founder-blocking]
+        pause: 1.2
+  - id: b28
+    intent: "The next step, and the lawyer."
+    lines:
+      - en: "The next step is a founders' meeting: [[meet]]settle those five, then accept, change, or reject each proposal."
+        tone: resolve
+        claims: [next-step]
+        pause: 0.6
+      - en: "And before anything is filed, a [[counsel]]lawyer checks the law."
+        claims: [draft-counsel]
+        pause: 1.4
+
+  # ---------------------------------------------------------------- close
+  - id: b29
+    intent: "The answer to the opening puzzle."
+    lines:
+      - en: "So, the answer to our puzzle. When three friends hold every seat,"
+        tone: warm
+        pause: 0.4
+      - en: "they keep each other honest with [[time]]time, [[paper]]paper, and [[outsiderc]]an *outsider*."
+        tone: reveal
+        claims: [close-summary]
+        pause: 3.0

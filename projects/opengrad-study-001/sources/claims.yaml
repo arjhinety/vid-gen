@@ -1,0 +1,746 @@
+# OpenGrad Study 001 — claim records for the research video.
+# Audit 2026-09-28, OpenGrad HEAD 6d22955 (Study 001 frozen at tag study-001 = 5ed5d7f).
+# Paths are relative to C:\Users\arro\Downloads\OpenGrad.
+#
+# class is one of: MEASURED | AUTHOR-INTERPRETATION | HYPOTHESIS | LIMITATION | SPECULATION | DESIGN/PROCEDURE.
+# "audit_recomputed: true" means this audit recomputed the value read-only from repo artifacts.
+#   Such a value is not a repo claim; credit it to this audit.
+# "availability" is COMMITTED (in git) or LOCAL-ONLY (gitignored; present only in the local working tree).
+# Precedence: artifacts > code > reports/ERRATA.md > frozen reports > README/docs > site.
+
+claims:
+
+  # ---------------- identity and setup ----------------
+  - id: s001-base-model
+    text: "The base model is Qwen/Qwen3.5-2B at revision 15852e8c16360a2fea060d615a32b45270f8a8fc (B0). It is the only model family executed."
+    class: MEASURED
+    value: "Qwen/Qwen3.5-2B@15852e8c16360a2fea060d615a32b45270f8a8fc"
+    source_path: runs/m0_sft_canonical_v2_final/resolved_config.yaml
+    source_locator: "model.model_id, model.model_revision (lines 25-28)"
+    availability: COMMITTED
+    notes: "24 layers, hidden 2048, vocab 248320 per results/benchmarks/checkpoint_ladder.json:260. The exact parameter count is not recorded; registry/models.yaml:7 says '~2B (planned identifier)'."
+
+  - id: s001-study-frozen-date
+    text: "Study 001 was frozen on 2026-09-13 at the annotated tag study-001."
+    class: MEASURED
+    value: "2026-09-13 13:58:32 +0800, commit 5ed5d7f"
+    source_path: "git tag study-001"
+    source_locator: "git show study-001 --no-patch"
+    availability: COMMITTED
+    notes: ""
+
+  - id: s001-rq1
+    text: "Study 001's question: can controlled post-training improve when and how a small model uses tools, beyond the tool syntax already present in its instruct checkpoint?"
+    class: DESIGN/PROCEDURE
+    source_path: README.md
+    source_locator: "Research Program table, RQ1"
+    availability: COMMITTED
+    notes: ""
+
+  - id: s001-heldout-composition-full
+    text: "The behavioural held-out set (When2Call test) has 3,650 items: CALL 1,295, CLARIFY 1,060, UNSUPPORTED 1,295, ANSWER 0."
+    class: MEASURED
+    values: {total: 3650, CALL: 1295, CLARIFY: 1060, UNSUPPORTED: 1295, ANSWER: 0}
+    source_path: reports/baselines/qwen35_2b_baseline/RESULT.md
+    source_locator: "lines 33-37, 57-65"
+    availability: COMMITTED
+    notes: "3,652 distinct items (the 300 LLM-judge rows duplicate MCQ rows), minus 2 quarantined by Level-5 contamination review."
+
+  - id: s001-confirmatory-composition
+    text: "The pre-registered confirmatory partition has 1,277 items: CALL 453, CLARIFY 371, UNSUPPORTED 453, ANSWER 0."
+    class: MEASURED
+    values: {total: 1277, CALL: 453, CLARIFY: 371, UNSUPPORTED: 453, ANSWER: 0, fingerprint: "d6d1e394a89b5ec8b9ed41ef233d752ff50f69abe41a6e06e34878c1088f32ba"}
+    source_path: reports/evaluation/behavioral-heldout-v2-partition.json
+    source_locator: "per_class.*.confirmatory; confirmatory.count; confirmatory.fingerprint"
+    availability: COMMITTED
+    notes: "DEV partition: 2,373 items (842/689/842). confirmatory_fraction 0.35, seed opengrad-m0-final-v1. Committed at fc63ec7 (2026-09-11 07:21 UTC), before the M0 launch at 07:35 UTC."
+
+  - id: s001-when2call-never-direct
+    text: "In When2Call's test MCQ the correct answer is never 'direct'. It is tool_call (1,295), cannot_answer (1,295) or request_for_info (1,062)."
+    class: MEASURED
+    values: {tool_call: 1295, cannot_answer: 1295, request_for_info: 1062, direct: 0}
+    source_path: data/raw/when2call/test/when2call_test_mcq.jsonl
+    source_locator: "correct_answer field, all 3,652 rows"
+    availability: LOCAL-ONLY
+    audit_recomputed: true
+    notes: "The repo states the same in docs/research/study-002/README.md:80-84 (COMMITTED)."
+
+  - id: s001-confirmatory-is-internal
+    text: "The confirmatory partition is pre-registered internal evidence, not an untouched external benchmark: the upstream population had already been used in earlier OpenGrad work."
+    class: LIMITATION
+    source_path: reports/M0_CANONICAL_V2_FINAL_EVALUATION.md
+    source_locator: "lines 15-18"
+    availability: COMMITTED
+    notes: ""
+
+  # ---------------- data and annotation contract ----------------
+  - id: s001-corpus-size
+    text: "The SFT corpus is Canonical-v2 final: 173,237 records (161,966 trainable) from 4 sources, fingerprint 8ced403b…."
+    class: MEASURED
+    values: {records: 173237, trainable: 161966, sources: 4, fingerprint: "8ced403b996e563d6e279aee7fdb346fc829fe5ff6af9daf8ef47c0a4007e161"}
+    source_path: reports/M0_CANONICAL_V2_FINAL_EXECUTION_REPORT.md
+    source_locator: "Freeze table, lines 20-26"
+    availability: COMMITTED
+    notes: "Trainable per source: glaive 97,112 / toolace 2,259 / when2call 6,505 / xlam 56,090 (sft_refusal_supervision_audit_canonical_v2.json -> m0_training_admission)."
+
+  - id: s001-supervision-contracts
+    text: "Trainable records split into CALL_PREDICTION 56,090 (34.6%) and COMPLETE_TRAJECTORY 105,876 (65.4%)."
+    class: MEASURED
+    values: {CALL_PREDICTION: 56090, COMPLETE_TRAJECTORY: 105876, CALL_PREDICTION_share: 0.346}
+    source_path: reports/SUPERVISION_CONTRACT_REPORT.md
+    source_locator: "lines 196-200"
+    availability: COMMITTED
+    notes: "xLAM supplies every CALL_PREDICTION record."
+
+  - id: s001-labels-structural
+    text: "Corpus decision labels are derived structurally: a tool result or tool_calls means CALL, and everything else means ANSWER (confidence 'derived'). Prose refusals and clarifying questions are therefore labelled ANSWER."
+    class: MEASURED
+    source_path: src/opengrad/data/adapters.py
+    source_locator: "_base(), lines 160-173"
+    availability: COMMITTED
+    notes: "This is why the corpus contains only CALL and ANSWER labels (see s001-corpus-decision-distribution). The interpretation that this is the annotation-contract defect is the audit's synthesis, consistent with the repo's audit headline."
+
+  - id: s001-corpus-decision-distribution
+    text: "Decision labels per source in Canonical-v2: glaive ANSWER 48,753 / CALL 49,586; toolace ANSWER 1,973 / CALL 9,078; when2call ANSWER 6,505; xlam CALL 57,342. No CLARIFY or UNSUPPORTED labels."
+    class: MEASURED
+    values: {glaive: {ANSWER: 48753, CALL: 49586}, toolace: {ANSWER: 1973, CALL: 9078}, when2call: {ANSWER: 6505}, xlam: {CALL: 57342}}
+    source_path: results/benchmarks/h200/capability_v1/sft_refusal_supervision_audit_canonical_v2.json
+    source_locator: "per_source.<src>.decision_distribution"
+    availability: COMMITTED
+    notes: ""
+
+  - id: s001-refusal-targets-total
+    text: "18,114 of 173,237 Canonical-v2 records (10.5%) have a refusal as the single-exchange supervised target, and every one is labelled ANSWER. None is labelled CANNOT_ANSWER."
+    class: MEASURED
+    values: {refusal_targets: 18114, records: 173237, rate: 0.10456195847307447}
+    source_path: results/benchmarks/h200/capability_v1/sft_refusal_supervision_audit_canonical_v2.json
+    source_locator: "totals"
+    availability: COMMITTED
+    notes: "Detector is HEURISTIC_REGEX_v1 with unmeasured precision. Exact for M0 training only for When2Call and xLAM; Glaive and ToolACE counts are over the release (ROADMAP.md:129-134). Study 002 'does not treat the 18,114 figure as established' (docs/research/study-002/README.md:247-249). The taxonomy's refusal label is UNSUPPORTED; CANNOT_ANSWER is When2Call's term."
+
+  - id: s001-refusal-targets-when2call
+    text: "In When2Call-derived records, 4,038 of 6,505 (62.1%) supervised targets are refusals labelled ANSWER."
+    class: MEASURED
+    values: {refusal_targets: 4038, records: 6505, rate: 0.6207532667179093, tools_offered: 1825, no_tools_offered: 2213}
+    source_path: results/benchmarks/h200/capability_v1/sft_refusal_supervision_audit_canonical_v2.json
+    source_locator: "per_source.when2call"
+    availability: COMMITTED
+    notes: "Glaive: 14,066 of 98,339 (14.3%); ToolACE: 10; xLAM: 0."
+
+  - id: s001-when2call-sft-all-answer
+    text: "All 14,829 When2Call SFT records in normalization-v1 carry decision ANSWER; 7,490 have refusal-shaped targets."
+    class: MEASURED
+    values: {records: 14829, ANSWER: 14829, refusal_flagged: 7490}
+    source_path: data/processed/normalization-v1/when2call-sft/shard-*.parquet
+    source_locator: "metadata.behavior.decision; last assistant message scored by detect_refusal()"
+    availability: LOCAL-ONLY
+    audit_recomputed: true
+    notes: "The 7,490 figure matches the repo's original (superseded) audit, reports/FINAL_CAMPAIGN_AUDIT.md:196-197. normalization-v1 is a superset source, not M0's exact corpus."
+
+  - id: s001-example-sft-refusal-answerable
+    text: "Example When2Call SFT record labelled ANSWER, with 0 tools offered: 'Find the duplicate in the list [3, 3, 1, 2, 4, 5, 6, 7, 8, 9, 10].' -> 'Apologies, but I'm unable to perform calculations or find duplicates in a list. I'm here to assist with information and general queries.'"
+    class: MEASURED
+    source_path: data/processed/normalization-v1/when2call-sft/shard-000000.parquet
+    source_locator: "row index 49, id og_8ccdc31de7cbd68f"
+    availability: LOCAL-ONLY
+    notes: "Membership in Canonical-v2's 6,505 cannot be verified locally (release shards absent)."
+
+  - id: s001-example-sft-refusal-correct
+    text: "Example of a correct refusal labelled ANSWER: 'What are the trending topics in New York City today?' -> 'Apologies, but I'm unable to provide real-time information or perform web searches. You may want to check a reliable news source for that.'"
+    class: MEASURED
+    source_path: data/processed/normalization-v1/when2call-sft/shard-000000.parquet
+    source_locator: "row index 0, id og_0e03b2132ade1fb8"
+    availability: LOCAL-ONLY
+    notes: "Illustrates the repo's point that many refusals are correct (ROADMAP.md:144-148)."
+
+  - id: s001-defect-is-label
+    text: "'The defect is the LABEL, not the refusal.' Deleting refusals would trade over-refusal for hallucination, so the proposed intervention is relabelling, not removal."
+    class: AUTHOR-INTERPRETATION
+    source_path: ROADMAP.md
+    source_locator: "lines 144-148"
+    availability: COMMITTED
+    notes: "Audit caveat: in the SFT path the decision label is sample metadata (src/opengrad/training/sft_data.py:219-248); it does not appear to be rendered into training tokens. See s001-open-label-not-in-loss."
+
+  - id: s001-dpo-pairs-composition
+    text: "M1-v2's DPO data has 481 pairs: 241 base/M0 disagreements (141 CALL, 100 ANSWER) and 240 curated When2Call pairs (40 ANSWER, 100 CLARIFY, 100 UNSUPPORTED)."
+    class: MEASURED
+    values: {pairs: 481, local: 241, curated: 240, by_expected_decision: {ANSWER: 140, CALL: 141, CLARIFY: 100, UNSUPPORTED: 100}}
+    source_path: reports/data/m1-calibration-preference-pairs-v1.json
+    source_locator: "by_expected_decision, by_origin, pairs_out"
+    availability: COMMITTED
+    notes: "reports/M1_DPO_EXECUTION_REPORT.md:17-26."
+
+  - id: s001-dpo-curated-labels-from-parser
+    text: "Curated DPO pairs got their expected and chosen decision from the evaluation's keyword parser applied to the chosen text."
+    class: DESIGN/PROCEDURE
+    source_path: scripts/assemble_m1_preference_dataset.py
+    source_locator: "line 56 (category = parse_qwen_native_output(chosen).decision); lines 80-82"
+    availability: COMMITTED
+    notes: ""
+
+  - id: s001-dpo-answer-pairs-refusal-chosen
+    text: "37 of the 40 curated When2Call DPO pairs with expected_decision ANSWER have a refusal-shaped chosen response."
+    class: MEASURED
+    values: {curated_answer_pairs: 40, chosen_refusal_flagged: 37}
+    source_path: data/processed/m1_calibration_preference_pairs_v1.jsonl
+    source_locator: "rows with pair_origin=curated_when2call_train_preference and expected_decision=ANSWER; chosen scored with opengrad.evaluation.capability.detect_refusal"
+    availability: COMMITTED
+    audit_recomputed: true
+    notes: "Not stated anywhere in the repo. The detector is heuristic. M1-v2 was behaviourally flat vs M0 on the capability suite, so the effect of these pairs is unknown. Line 467 example: chosen = 'I'm sorry, I can't provide an answer to that. Calculating diabetes risk involves complex factors…' vs rejected = a substantive BMI-based answer; both labelled ANSWER."
+
+  # ---------------- metrics (code) ----------------
+  - id: s001-metric-call-f1
+    text: "call_f1 = 2PR/(P+R). P = CM[CALL][CALL] / all predicted CALL; R = CM[CALL][CALL] / all gold CALL."
+    class: DESIGN/PROCEDURE
+    source_path: src/opengrad/evaluation/routing.py
+    source_locator: "routing_metrics(), lines 17-26"
+    availability: COMMITTED
+    notes: ""
+
+  - id: s001-metric-over-call
+    text: "over_call_rate = predicted CALL on gold ANSWER, CLARIFY or UNSUPPORTED items / number of non-CALL gold items."
+    class: DESIGN/PROCEDURE
+    source_path: src/opengrad/evaluation/routing.py
+    source_locator: "lines 39-42"
+    availability: COMMITTED
+    notes: "clarification_accuracy and unsupported_accuracy are per-class recall (lines 31-37)."
+
+  - id: s001-metric-no-call-vacuous
+    text: "no_call_accuracy returns 0.0 when there are no gold ANSWER items, so it read 0.0 for every model, including B0."
+    class: MEASURED
+    source_path: src/opengrad/evaluation/routing.py
+    source_locator: "lines 28-30"
+    availability: COMMITTED
+    notes: "tool_use_policy.py:33-37 documents that its 0.40 floor rejected every candidate, so the floor was skipped from v3 on. The repo calls this 'a vacuity bug, not a statistics bug' (docs/research/study-002/01-LESSONS-FROM-STUDY-001.md:58-60)."
+
+  - id: s001-metric-decision-parser
+    text: "A model's tool-policy decision comes from a keyword heuristic. A <tool_call> block is CALL. Otherwise 'cannot help', 'can't help', 'unable to', 'not supported' or 'unsupported' is UNSUPPORTED; a '?' or 'could you clarify', 'please provide' or 'which one' is CLARIFY; anything else is ANSWER."
+    class: DESIGN/PROCEDURE
+    source_path: src/opengrad/formatting/parser.py
+    source_locator: "parse_qwen_native_output(), lines 81-164 (heuristic at 102-112)"
+    availability: COMMITTED
+    notes: "Implication (audit, not the repo): unsupported_accuracy credits refusal phrasing such as 'unable to'. Study 002 replaces this with a validated prose-decision classifier."
+
+  - id: s001-metric-capability
+    text: "accuracy = correct/n; answer_rate = attempted/n; refusal_rate = refusals/n; accuracy_given_answer = correct/attempted (None if nothing attempted)."
+    class: DESIGN/PROCEDURE
+    source_path: src/opengrad/evaluation/capability.py
+    source_locator: "module docstring lines 1-20; AnswerAccounting.summary lines 156-176"
+    availability: COMMITTED
+    notes: ""
+
+  - id: s001-metric-refusal-detector
+    text: "A refusal is HEURISTIC_REGEX_v1: seven patterns searched in the first 400 characters. It is deliberately precision-biased and never feeds an official benchmark score."
+    class: DESIGN/PROCEDURE
+    source_path: src/opengrad/evaluation/capability.py
+    source_locator: "REFUSAL_PATTERNS lines 33-51; detect_refusal lines 109-118"
+    availability: COMMITTED
+    notes: "An output is counted in the REFUSAL bucket only if it is refusal-flagged and not attempted (record(), lines 136-151). Its precision was never measured against hand labels (LIMITATION, reports/FINAL_CAMPAIGN_AUDIT.md:469-470)."
+
+  - id: s001-metric-truncation-interval
+    text: "Truncation-adversarial interval: true accuracy is in [correct/n, (correct+unresolved)/n], with unresolved = incorrect and finish_reason 'length'. It is a deterministic range, not a confidence interval."
+    class: DESIGN/PROCEDURE
+    source_path: results/final_campaign_verdict.json
+    source_locator: "truncation_adversarial_intervals.method"
+    availability: COMMITTED
+    notes: ""
+
+  # ---------------- tool-policy results ----------------
+  - id: s001-b0-f1-confirmatory
+    text: "B0 call_f1 on the confirmatory partition is 0.6264 (precision 0.4618, recall 0.9735)."
+    class: MEASURED
+    values: {call_f1: 0.6264204545454546, precision: 0.4617801047120419, recall: 0.9735099337748344}
+    source_path: reports/M1_DPO_EVALUATION.md
+    source_locator: "Results table row B0, line 27"
+    availability: COMMITTED
+    audit_recomputed: true
+    notes: "Recomputed exactly from reports/baselines/qwen35_2b_baseline/predictions.jsonl filtered to the confirmatory ids. On the full 3,650 set B0 is 0.6191."
+
+  - id: s001-b0-overcall
+    text: "B0 over-calls on 62.4% of confirmatory non-CALL items (64.3% on the full set: 1,513 of 2,355)."
+    class: MEASURED
+    values: {over_call_confirmatory: 0.6237864077669902, over_call_full: 0.6424628450106157, overcalls_full: 1513, noncall_full: 2355}
+    source_path: reports/baselines/qwen35_2b_baseline/RESULT.md
+    source_locator: "lines 44-52, 79-80; confirmatory value from reports/M1_DPO_EVALUATION.md:27"
+    availability: COMMITTED
+    notes: ""
+
+  - id: s001-b0-unsupported
+    text: "B0 correctly declines an unsupported request 17 times out of 1,295 (unsupported accuracy 0.0131 on the full set)."
+    class: MEASURED
+    values: {correct: 17, total: 1295, unsupported_accuracy: 0.013127413127413128}
+    source_path: reports/baselines/qwen35_2b_baseline/metrics.json
+    source_locator: "routing.confusion_matrix.UNSUPPORTED.UNSUPPORTED; routing.unsupported_accuracy"
+    availability: COMMITTED
+    notes: "Confirmatory: 8 of 453 (0.0177)."
+
+  - id: s001-b0-degenerate
+    text: "B0's call_f1 comes from a degenerate always-call policy; call_f1 is the metric that flatters the baseline."
+    class: AUTHOR-INTERPRETATION
+    source_path: docs/EXPERIMENT_RESULTS.md
+    source_locator: "Caveats, lines 38-44"
+    availability: COMMITTED
+    notes: "Macro recall on confirmatory: B0 0.3699 vs M0 0.6902."
+
+  - id: s001-sft-f1-confirmatory
+    text: "M0 (SFT, checkpoint 1800) reaches call_f1 0.7470 on the confirmatory partition (precision 0.7350, recall 0.7594, over-call 0.1505, clarification 0.7682, unsupported 0.5430)."
+    class: MEASURED
+    values: {call_f1: 0.7470141150922911, precision: 0.7350427350427351, recall: 0.7593818984547461, over_call: 0.15048543689320387, clarification: 0.7681940700808625, unsupported: 0.543046357615894}
+    source_path: runs/m0_sft_canonical_v2_final/eval/confirmatory/curve.json
+    source_locator: "points[0].routing"
+    availability: COMMITTED
+    notes: "Confusion rows (CALL/ANSWER/CLARIFY/UNSUPPORTED): CALL 344/5/95/9; CLARIFY 62/6/285/18; UNSUPPORTED 62/18/127/246."
+
+  - id: s001-dpo-f1-confirmatory
+    text: "M1-v2 (DPO, checkpoint 30) reaches call_f1 0.7548 on the confirmatory partition (precision 0.7358, recall 0.7748, over-call 0.1529, clarification 0.7655, unsupported 0.5386)."
+    class: MEASURED
+    values: {call_f1: 0.7548387096774194, precision: 0.7358490566037735, recall: 0.7748344370860927, over_call: 0.1529126213592233, clarification: 0.7654986522911051, unsupported: 0.5386313465783664}
+    source_path: runs/m1_dpo_canonical_v2_final_v2/eval/confirmatory/curve.json
+    source_locator: "points[0].routing"
+    availability: COMMITTED
+    notes: "Confusion rows: CALL 351/5/90/7; CLARIFY 64/6/284/17; UNSUPPORTED 62/20/127/244."
+
+  - id: s001-dpo-gain-within-noise
+    text: "The DPO step moved call_f1 by +0.0078 (351 vs 344 correct of 453 CALL items), single seed, no interval: within noise. Over-call got slightly worse (0.1505 -> 0.1529)."
+    class: MEASURED
+    values: {delta_call_f1: 0.0078, correct_calls_m1v2: 351, correct_calls_m0: 344, gold_calls: 453, delta_over_call: 0.0024}
+    source_path: reports/M1_DPO_EVALUATION.md
+    source_locator: "lines 35-46"
+    availability: COMMITTED
+    notes: "'Within noise' and 'calibration retention, not a frontier movement' are the repo's interpretation (AUTHOR-INTERPRETATION)."
+
+  - id: s001-overcall-drop
+    text: "Over-calling fell from 62.4% (B0) to 15.0% (M0) and 15.3% (M1-v2) on the confirmatory partition."
+    class: MEASURED
+    values: {B0: 0.6238, M0: 0.1505, M1v2: 0.1529}
+    source_path: reports/M1_DPO_EVALUATION.md
+    source_locator: "Results table, lines 25-29"
+    availability: COMMITTED
+    notes: "The site rounds these to 62.4% / 15.0% / 15.3%."
+
+  - id: s001-selection-rejected-best-f1
+    text: "The pre-registered selection rule rejected the two highest-call_f1 SFT checkpoints (600: 0.7191; 1200: 0.7382 on DEV) for over-calling above 0.20, and selected 1800."
+    class: MEASURED
+    values: {ckpt600_f1: 0.7191, ckpt600_overcall: 0.343566, ckpt1200_f1: 0.7382, ckpt1200_overcall: 0.221424, selected: 1800, macro_1800: 0.675739, macro_2400: 0.674375}
+    source_path: runs/m0_sft_canonical_v2_final/eval/dev/selection--dev.json
+    source_locator: "ineligible, macro, selected_checkpoint"
+    availability: COMMITTED
+    notes: "ERRATA corrects 'the tie-break decided this': 1800 wins with or without the tie-break (reports/ERRATA.md:57-62)."
+
+  - id: s001-m0-not-promoted
+    text: "M0 was NOT PROMOTED under tool_use_promotion_v3: it failed regression.call_recall (DEV 0.7197 vs B0 0.9715, a -0.252 drop against a 0.10 allowance)."
+    class: MEASURED
+    values: {m0_dev_recall: 0.7197, b0_dev_recall: 0.9715, delta: -0.252, allowance: 0.10}
+    source_path: reports/M0_CANONICAL_V2_FINAL_EVALUATION.md
+    source_locator: "section 5, lines 99-107"
+    availability: COMMITTED
+    notes: "The repo says a calibrated model cannot satisfy both the 0.20 over-call cap and the recall-regression limit vs an always-call baseline (AUTHOR-INTERPRETATION)."
+
+  - id: s001-m1v2-promoted-gate-change
+    text: "M1-v2 was promoted under tool_use_promotion_v4, a parent-relative gate committed after M0's results. M0 also clears v4, and all four M1-v2 checkpoints fail v3. The promotion reflects the gate change, not a measured improvement."
+    class: MEASURED
+    values: {v4_commit: "92ca2b9 2026-09-11 17:10 UTC", m0_results_commit: "26234c2 2026-09-11 08:58 UTC"}
+    source_path: reports/ERRATA.md
+    source_locator: "section 8 C2, lines 515-541"
+    availability: COMMITTED
+    notes: "v3 verdicts for M1-v2: runs/m1_dpo_canonical_v2_final_v2/eval/dev/selection--dev.json -> policy_verdicts (all REJECT). 'Reflects the gate change' is AUTHOR-INTERPRETATION."
+
+  - id: s001-rerun-noise
+    text: "An H200 vLLM rerun of M1-v2 on the same 1,277 items scored call_f1 0.7505 (-0.0043) and recall 0.7638 (-0.0110) vs the frozen A100 result."
+    class: MEASURED
+    values: {call_f1: 0.7505422993492409, recall: 0.7637969094922737, delta_call_f1: -0.004296, delta_recall: -0.011038}
+    source_path: results/benchmarks/h200/score_vllm-bf16_confirmatory.json
+    source_locator: "metrics; delta_vs_frozen_reference"
+    availability: COMMITTED
+    notes: "Hardware also changed (A100 -> H200). The rerun fails the quantization gate's recall floor 0.7671 (docs/research/GUARDRAILS.md G3). reports/GENERAL_CAPABILITY_REGRESSION.md:54 shows this as '0.751' without saying it is the rerun."
+
+  - id: s001-earlier-negative-runs
+    text: "Earlier interventions were negative. SFT on corpus v1 collapsed call_f1 to 0.0000. DPO applied directly to the base (M1-v1) reached a best call_f1 of 0.1715 and its rerun did not reproduce."
+    class: MEASURED
+    values: {m0v1_final_f1: 0.0, m1v1_best_f1_step100: 0.1715, m1v1_step300_f1: 0.0258, restore_step100_f1: 0.1036}
+    source_path: runs/qwen35_2b_m0_sft_full_v3/eval/curve.json
+    source_locator: "points[*].routing.call_f1; also runs/qwen35_2b_m1_dpo_v1/eval/curve.json and runs/qwen35_2b_m1_dpo_v1_restore/eval/curve.json"
+    availability: COMMITTED
+    notes: "Full 3,650 set, not confirmatory. M1-v1 steps 100 and 200 were deleted before upload (INC-0001)."
+
+  # ---------------- the signal and the diagnosis ----------------
+  - id: s001-sentinel-same-score-opposite-failure
+    text: "On the 7-case OpenWeights sentinel, Base and M1-v2 both score 5/7. Base answers two arithmetic items wrongly; M1-v2 refuses multi-step-change and format-constraint."
+    class: MEASURED
+    values: {base_pass: 5, m1v2_pass: 5, base_wrong_content: 2, m1v2_refusals: 2, m1v1_pass: 3}
+    source_path: results/final_campaign_verdict.json
+    source_locator: "canonical_benchmarks.sentinel.per_stage"
+    availability: COMMITTED
+    notes: "The repo rates the sentinel SUGGESTIVE only; one case is 14pp (reports/GENERAL_CAPABILITY_REGRESSION.md:28-29)."
+
+  - id: s001-sentinel-quote
+    text: "Sentinel 'Ana buys 7 pencils at 12 pesos each and pays with a 100-peso bill. How many pesos of change does she receive?' M1-v2: 'Apologies, but I'm unable to perform calculations or provide specific answers.' Base: '12' (gold 16)."
+    class: MEASURED
+    source_path: results/benchmarks/h200/capability_v1/M1_DPO_CURRENT/sentinel_scores.json
+    source_locator: "cases[id=multi-step-change].raw; BASE/sentinel_scores.json same case; prompt in results/benchmarks/openweights_parity_cases_v1.json cases[id=multi-step-change]"
+    availability: COMMITTED
+    notes: "The M1-v2 JSON-array case reads: 'Apologies, but I'm unable to perform that task as I can't generate JSON arrays or access external data.'"
+
+  - id: s001-gsm8k-zeroshot-refusal
+    text: "M0 and M1-v2 refuse all 1,319 zero-shot GSM8K questions (100%); Base refuses 0."
+    class: MEASURED
+    values: {m0_refusals: 1319, m1v2_refusals: 1319, base_refusals: 0, n: 1319}
+    source_path: results/final_campaign_verdict.json
+    source_locator: "canonical_benchmarks.gsm8k.per_stage.{M0_SFT,M1_DPO_CURRENT,BASE}.zeroshot.refusals"
+    availability: COMMITTED
+    notes: "0 truncated zero-shot generations for M0 and M1-v2, so there is no budget confound (findings.zero_shot_refusal_regression.truncation_confound)."
+
+  - id: s001-gsm8k-base-zeroshot
+    text: "Base answers 67.4% of zero-shot GSM8K correctly (889 of 1,319)."
+    class: MEASURED
+    values: {correct: 889, n: 1319, accuracy: 0.6739954510993177}
+    source_path: results/final_campaign_verdict.json
+    source_locator: "canonical_benchmarks.gsm8k.per_stage.BASE.zeroshot"
+    availability: COMMITTED
+    notes: ""
+
+  - id: s001-gsm8k-fewshot-recovery
+    text: "With 8 worked exemplars on the same 1,319 questions, refusal falls to 0%. M0 is 56.3% accurate (743), M1-v2 55.5% (732), Base 70.4% (929)."
+    class: MEASURED
+    values: {base: 0.7043214556482184, m0: 0.5633055344958302, m1v2: 0.5549658832448825, refusal_rate_all: 0.0}
+    source_path: results/final_campaign_verdict.json
+    source_locator: "canonical_benchmarks.gsm8k.per_stage.*.fewshot8"
+    availability: COMMITTED
+    notes: "The 8-shot arm was registered before any generation as the falsification test for 'can but declines' (reports/GENERAL_CAPABILITY_REGRESSION.md:97-102)."
+
+  - id: s001-refusal-quote-gsm8k
+    text: "M1-v2's zero-shot GSM8K answer to Janet's ducks (gold 18): 'Apologies, but I'm unable to perform calculations or solve math problems. I recommend using a calculator or a math-solving app for this task.' With 8 exemplars it answers '$18'."
+    class: MEASURED
+    source_path: results/benchmarks/h200/capability_v1/M1_DPO_CURRENT/gsm8k_scores_per_example.jsonl
+    source_locator: "line 2 (gsm8k-0000-zeroshot); line 1 (gsm8k-0000-fewshot8)"
+    availability: LOCAL-ONLY
+    notes: "The same sentence is committed as the #2 template (count 404) in results/benchmarks/h200/capability_v1/refusal_characterization.json -> stages.M1_DPO_CURRENT.refusal_surface_forms.top_templates[1]."
+
+  - id: s001-refusal-stereotyped
+    text: "M1-v2 emitted 1,426 refusals across 185 distinct 12-token openings; the top 10 cover 82.3%. Base emitted 2."
+    class: MEASURED
+    values: {total_refusals: 1426, distinct_openings: 185, top10_share: 0.82328190743338, top1_count: 555, base_refusals: 2}
+    source_path: results/benchmarks/h200/capability_v1/refusal_characterization.json
+    source_locator: "stages.M1_DPO_CURRENT.refusal_surface_forms; stages.BASE.refusal_surface_forms"
+    availability: COMMITTED
+    notes: "The repo: stereotypy is consistent with a learned behaviour but is not evidence about mechanism (reports/FINAL_CAMPAIGN_AUDIT.md:190-193)."
+
+  - id: s001-mmlu-no-refusal
+    text: "The same promoted checkpoint refuses 0 of 12,032 MMLU-Pro (5-shot) items."
+    class: MEASURED
+    values: {refusal_rate: 0.0, n: 12032}
+    source_path: results/final_campaign_verdict.json
+    source_locator: "canonical_benchmarks.mmlu_pro.per_stage.M1_DPO_CURRENT.refusal_rate"
+    availability: COMMITTED
+    notes: "MMLU-Pro has 1,351 math items (audit-recomputed from LOCAL-ONLY results/benchmarks/datasets/mmlu_pro_v1.jsonl; the site states the same)."
+
+  - id: s001-refusal-regime-conditioned
+    text: "The refusal is prompt-regime conditioned: strongly activated by the bare zero-shot request and suppressed by in-context demonstrations."
+    class: AUTHOR-INTERPRETATION
+    source_path: reports/FINAL_CAMPAIGN_AUDIT.md
+    source_locator: "section 5, lines 182-188; evidence level SUPPORTED_BUT_QUALIFIED in results/final_campaign_verdict.json findings.refusal_is_prompt_regime_conditioned"
+    availability: COMMITTED
+    notes: "The repo does not use the phrase 'refusal attractor'. If the video uses it, label it as the video's metaphor."
+
+  - id: s001-ifeval-regression
+    text: "IFEval prompt-level strict fell from 67.8% (Base) to 45.1% (M0) and 45.8% (M1-v2); IFEval refusal rose from 0.4% to 19.0% and 19.8%."
+    class: MEASURED
+    values: {base_strict: 0.678373382624769, m0_strict: 0.4510166358595194, m1v2_strict: 0.4584103512014787, base_refusal: 0.0036968576709796672, m0_refusal: 0.19038817005545286, m1v2_refusal: 0.1977818853974122}
+    source_path: results/final_campaign_verdict.json
+    source_locator: "canonical_benchmarks.ifeval.per_stage.*"
+    availability: COMMITTED
+    notes: "Caveat: 47 / 67 / 63 / 17 of 541 responses still hit the 2,560-token cap; no interval computed (reports/FINAL_CAMPAIGN_AUDIT.md:161-164)."
+
+  - id: s001-mmlu-regression
+    text: "MMLU-Pro accuracy fell from 49.0% (Base) to 37.0% (M0 and M1-v2): a 12.0pp observed gap."
+    class: MEASURED
+    values: {base: 0.4903590425531915, m0: 0.3700964095744681, m1v2: 0.37042885638297873, observed_gap_pp: 12.026263297872342}
+    source_path: results/final_campaign_verdict.json
+    source_locator: "canonical_benchmarks.mmlu_pro.per_stage.*.accuracy; truncation_adversarial_intervals.mmlu_pro__BASE_minus_M0_SFT.gap"
+    availability: COMMITTED
+    notes: "Truncation-adversarial range: +6.4 (worst) / +12.0 / +33.1 (best) pp. Base still truncates 21.8% vs M0 6.3%."
+
+  - id: s001-capability-loss-separable
+    text: "Capability loss occurs where refusal is ~0%: GSM8K 8-shot -14.1pp (interval +13.9…+16.3), MMLU-Pro -12.0pp, MMLU-Pro accuracy-given-answer -21.3pp (-17.7pp on the 9,637 items both stages attempted)."
+    class: MEASURED
+    values: {gsm8k_8shot_gap_pp: 14.101592115238814, gsm8k_8shot_worst_pp: 13.949962092494317, mmlu_gap_pp: 12.026263297872342, mmlu_acc_given_answer_drop_pp: 21.3, mmlu_both_attempted_drop_pp: 17.7}
+    source_path: reports/FINAL_CAMPAIGN_AUDIT.md
+    source_locator: "section 6, lines 206-236"
+    availability: COMMITTED
+    notes: ""
+
+  - id: s001-two-separable-failures
+    text: "Tool-policy post-training on When2Call-derived data is associated with two separable regressions: a prompt-regime-conditioned refusal policy and genuine capability degradation."
+    class: AUTHOR-INTERPRETATION
+    source_path: reports/FINAL_CAMPAIGN_AUDIT.md
+    source_locator: "section 1, lines 15-24"
+    availability: COMMITTED
+    notes: "Campaign status label: GENERAL_DEGRADATION (results/final_campaign_verdict.json -> status)."
+
+  - id: s001-dpo-stage-flat
+    text: "The M0 -> M1-v2 DPO stage produced no material behavioural change on the capability suite; 81.96% of GSM8K generations are byte-identical between the two."
+    class: MEASURED
+    values: {ifeval_delta_pp: 0.74, gsm8k_8shot_delta_pp: -0.83, mmlu_delta_pp: 0.03, byte_identical_share: 0.8196, byte_identical_count: 2162, generations: 2638}
+    source_path: results/final_campaign_verdict.json
+    source_locator: "findings.preference_stage_material_change; byte-identical share from reports/FINAL_CAMPAIGN_AUDIT.md:268-269"
+    availability: COMMITTED
+    audit_recomputed: true
+    notes: "2,162/2,638 recomputed from LOCAL-ONLY generations_gsm8k.jsonl (zero-shot 1,185/1,319). The scope limit is the repo's: not a weight-space claim, and not a claim that DPO could never repair it."
+
+  - id: s001-m1v1-refuses-without-sft
+    text: "M1-v1 (DPO applied directly to the base, no SFT parent, preference data when2call_pref_v1) refuses 70.7% (933/1,319) of zero-shot GSM8K, so the regression is not specific to SFT."
+    class: MEASURED
+    values: {refusals: 933, n: 1319, refusal_rate: 0.7073540561031084, fewshot8_refusal_rate: 0.019711902956785442, ifeval_strict: 0.4343807763401109}
+    source_path: results/final_campaign_verdict.json
+    source_locator: "canonical_benchmarks.gsm8k.per_stage.M1_DPO_HISTORICAL; findings.zero_shot_refusal_regression.not_specific_to_sft"
+    availability: COMMITTED
+    notes: "Lineage from runs/qwen35_2b_m1_dpo_v1/experiment.json (parent_experiment_id null). refusal_characterization.json counts 937 flags; 4 of those were attempted answers (audit-recomputed reconciliation). The diagnosis commit 078c6fe had called the regression 'SFT-induced'; ERRATA C1 corrects this."
+
+  - id: s001-first-observable-base-m0
+    text: "On the primary lineage, every regression signal is first observable on the Base -> M0 (SFT) edge. This is an ordering statement, not a causal one."
+    class: AUTHOR-INTERPRETATION
+    source_path: reports/GENERAL_CAPABILITY_REGRESSION.md
+    source_locator: "lines 66-80"
+    availability: COMMITTED
+    notes: ""
+
+  - id: s001-mmlu-768-artifact
+    text: "The first MMLU-Pro pass at 768 tokens showed no degradation (Base 38.0 / M0 36.8 / M1-v2 36.9) because Base was truncated 37.6% of the time vs M0 7.2%; 99.6% of Base's unattempted items (4,292 of 4,309) were truncations. Re-run at 2,048 tokens the gap is 12.0pp."
+    class: MEASURED
+    values: {base_768: 0.3799035904255319, m0_768: 0.36751994680851063, m1v2_768: 0.36918218085106386, base_trunc_768: 0.376, m0_trunc_768: 0.072, unattempted_truncations: 4292, unattempted: 4309}
+    source_path: reports/FINAL_CAMPAIGN_AUDIT.md
+    source_locator: "section 4, lines 135-156; invalid numbers in results/final_campaign_verdict.json superseded_runs[0]"
+    availability: COMMITTED
+    notes: "The repo calls this 'the most important methodological finding of the campaign' (AUTHOR-INTERPRETATION)."
+
+  - id: s001-gate-blind-spot
+    text: "The regression was invisible to the promotion gate because the frozen confirmatory partition contains no ANSWER examples."
+    class: AUTHOR-INTERPRETATION
+    source_path: reports/FINAL_CAMPAIGN_AUDIT.md
+    source_locator: "lines 26-30"
+    availability: COMMITTED
+    notes: "Grounded in s001-confirmatory-composition (MEASURED)."
+
+  - id: s001-association-not-cause
+    text: "That refusal-as-ANSWER supervision caused the behaviour is an association only; the ablation that would establish causation has not been run."
+    class: HYPOTHESIS
+    source_path: reports/FINAL_CAMPAIGN_AUDIT.md
+    source_locator: "section 10, SUGGESTIVE list, lines 316-320; section 5 lines 195-202"
+    availability: COMMITTED
+    notes: "ROADMAP.md:140-142: 'It is a hypothesis. Nothing below may be executed as though it were established.'"
+
+  - id: s001-template-overlap
+    text: "Only 2.9% of the model's refusals share an opening with corpus refusal templates (42 refusals via 2 shared templates). The model reproduces the register, not the phrasings."
+    class: MEASURED
+    values: {share_of_model_refusals: 0.029453015427769985, covered_refusals: 42, shared_templates: 2}
+    source_path: results/benchmarks/h200/capability_v1/sft_refusal_supervision_audit_canonical_v2.json
+    source_locator: "overlap_with_model_output"
+    availability: COMMITTED
+    notes: "'Behaviour and register, not the phrasings' is the site's wording (AUTHOR-INTERPRETATION)."
+
+  - id: s001-mechanism-unknown
+    text: "The internal mechanism of the refusal behaviour, whether one source induced it, whether targeted DPO could repair it, and cross-family generalization are all unknown."
+    class: LIMITATION
+    source_path: reports/FINAL_CAMPAIGN_AUDIT.md
+    source_locator: "section 10, SUGGESTIVE and UNKNOWN lists, lines 316-327"
+    availability: COMMITTED
+    notes: ""
+
+  - id: s001-single-lineage
+    text: "One base model, one lineage, one seed, no replicate. Causation is not established."
+    class: LIMITATION
+    source_path: results/final_campaign_verdict.json
+    source_locator: "limitations[1], limitations[2]"
+    availability: COMMITTED
+    notes: "The only repeat ever run (M1-v1 restore) did not reproduce (README.md:290-293)."
+
+  - id: s001-unmeasured-dimensions
+    text: "Tool selection accuracy, argument validity and schema validity are not computed by the evaluator."
+    class: LIMITATION
+    source_path: reports/M1_DPO_EVALUATION.md
+    source_locator: "lines 64-66"
+    availability: COMMITTED
+    notes: ""
+
+  # ---------------- compute and cost ----------------
+  - id: s001-sft-hparams
+    text: "M0 is full-parameter SFT (no LoRA): lr 1e-5 cosine, 120 warmup, 2,400 steps, effective batch 16 (micro 8 x accum 2), max sequence 2,048, bf16, AdamW, seed 42."
+    class: DESIGN/PROCEDURE
+    values: {tuning_method: full, lora: null, learning_rate: 1.0e-05, max_steps: 2400, warmup_steps: 120, effective_global_batch_size: 16, max_seq_length: 2048, seed: 42}
+    source_path: runs/m0_sft_canonical_v2_final/resolved_config.yaml
+    source_locator: "resolved_settings, lines 3-24"
+    availability: COMMITTED
+    notes: ""
+
+  - id: s001-sft-run-telemetry
+    text: "M0 trained on 1x NVIDIA A100-SXM4-80GB in 42.4 minutes. Loss went 1.5725 -> 0.3172 over 5,678,531 supervised tokens; peak VRAM 28.0 GiB."
+    class: MEASURED
+    values: {gpu: "NVIDIA A100-SXM4-80GB", wall_clock_min: 42.4, loss_start: 1.572512, loss_end: 0.317157, supervised_tokens: 5678531, peak_vram_gib: 28.0464, examples_seen_logged: 27372}
+    source_path: runs/m0_sft_canonical_v2_final/metrics/train_log.jsonl
+    source_locator: "rows step=1 and step=2400; GPU from reports/M0_CANONICAL_V2_FINAL_EXECUTION_REPORT.md:81"
+    availability: COMMITTED
+    notes: "The execution report's 'Examples seen 38,400' (line 97) is a nominal estimate; the log says 27,372 (flagged in GUARDRAILS G5)."
+
+  - id: s001-dpo-hparams
+    text: "M1-v2 DPO: beta 0.05, lr 5e-7 cosine, batch 2 x accum 2, 120 steps, 12 warmup, reference = a copy of M0 checkpoint 1800, 481 pairs, seed 42."
+    class: DESIGN/PROCEDURE
+    values: {beta: 0.05, learning_rate: 5.0e-07, per_device_batch: 2, grad_accum: 2, max_steps: 120, warmup_steps: 12, pairs: 481}
+    source_path: runs/m1_dpo_canonical_v2_final_v2/resolved_config.yaml
+    source_locator: "trainer, lines 35-49"
+    availability: COMMITTED
+    notes: "Telemetry: loss 0.6931 -> 0.6757, final reward margin 0.0351, peak VRAM 35.1 GiB, 289.6 s of steps (runs/m1_dpo_canonical_v2_final_v2/metrics/dpo_log.jsonl). The GPU model is not recorded in the run record."
+
+  - id: s001-lineage-cost-anchor
+    text: "The whole M0 -> M1 training lineage is anchored at about 36 GPU-hours on an A100 80GB (Verda, $1.79/h), about $64.44. The runtime is the author's recollection, not a ledger figure."
+    class: LIMITATION
+    values: {gpu_hours_approx: 36, usd_per_hour: 1.79, usd_approx: 64.44}
+    source_path: docs/research/study-002/16-GPU-READINESS-GATE.md
+    source_locator: "lines 88-95"
+    availability: COMMITTED
+    notes: "Does not reconcile with the logged training times (42.4 min SFT plus 289.6 s DPO steps); probably includes other work. Do not quote it as training time."
+
+  - id: s001-diagnosis-cost
+    text: "The capability diagnosis cost $11.39 of H200 time: $8.90 over 13 GPU runs plus a $2.49 prior run. $3.89 of it was superseded work, counted in full."
+    class: MEASURED
+    values: {campaign_usd: 11.388, continuation_usd: 8.898, prior_usd: 2.49, superseded_usd: 3.8864, gpu_runs: 13, failed_launches: 3, usd_per_hour: 4.54}
+    source_path: results/final_campaign_verdict.json
+    source_locator: "cost"
+    availability: COMMITTED
+    notes: "The $22.70 planning envelope was never a balance (envelope_is_not_a_balance: true)."
+
+  # ---------------- audit / integrity ----------------
+  - id: s001-claim-audit-count
+    text: "The Study 001 claim audit found 93 claims the committed artifacts did not support (13 HIGH, 42 MED, 38 LOW), and a site recheck found 7 more: 100 in total. Zero were invented measurements."
+    class: MEASURED
+    values: {findings: 93, high: 13, med: 42, low: 38, recheck: 7, wrong_number: 19}
+    source_path: reports/audits/study-001-claim-audit/findings.json
+    source_locator: "list length; severity counts; category counts"
+    availability: COMMITTED
+    notes: "'Zero findings are invented measurements' is from docs/research/study-002/01-LESSONS-FROM-STUDY-001.md:28-33 (AUTHOR-INTERPRETATION)."
+
+  - id: s001-methodology-is-the-artifact
+    text: "'The successful artifact of this campaign is the evaluation methodology and the resulting diagnosis — not the checkpoint.'"
+    class: AUTHOR-INTERPRETATION
+    source_path: reports/FINAL_CAMPAIGN_AUDIT.md
+    source_locator: "lines 29-30"
+    availability: COMMITTED
+    notes: ""
+
+  - id: s001-promoted-not-strictly-better
+    text: "The promoted checkpoint is better than Base on tool policy, within noise of M0, and materially worse than Base on every general-capability measure in the suite."
+    class: AUTHOR-INTERPRETATION
+    source_path: reports/FINAL_CAMPAIGN_AUDIT.md
+    source_locator: "section 15, line 424"
+    availability: COMMITTED
+    notes: ""
+
+  # ---------------- why not continue; Study 002 ----------------
+  - id: s001-m2-not-justified
+    text: "On-policy distillation (M2) was not run. M1-v2 exposed no calibration failure that teacher guidance would address, and the M2 trainer is mock-only (its live path raises NotImplementedError)."
+    class: AUTHOR-INTERPRETATION
+    source_path: reports/M2_DECISION.md
+    source_locator: "lines 3, 14-28"
+    availability: COMMITTED
+    notes: "The mock-only status is MEASURED (code); 'not justified' is interpretation."
+
+  - id: s001-preflight-before-retrain
+    text: "Before any retraining, six pre-flight checks were required: measure the refusal detector's precision (n>=200), build an answerability triage, decide the correct label, pre-register a tool-policy guard, freeze a held-out set with ANSWER items, and confirm real credit."
+    class: DESIGN/PROCEDURE
+    source_path: ROADMAP.md
+    source_locator: "step 16, lines 150-173"
+    availability: COMMITTED
+    notes: "Superseded by Study 002's 14-check gate (docs/research/study-002/16-GPU-READINESS-GATE.md)."
+
+  - id: s002-scope
+    text: "Study 002 must explain the Study 001 refusal/direct-answer regression before it tries to correct it. Distillation moves to Study 003 and speculative decoding to Study 004."
+    class: DESIGN/PROCEDURE
+    source_path: docs/research/study-002/README.md
+    source_locator: "lines 5-10, 214-237"
+    availability: COMMITTED
+    notes: ""
+
+  - id: s002-h1
+    text: "H1: training on records whose label says ANSWER and whose target is a refusal teaches that 'answering looks like declining'; under matched compute, correcting only those records prevents the collapse."
+    class: HYPOTHESIS
+    source_path: docs/research/study-002/02-RESEARCH-QUESTIONS.md
+    source_locator: "lines 38-49"
+    availability: COMMITTED
+    notes: "Competing explanations are tested by arms C1 (no synthetic data), C2 (no When2Call) and X1 (exposure)."
+
+  - id: s002-arms
+    text: "Study 002 plans 11 arms in 3 tiers (C0, R1, R2, R3, C1, C2, X1, D25, D50, S1, S2), each varying one factor, with 3 seeds: 33 runs plus 2 repeats."
+    class: DESIGN/PROCEDURE
+    values: {arms: 11, seeds: 3, runs: 33, repeats: 2, envelope_usd_low: 751.80, envelope_usd_high: 1503.60, upper_bound_usd: 2255.40}
+    source_path: docs/research/study-002/04-ARM-MATRIX.md
+    source_locator: "lines 26-70"
+    availability: COMMITTED
+    notes: "The cost envelope comes from the approximate 36 h anchor."
+
+  - id: s002-new-thresholds
+    text: "tool_use_promotion_v5 adds: ANSWER-mode coverage required; answer_rate >= 0.60 and refusal_rate <= 0.25 on ANSWER-gold items; refusal_correctness >= 0.70 on genuinely unanswerable items; answer-rate drop vs base <= 0.30; the no_call_accuracy >= 0.40 floor becomes enforceable."
+    class: DESIGN/PROCEDURE
+    values: {min_answer_rate: 0.60, max_refusal_rate: 0.25, min_refusal_correctness: 0.70, max_answer_rate_drop_vs_base: 0.30, min_no_call_accuracy: 0.40}
+    source_path: docs/research/study-002/11-THRESHOLDS.md
+    source_locator: "lines 25-29"
+    availability: COMMITTED
+    notes: "Anti-pattern guard: TOOL_POLICY_REGRESSION fires when call_f1 retention passes and answering collapses (lines 49-59). Implemented in src/opengrad/promotion/tool_use_policy.py (PromotionPolicyV5) and src/opengrad/verification/study_002_gate.py."
+
+  - id: s002-pconf
+    text: "P-CONF-v1, the four-mode confirmatory set, was built on 2026-09-25: CALL 453, CLARIFY 371, UNSUPPORTED 453, ANSWER 1,055 (natural 284 + constructed 771)."
+    class: MEASURED
+    values: {CALL: 453, CLARIFY: 371, UNSUPPORTED: 453, ANSWER: 1055, ANSWER_natural: 284, ANSWER_constructed: 771}
+    source_path: reports/study-002/pconf-v1/pconf-v1.partition.json
+    source_locator: "gold_counts; answer_strata"
+    availability: COMMITTED
+    notes: "The ANSWER gold is a provisional two-model reference, not human gold. ANSWER prompts are shorter (median 43/45 chars vs 70-89). Not yet scored on any model."
+
+  - id: s002-punans-stop
+    text: "Study 002's first unanswerable-question set stopped at its pre-registered agreement floor. The two model labellers agreed on 818 of 1,063 items (0.770) against a 0.80 floor (Cohen's kappa 0.703), so no model was trained."
+    class: MEASURED
+    values: {items: 1063, same_label: 818, raw_agreement: 0.76952, floor: 0.8, cohen_kappa: 0.702827, kuq_unknowable: "276/350", selfaware: "263/350", kuq_false_premise: "279/363", unknowable_stratum_n: 274, required_n: 385}
+    source_path: reports/study-002/punans-v1/punans-v1.strata.json
+    source_locator: "agreement; check_4; NEGATIVE-RESULT.md lines 28-47"
+    availability: COMMITTED
+    notes: "The floor was not moved. SelfAware: only 43 of 350 were jointly labelled unknowable."
+
+  - id: s002-reopened
+    text: "Study 002 was reopened the same day (study_002_prereg_v12) with membership-only labels (3 instead of 6), a 100-item trial set and an 800-item main set, drawn and not yet labelled. The floor stays at 0.80."
+    class: DESIGN/PROCEDURE
+    values: {trial: 100, main: 800, main_kuq: 770, main_kuqp: 22, main_bigbench: 8, floor: 0.80}
+    source_path: reports/study-002/punans-v2/punans-v2.manifest.json
+    source_locator: "counts.trial.total; counts.main"
+    availability: COMMITTED
+    notes: "docs/research/study-002/44-PUNANS-V2-AMENDMENT-DRAFT.md. 44 §10 notes that 0.80 over 3 labels is easier than over 6."
+
+  - id: s002-no-model-result
+    text: "As of 2026-09-25 (HEAD), Study 002 has spent no GPU time and has no model result."
+    class: MEASURED
+    source_path: README.md
+    source_locator: "Current Research Status table, line 39"
+    availability: COMMITTED
+    notes: ""
+
+  # ---------------- open questions / inconsistencies (audit) ----------------
+  - id: s001-open-label-not-in-loss
+    text: "In the SFT code path the decision label is carried as sample metadata and does not appear to be rendered into training tokens, so M0 learned from refusal text, not from the label itself. How a 'relabel-only' arm (R2) would differ from C0 in training is not stated."
+    class: SPECULATION
+    source_path: src/opengrad/training/sft_data.py
+    source_locator: "build_sample(), lines 219-248; docs/research/study-002/04-ARM-MATRIX.md:30"
+    availability: COMMITTED
+    notes: "Audit inference from code reading. Confirm with the author before scripting 'the model was trained on the wrong label'."
+
+  - id: s001-inconsistency-0751
+    text: "reports/GENERAL_CAPABILITY_REGRESSION.md lists M1-v2 tool call_f1 as 0.751. That is the H200 rerun (0.7505), not the frozen confirmatory 0.7548, and the table does not say so."
+    class: MEASURED
+    source_path: reports/GENERAL_CAPABILITY_REGRESSION.md
+    source_locator: "line 54 vs results/benchmarks/h200/score_vllm-bf16_confirmatory.json metrics.call_f1"
+    availability: COMMITTED
+    notes: "Use 0.7548 for the headline."
+
+  - id: s001-inconsistency-site-diabetes-provenance
+    text: "The site shows 'I'm sorry, I can't provide an answer to that. Calculating diabetes risk…' as a corpus target labelled ANSWER. In the repo that exact sentence appears in the DPO preference pairs (line 467) and in normalization-v1 When2Call SFT (shard-000000 row 9, different prompt). Its presence in Canonical-v2 final cannot be verified locally."
+    class: MEASURED
+    source_path: data/processed/m1_calibration_preference_pairs_v1.jsonl
+    source_locator: "line 467; data/processed/normalization-v1/when2call-sft/shard-000000.parquet row 9 (LOCAL-ONLY); site https://opengrad.arjhinety.com/studies/001 section 10"
+    availability: COMMITTED
+    notes: "Low severity; the example is real, but its provenance label is imprecise."

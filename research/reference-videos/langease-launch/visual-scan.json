@@ -1,0 +1,175 @@
+{
+ "video": "C:\\Users\\arro\\Downloads\\Best SaaS Product Launch Ad Video  LangEase.mp4",
+ "scan_fps": 10.0,
+ "duration_s": 33.0,
+ "hard_cuts": [
+  9.7,
+  9.8,
+  10.4,
+  10.5,
+  10.6,
+  17.6,
+  18.3,
+  18.4,
+  18.5,
+  20.1
+ ],
+ "n_hard_cuts": 10,
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 6.9,
+   "kind": "cut",
+   "dur": 6.9
+  },
+  {
+   "start": 6.9,
+   "end": 7.9,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 7.9,
+   "end": 8.9,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 8.9,
+   "end": 9.9,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 9.9,
+   "end": 10.9,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 10.9,
+   "end": 11.9,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 11.9,
+   "end": 13.5,
+   "kind": "drift",
+   "dur": 1.6
+  },
+  {
+   "start": 13.5,
+   "end": 14.7,
+   "kind": "drift",
+   "dur": 1.2
+  },
+  {
+   "start": 14.7,
+   "end": 15.7,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 15.7,
+   "end": 16.7,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 16.7,
+   "end": 17.7,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 17.7,
+   "end": 18.7,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 18.7,
+   "end": 19.7,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 19.7,
+   "end": 20.7,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 20.7,
+   "end": 22.8,
+   "kind": "drift",
+   "dur": 2.1
+  },
+  {
+   "start": 22.8,
+   "end": 23.8,
+   "kind": "drift",
+   "dur": 1.0
+  },
+  {
+   "start": 23.8,
+   "end": 33.0,
+   "kind": "drift",
+   "dur": 9.2
+  }
+ ],
+ "n_segments": 17,
+ "segment_stats": {
+  "mean_s": 1.94,
+  "median_s": 1.0,
+  "p10_s": 1.0,
+  "p90_s": 4.02,
+  "changes_per_min": 30.91
+ },
+ "activity_per_s": [
+  0.75,
+  0.96,
+  0.69,
+  1.65,
+  3.36,
+  2.05,
+  10.61,
+  19.82,
+  16.36,
+  18.64,
+  23.34,
+  3.47,
+  2.29,
+  4.36,
+  10.27,
+  14.94,
+  10.14,
+  14.69,
+  24.61,
+  11.67,
+  9.0,
+  2.97,
+  7.3,
+  3.35,
+  7.23,
+  1.08,
+  0.9,
+  0.96,
+  1.71,
+  0.76,
+  0.1,
+  0.1,
+  0.09
+ ],
+ "still_fraction": 0.091,
+ "keyframes": [
+  "kf_00m03.45s.jpg",
+  "kf_00m12.70s.jpg",
+  "kf_00m21.75s.jpg",
+  "kf_00m28.40s.jpg"
+ ],
+ "contact_sheets": [
+  "sheet_00.jpg"
+ ]
+}

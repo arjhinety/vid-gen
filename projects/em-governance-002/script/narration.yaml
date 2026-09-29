@@ -1,0 +1,587 @@
+# Experimental Machines — the founders' decisions, and "the OpenAI move" (film 2 of the governance series).
+#
+# Sources: sources/governance-draft-v0.1.pdf (the founders' draft v0.1) for every decision; sources/research-openai.md
+# and sources/research-ph-law.md (web research with primary URLs) for the OpenAI story and the Philippine legal
+# caveats. Every line that states a fact carries a claim id in ../sources/claims.yaml.
+# The draft is a PROPOSAL and the legal points are research, not legal advice: the film says "the draft suggests" and
+# "a lawyer should confirm", never "the law requires" on its own authority.
+# Written to be heard: sentences of about 8 to 14 words, terms defined the first time, authored pauses. The founders are
+# never given pronouns. `tone:` words come from voices/narrator-en.yaml. Cue names: lowercase letters and digits only.
+
+beats:
+  # ---------------------------------------------------------------- cold open
+  - id: b01
+    intent: "Film 2: the choices only the founders can make; sixteen of them, five first."
+    lines:
+      - en: "Last time, we saw how the draft works."
+        tone: warm
+        pause: 0.5
+      - en: "This time, it's about the [[choices]]choices only the three of you can make."
+        claims: [founder-choices]
+        pause: 0.8
+      - en: "The draft lists [[sixteen]]sixteen of them, and [[five]]five have to come first."
+        claims: [founder-choices]
+        pause: 1.0
+  - id: b02
+    intent: "And the big idea: a company beside the lab, like OpenAI."
+    lines:
+      - en: "There's one big idea on the table, too."
+        pause: 0.4
+      - en: "What if, like [[openai]]OpenAI, the lab someday had a [[company]]company beside it?"
+        tone: curious
+        pause: 2.0
+      - en: "Let's go through it, one [[card]]card at a time."
+        tone: warm
+        pause: 0.6
+
+  # ---------------------------------------------------------------- the five that block the Articles
+  - id: b03
+    intent: "Why the first five come first."
+    lines:
+      - en: "The first five [[block]]block the founding papers."
+        claims: [founder-blocking]
+        pause: 0.4
+      - en: "The Articles of Incorporation can't be drafted until they're [[settled]]settled."
+        claims: [founder-blocking]
+        pause: 1.0
+  - id: b04
+    intent: "Decision one: the purpose wording."
+    lines:
+      - en: "One: the [[purpose]]purpose wording."
+        pause: 0.5
+      - en: "The tax office reads this sentence to decide if the lab is truly [[scientific]]scientific."
+        claims: [d1-why]
+        pause: 0.6
+      - en: "Too [[broad]]broad, and it invites doubt. Too [[narrow]]narrow, and every new research area needs an amendment."
+        claims: [d1-why]
+        pause: 1.0
+      - en: "The draft suggests its own wording: [[rec]]scientific research, in machine learning, with open results."
+        claims: [d1-rec]
+        pause: 0.8
+      - en: "One catch: the tax rules' list of sciences doesn't name [[ml]]machine learning. So ask a lawyer how to word it."
+        claims: [ph-scientific]
+        pause: 1.4
+  - id: b05
+    intent: "Decision two: the office address."
+    lines:
+      - en: "Two: the [[office]]office address."
+        pause: 0.5
+      - en: "It has to be in the Philippines, and it goes into [[public]]public government records."
+        claims: [d2]
+        pause: 0.6
+      - en: "So the draft suggests an address you can [[keep]]keep for years, and not someone's [[home]]home, if there's another choice."
+        claims: [d2]
+        pause: 1.4
+  - id: b06
+    intent: "Decision three: the starting money, and the foundation trap."
+    lines:
+      - en: "Three: the [[money]]starting money, and who puts in what."
+        claims: [d3]
+        pause: 0.5
+      - en: "The draft suggests a [[equal]]modest, equal amount from each of you."
+        claims: [d3]
+        pause: 0.6
+      - en: "Your names and amounts are [[listed]]listed publicly, but putting money in gives [[noown]]no ownership."
+        claims: [d3]
+        pause: 0.8
+      - en: "One trap: don't call it a [[foundation]]foundation. That word triggers a minimum of one million pesos."
+        tone: irony
+        claims: [d3-foundation]
+        pause: 1.4
+  - id: b07
+    intent: "Decision four: who lives where."
+    lines:
+      - en: "Four: [[where]]who lives where."
+        pause: 0.5
+      - en: "The [[treasurer]]Treasurer must live in the Philippines, and the [[secretary]]Secretary must be a Filipino citizen who lives here too."
+        claims: [d4]
+        pause: 0.6
+      - en: "So John and Arjhine each [[confirm]]confirm it. If either can't, the offices [[swap]]swap."
+        claims: [d4]
+        pause: 1.4
+  - id: b08
+    intent: "Decision five: expense claims; receipts, not allowances."
+    lines:
+      - en: "Five: can trustees claim [[expenses]]expenses?"
+        tone: curious
+        pause: 0.5
+      - en: "The draft says [[yes]]yes, but only true reimbursement: [[receipts]]receipts, approved by [[another]]another trustee."
+        claims: [d5]
+        pause: 0.8
+      - en: "A flat daily [[allowance]]allowance is riskier, because the tax office could treat it as pay."
+        claims: [d5-risk]
+        pause: 1.6
+
+  # ---------------------------------------------------------------- the other eleven
+  - id: b09
+    intent: "Names and the things you already made."
+    lines:
+      - en: "The other eleven can wait for the By-Laws, but they still matter."
+        claims: [founder-choices]
+        pause: 0.6
+      - en: "First, [[ei]]Experimental Intelligence. The draft suggests keeping it as a [[program]]program name, which needs no filing."
+        claims: [d6]
+        pause: 0.8
+      - en: "Then the [[assets]]things you've already made: domains, accounts, code, an app listing."
+        claims: [d16]
+        pause: 0.4
+      - en: "Each gets its own decision: [[move]]move it to the lab, [[lic]]license it, or keep it outside."
+        claims: [d16]
+        pause: 0.6
+      - en: "Some need care. [[vq]]Visual-Qwen began as a thesis with five authors, so their rights come first."
+        claims: [d16-vq]
+        pause: 1.4
+  - id: b10
+    intent: "The choices that protect the founders from each other."
+    lines:
+      - en: "Next, the choices that protect you [[from]]from each other."
+        tone: warm
+        pause: 0.6
+      - en: "Changing the mission takes [[twovotes]]two votes, sixty days apart, or [[unan]]unanimity while you're fewer than five. The draft prefers two votes."
+        claims: [d7]
+        pause: 1.0
+      - en: "Bringing others in: commit to [[twomembers]]two outside members, or a five-seat Board, within [[three]]three years."
+        claims: [d8]
+        pause: 0.8
+      - en: "And name your [[reviewer]]independent reviewer now, while nobody is arguing."
+        tone: warm
+        claims: [d12]
+        pause: 1.6
+  - id: b11
+    intent: "The mechanics, and two blanks the draft leaves open."
+    lines:
+      - en: "Then the [[mechanics]]mechanics."
+        pause: 0.4
+      - en: "Trustee terms of [[terms]]two years, not three. Officers [[officers]]chosen by the Board."
+        claims: [d9, d10]
+        pause: 0.6
+      - en: "Proxy votes [[proxies]]in writing, for one meeting. At the bank, the President and Treasurer [[sign]]sign, with two signatures above an amount you pick."
+        claims: [d11, d13]
+        pause: 1.0
+      - en: "Plus two blanks the draft leaves for you: your [[titles]]research titles, and the [[limit]]spending limit that needs the Board."
+        claims: [extra-titles, extra-threshold]
+        pause: 1.4
+  - id: b12
+    intent: "The two lines around money lead into the big question."
+    lines:
+      - en: "The last two draw [[lines]]lines around money."
+        pause: 0.4
+      - en: "No [[consulting]]consulting as a business."
+        claims: [d14]
+        pause: 0.4
+      - en: "And no deals with a company the founders own, until the Board has [[twofree]]two trustees with no stake in it."
+        claims: [d15]
+        pause: 1.6
+
+  # ---------------------------------------------------------------- the OpenAI move (written after research)
+  # ---------------------------------------------------------------- the review pass and what can wait
+  - id: b15
+    intent: "The twenty-four proposals: accept, change or reject; a test for each; three examples."
+    lines:
+      - en: "Beyond the sixteen, the draft makes [[proposals]]twenty-four proposals it chose not to decide for you."
+        claims: [status-provisional]
+        pause: 0.6
+      - en: "They cover the Board's limits, research independence, removal, conflicts, ownership, sponsors, and money."
+        claims: [provisional-list]
+        pause: 0.6
+      - en: "For each one, you [[accept]]accept it as written, [[change]]change it, or [[reject]]reject it."
+        claims: [next-step]
+        pause: 0.8
+      - en: "Here's one way to test each rule: picture the [[worst]]worst day, a real fight between two of you."
+        claims: [film-test]
+        pause: 0.5
+      - en: "Does the rule still [[protects]]protect the one who's outvoted?"
+        tone: gravity
+        claims: [film-test]
+        pause: 1.4
+  - id: b17
+    intent: "The worst-day test on the hardest case: two founders removing the third; the gap the draft itself flags."
+    lines:
+      - en: "Let's try it on the [[hardest]]hardest case: two of you want the third one out."
+        tone: gravity
+        pause: 0.6
+      - en: "To remove a [[member]]member, the draft wants one of five real causes, a written notice, and at least [[thirty]]thirty days to answer."
+        claims: [removal-process]
+        pause: 0.5
+      - en: "Then an [[reviewer]]independent reviewer must find the cause proven, before both of the other two vote."
+        claims: [removal-process]
+        pause: 0.6
+      - en: "Disagreeing about research, or [[outvoted]]voting against the majority, is never a cause."
+        claims: [removal-not-cause]
+        pause: 0.8
+      - en: "But here's the gap. The law lets two thirds of members remove a [[trustee]]trustee, with or without cause."
+        tone: gravity
+        claims: [removal-gap]
+        pause: 0.6
+      - en: "So two of you could take the third [[offboard]]off the Board, though not out of the lab."
+        claims: [removal-gap]
+        pause: 0.5
+      - en: "Whether the By-Laws can close that gap is a [[lawyerq]]question for a lawyer. And that's the test doing its job."
+        claims: [removal-gap]
+        pause: 1.6
+  - id: b16
+    intent: "Three deferred items; founder pay is the delicate one."
+    lines:
+      - en: "And three things can [[wait]]wait until the lab exists:"
+        claims: [deferred-list]
+        pause: 0.3
+      - en: "[[pay]]paying a founder, [[classes]]different kinds of members, and [[cte]]when to apply for the tax exemption."
+        claims: [deferred-list]
+        pause: 0.8
+      - en: "Paying a founder is the delicate one: tax advice [[taxfirst]]first, and the founder [[leaves]]leaves the Board before any pay starts."
+        claims: [founder-transition]
+        pause: 1.6
+
+  # ---------------------------------------------------------------- Xynil, the first trustee beyond the founders
+  # Xynil Jhed Lacap is not in the draft; the owner named him (2026-09-29) as the first trustee. These lines apply the
+  # draft's own rules to his case and say so on screen.
+  - id: b13
+    intent: "Meet Xynil; how a new trustee gets in under the draft's rules."
+    lines:
+      - en: "Now, a [[newface]]new face."
+        tone: warm
+        pause: 0.6
+      - en: "Meet [[xynil]]Xynil Jhed Lacap, set to be the lab's first trustee beyond the three of you."
+        tone: warm
+        claims: [xynil-fact]
+        pause: 0.8
+      - en: "But there's an order. A trustee must first be a [[member]]member."
+        claims: [x-member-first]
+        pause: 0.6
+      - en: "So Xynil goes through the same door as anyone: [[propose]]proposed, [[nominate]]nominated by the Board, and [[approve]]approved by two thirds of members."
+        claims: [members-admission]
+        pause: 0.8
+      - en: "The draft asks for a real [[contrib]]contribution first, like research, leadership, or governance work."
+        claims: [x-criteria]
+        pause: 0.6
+      - en: "He also [[accepts]]signs on to the rules, discloses his interests, and serves [[unpaid]]unpaid, like every trustee."
+        claims: [x-accept]
+        pause: 1.2
+  - id: b14
+    intent: "Now or later: four seats vs an Articles amendment; and the no-stake caveat."
+    lines:
+      - en: "The bigger question is [[when]]when."
+        tone: curious
+        pause: 0.6
+      - en: "If he joins [[now]]now, before filing, the founding papers name four members and four trustees, and you reopen choices already made."
+        claims: [x-now]
+        pause: 0.6
+      - en: "Four has a bonus: two thirds of four is [[three]]three, so no two people can act alone."
+        claims: [x-four-math]
+        pause: 0.6
+      - en: "But an even Board can [[tie]]tie, and the draft's rules are written for odd sizes."
+        claims: [x-even]
+        pause: 0.8
+      - en: "If he joins [[later]]later, a new seat means amending the Articles, with government approval, and the draft's plan is to grow to [[five]]five."
+        claims: [x-later]
+        pause: 1.0
+      - en: "One more catch. He only counts as a trustee with [[nostake]]no stake if he stays out of any founders' company."
+        tone: gravity
+        claims: [x-stake]
+        pause: 0.6
+      - en: "And the draft wants [[twoclean]]two such trustees before any deal. Which brings us to the big question."
+        claims: [coi-all]
+        pause: 1.4
+  - id: b19
+    intent: "Why the founders came to the idea of a for-profit sister company: grants grow, research becomes full-time, and the founders need to earn from it; the lab can't do that for them."
+    lines:
+      - en: "First: why would you even [[want]]want a company beside the lab?"
+        tone: curious
+        pause: 0.6
+      - en: "Here's your reasoning. As [[grants]]grants grow, the research stops being a side project. It becomes the job."
+        claims: [why-company]
+        pause: 0.6
+      - en: "And the three of you, doing that research full-time, will need to [[earn]]earn from it. Not just survive on it."
+        claims: [why-company]
+        pause: 0.8
+      - en: "The lab can pay researchers a fair wage. But paying a founder is a [[delicate]]delicate step: tax advice first, and off the Board first."
+        claims: [why-lab-pay, founder-transition]
+        pause: 0.6
+      - en: "And the lab can never hand out [[profit]]profit to anyone. Grants get spent only on what they're [[research]]for."
+        claims: [ph-articles-four, why-grants]
+        pause: 0.5
+      - en: "It can't even sell [[consulting]]consulting as a business."
+        claims: [d14]
+        pause: 0.8
+      - en: "A [[sister]]separate company could. It can sell products and services, pay you, and make a profit you own."
+        claims: [why-company-fit]
+        pause: 0.8
+      - en: "That's the idea. And someone famous has [[before]]tried a version of it."
+        tone: warm
+        pause: 1.0
+
+  # ---------------------------------------------------------------- the OpenAI move
+  # Facts from sources/research-openai.md (each read at its primary URL); Philippine law from sources/research-ph-law.md.
+  # The law lines are research, not advice: the stage says "a lawyer should confirm".
+  - id: b20
+    intent: "How OpenAI started: a nonprofit, promises vs cash, the capped-profit arm under nonprofit control."
+    lines:
+      - en: "So how did [[oa]]OpenAI do it?"
+        tone: curious
+        pause: 0.6
+      - en: "It began in twenty fifteen as a [[nonprofit]]nonprofit, with a billion dollars promised by its funders."
+        claims: [oa-founding]
+        pause: 0.6
+      - en: "But promises aren't cash. By its own account, about [[cash]]a hundred and thirty-seven million dollars actually arrived."
+        claims: [oa-cash]
+        pause: 1.0
+      - en: "Training big models needed billions. So in twenty nineteen, it built a [[capped]]capped-profit company underneath the nonprofit."
+        claims: [oa-lp]
+        pause: 0.6
+      - en: "Investors could earn up to [[cap]]a hundred times their money, and the nonprofit's board stayed [[control]]in control."
+        claims: [oa-lp]
+        pause: 0.6
+      - en: "And only board members [[nostake]]without a stake could vote on conflicts."
+        claims: [oa-conflict]
+        pause: 1.4
+  - id: b21
+    intent: "The twists: the CEO fired and rehired; the plan to let the for-profit run things; the AG review; control kept; the lawsuit."
+    lines:
+      - en: "Then came the [[twists]]twists."
+        pause: 0.5
+      - en: "In late twenty twenty-three, the nonprofit's board [[fired]]fired its own CEO, and four days later decided to [[rehire]]rehire the same CEO."
+        claims: [oa-fired]
+        pause: 0.8
+      - en: "In twenty twenty-four, OpenAI proposed letting the for-profit [[run]]run the show."
+        claims: [oa-pbc-plan]
+        pause: 0.4
+      - en: "State [[ag]]attorneys general, the officials who guard charities, spent over a year reviewing it."
+        claims: [oa-ag]
+        pause: 0.8
+      - en: "In the end, the nonprofit [[kept]]kept control."
+        tone: resolve
+        claims: [oa-reversal]
+        pause: 0.6
+      - en: "Today, the [[foundation]]OpenAI Foundation owns about twenty-six percent of the company, and can replace its directors at any time."
+        claims: [oa-recap]
+        pause: 1.0
+      - en: "And a co-founder's lawsuit over it? A jury found the charity claims were filed [[late]]too late, so it never ruled on whether the change was right."
+        claims: [oa-verdict]
+        pause: 1.6
+  - id: b27
+    intent: "OpenAI's structure today: who owns what, and where control actually lives."
+    lines:
+      - en: "So what does OpenAI look like [[today]]today?"
+        tone: curious
+        pause: 0.6
+      - en: "On top sits the [[fdn]]OpenAI Foundation, the nonprofit. Under it, [[group]]OpenAI Group, a public benefit corporation with the same mission."
+        claims: [oa-recap, oa-de-conditions]
+        pause: 0.6
+      - en: "The Foundation owns about [[stake]]twenty-six percent. Microsoft, about [[ms]]twenty-seven. Employees and investors, [[rest]]the rest."
+        claims: [oa-recap]
+        pause: 0.8
+      - en: "But control doesn't come from owning the most. It comes from a special class of [[classn]]shares, and the power to [[appoint]]appoint and remove every director."
+        claims: [oa-classn, oa-de-conditions]
+        pause: 0.8
+      - en: "[[safety]]Safety oversight stays with the nonprofit, up to halting a model's release."
+        claims: [oa-de-conditions]
+        pause: 0.5
+      - en: "Within a year, at least [[apart]]two of its directors must sit only on the nonprofit's board."
+        claims: [oa-de-conditions]
+        pause: 0.5
+      - en: "And the attorneys general get [[notice]]advance notice of big changes."
+        claims: [oa-de-conditions]
+        pause: 1.4
+  - id: b22
+    intent: "Three lessons that carry over."
+    lines:
+      - en: "Three lessons carry over."
+        pause: 0.4
+      - en: "[[l1]]Control lives in the paperwork, written down before anyone needs it."
+        claims: [oa-lesson-control]
+        pause: 0.6
+      - en: "[[l2]]Conflicts are decided by people with no stake."
+        claims: [oa-conflict]
+        pause: 0.6
+      - en: "And [[l3]]regulators protect the charity's value: the nonprofit had to get a fair price, checked by independent advisers."
+        claims: [oa-fair]
+        pause: 1.6
+  - id: b28
+    intent: "The ground rules the tax office uses: four promises in the papers, and what counts as private benefit."
+    lines:
+      - en: "Before we try it here, the [[ground]]ground rules. What does the tax office look for?"
+        tone: curious
+        pause: 0.6
+      - en: "To be tax-exempt, the founding papers must [[promise]]promise four things."
+        claims: [ph-articles-four]
+        pause: 0.5
+      - en: "The lab is [[nonstock]]non-stock and non-profit. No income goes to [[inure]]any private person."
+        claims: [ph-articles-four]
+        pause: 0.5
+      - en: "Trustees get [[nopay]]no pay. And if it ever closes, what's left goes to [[similar]]similar groups, or the government."
+        claims: [ph-articles-four]
+        pause: 0.8
+      - en: "The tax office also lists what counts as [[private]]private benefit."
+        claims: [ph-inurement-list]
+        pause: 0.4
+      - en: "Like paying [[trustpay]]trustees or organizers, or [[overpay]]overpaying a company that a trustee has a stake in."
+        claims: [ph-inurement-list]
+        pause: 0.8
+      - en: "That first one matters to you. As founders, you're the [[organizers]]organizers, so even a research salary could count. Ask a lawyer."
+        tone: gravity
+        claims: [ph-organizers-pay]
+        pause: 1.4
+  - id: b23
+    intent: "Three versions here: convert (no), own a company (gated, taxed), a sister company (the draft's picture)."
+    lines:
+      - en: "Now, could Experimental Machines do the [[same]]same here? Let's try three versions."
+        tone: curious
+        pause: 0.6
+      - en: "Version one: [[convert]]turn the lab itself into a company."
+        pause: 0.3
+      - en: "[[no]]No. The Securities and Exchange Commission has said a non-stock corporation can't become a stock one just by amending its papers."
+        tone: gravity
+        claims: [ph-no-conversion]
+        pause: 0.6
+      - en: "It would have to [[dissolve]]dissolve first, and under the lab's own founding papers, its assets would go to similar nonprofits, not to the founders."
+        claims: [ph-dissolution]
+        pause: 1.0
+      - en: "Version two: the lab [[owns]]owns a company."
+        pause: 0.3
+      - en: "That's possible. It needs the Board plus [[twothirds]]two thirds of members, and the business must stay [[incidental]]tied to the lab's purpose."
+        claims: [ph-invest]
+        pause: 0.6
+      - en: "But business income is [[taxed]]taxed, and if for-profit work becomes a substantial part of the lab, the tax exemption can be [[revoked]]revoked, back to the date of the change."
+        claims: [ph-tax]
+        pause: 1.0
+      - en: "Version three: a [[sister]]separate company the founders own, beside the lab. That's the draft's own picture."
+        claims: [future-company]
+        pause: 1.2
+  - id: b24
+    intent: "The traps in version three."
+    lines:
+      - en: "So let's look at version three's [[traps]]traps."
+        tone: gravity
+        pause: 0.5
+      - en: "If each founder owns more than [[twenty]]twenty percent of the company, the law treats you as [[interlocked]]interlocking directors."
+        claims: [ph-interlock]
+        pause: 0.6
+      - en: "Then every deal between the lab and the company counts as [[selfdeal]]self-dealing, and with all three of you conflicted, the Board can't approve it."
+        claims: [ph-interlock]
+        pause: 0.6
+      - en: "It stays open to challenge unless [[ratify]]two thirds of members ratify it, with full disclosure, at a fair price."
+        claims: [ph-ratify]
+        pause: 0.5
+      - en: "And if the only members are the three of you, you'd be [[ownvote]]approving your own deal."
+        claims: [ph-ratify-weak]
+        pause: 0.8
+      - en: "Selling or licensing the lab's work [[cheap]]below its value counts as a gift, taxed at six percent, and as private benefit."
+        claims: [ph-gift]
+        pause: 0.6
+      - en: "Moving the lab's core model or computers over could count as selling [[allassets]]substantially all its assets, which also needs two thirds of members."
+        claims: [ph-substantially-all]
+        pause: 0.6
+      - en: "If the lab gets [[pcnc]]donor accreditation, even a fair-price sale or lease to a founder-controlled company is barred."
+        claims: [ph-pcnc]
+        pause: 0.6
+      - en: "An [[exclusive]]exclusive licence also clashes with keeping research open to the public."
+        claims: [ph-public]
+        pause: 0.6
+      - en: "And [[opportunity]]opportunities that belong to the lab can't quietly move to the company."
+        claims: [ph-opportunity]
+        pause: 1.6
+  - id: b29
+    intent: "If the company pays the lab: how rent, royalties, service income and dividends are taxed."
+    lines:
+      - en: "Now say the company [[does]]does well, and pays the lab. What does the tax office take?"
+        tone: curious
+        pause: 0.6
+      - en: "[[rent]]Rent, for space or computers, is taxed, even if every peso goes to research."
+        claims: [ph-rent]
+        pause: 0.5
+      - en: "[[royalty]]Royalties, for licensing the lab's work, carry a twenty percent final tax."
+        claims: [ph-royalty]
+        pause: 0.5
+      - en: "Selling services, like [[access]]model access, is business income. It's taxed, and it has to stay tied to the lab's purpose."
+        claims: [ph-business-income]
+        pause: 0.6
+      - en: "[[divs]]Dividends from a company the lab owns? The law's wording suggests tax-free, but no ruling confirms it yet."
+        claims: [ph-dividends]
+        pause: 0.6
+      - en: "And if prices between the two look off, the tax office can [[realloc]]reallocate income between them."
+        claims: [ph-reallocate]
+        pause: 1.4
+  - id: b25
+    intent: "What a careful version would look like."
+    lines:
+      - en: "So what would a [[careful]]careful version look like?"
+        tone: warm
+        pause: 0.5
+      - en: "The company uses the lab's [[open]]open releases, on the same terms as anyone."
+        claims: [future-company]
+        pause: 0.6
+      - en: "Every deal is written down, at [[fairvalue]]fair value, and approved by trustees with no stake: [[xyn]]Xynil, and one more."
+        claims: [d15, x-stake]
+        pause: 0.8
+      - en: "The lab stays [[mostly]]mostly research, so its tax exemption holds."
+        claims: [ph-tax]
+        pause: 0.6
+      - en: "You earn in the company, from your own work. But nobody gets [[shares]]shares of the lab's value. It stays held in trust for the mission."
+        tone: resolve
+        claims: [why-company-fit, ph-held-in-trust]
+        pause: 1.6
+  - id: b26
+    intent: "Questions for the lawyer."
+    lines:
+      - en: "Some of this, nobody has settled yet. So here are the [[questions]]questions for your lawyer."
+        tone: gravity
+        claims: [q-counsel]
+        pause: 0.6
+      - en: "Are [[dividends]]dividends from a company the lab owns tax-free?"
+        claims: [q-counsel]
+        pause: 0.4
+      - en: "How much [[licensing]]licensing income is safe before the exemption is at risk?"
+        claims: [q-counsel]
+        pause: 0.4
+      - en: "Can a founder be [[paidq]]paid by the lab at all?"
+        claims: [q-counsel]
+        pause: 0.4
+      - en: "Would [[accred]]donor accreditation block every deal with a founders' company?"
+        claims: [q-counsel]
+        pause: 0.4
+      - en: "And exactly how should the founding papers be [[worded]]worded?"
+        claims: [q-counsel]
+        pause: 1.6
+
+  # ---------------------------------------------------------------- next and close
+  - id: b92
+    intent: "The whole picture in one diagram before the agenda."
+    lines:
+      - en: "Let's put it all in [[one]]one picture."
+        tone: warm
+        pause: 0.5
+      - en: "The [[lab]]lab: a non-profit, with its purpose and promises [[papers]]written into its founding papers. Grants fund the research."
+        claims: [ph-articles-four, founder-blocking, why-grants]
+        pause: 0.5
+      - en: "Three founders as trustees, and [[xynil]]Xynil joining as a member first, with no stake."
+        claims: [x-member-first, x-stake]
+        pause: 0.6
+      - en: "Beside it, maybe someday, a [[company]]company you own, where you earn from your work. Never the lab turned into one."
+        claims: [why-company-fit, ph-no-conversion]
+        pause: 0.6
+      - en: "Between them, a [[gate]]gate: fair value, on paper, approved by trustees with no stake."
+        claims: [d15]
+        pause: 0.6
+      - en: "And the lab's value stays [[trust]]held in trust, for the mission."
+        tone: resolve
+        claims: [ph-held-in-trust]
+        pause: 1.6
+  - id: b90
+    intent: "The meeting agenda."
+    lines:
+      - en: "So here's the meeting [[agenda]]agenda."
+        tone: warm
+        pause: 0.5
+      - en: "Settle the [[firstfive]]first five. Then the other eleven. Then the twenty-four proposals: [[acc]]accept, change, or reject each one."
+        claims: [next-step]
+        pause: 1.0
+      - en: "And bring a [[lawyer]]lawyer the company questions before anyone signs anything."
+        claims: [counsel]
+        pause: 1.4
+  - id: b91
+    intent: "Close."
+    lines:
+      - en: "The hard choices are easiest now, [[calm]]while everyone still agrees."
+        tone: warm
+        claims: [close-summary]
+        pause: 3.0

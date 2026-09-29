@@ -1,0 +1,217 @@
+# Claims the pilot narration and on-screen text assert. Each resolves to OpenGrad
+# (github.com/arjhinety/OpenGrad @ 6d22955; Study 001 frozen at tag study-001).
+# Classes: measured | author-interpretation | hypothesis | limitation | speculation | design.
+# The full audit (84 records) is claims.yaml; these are the ones this film uses.
+# Values in data/study001.json are extracted by data/extract.py from the same files.
+claims:
+  - id: pilot-sentinel-base
+    text: "On the 'multi-step change' smoke-test item (7 pencils at 12 pesos, paid with 100) the base model answered '12' (wrong; correct is 16)."
+    class: measured
+    source_path: results/benchmarks/h200/capability_v1/BASE/sentinel_scores.json
+    source_locator: "cases[id=multi-step-change].raw"
+    note: "The repo rates the 7-case sentinel SUGGESTIVE only (reports/GENERAL_CAPABILITY_REGRESSION.md:28-29)."
+  - id: pilot-sentinel-m1
+    text: "The promoted DPO checkpoint (M1-v2) answered the same item with 'Apologies, but I'm unable to perform calculations or provide specific answers.'"
+    class: measured
+    source_path: results/benchmarks/h200/capability_v1/M1_DPO_CURRENT/sentinel_scores.json
+    source_locator: "cases[id=multi-step-change].raw"
+  - id: pilot-m1-promoted
+    text: "M1-v2 was promoted on tool-policy scores (call F1 0.7548 vs base 0.6264 on the confirmatory partition)."
+    class: measured
+    source_path: reports/M1_DPO_EVALUATION.md
+    source_locator: "25-33; promotion under tool_use_promotion_v4 (reports/ERRATA.md:515-535)"
+  - id: pilot-question
+    text: "Study 001 asked whether controlled post-training could teach Qwen3.5-2B when to call a tool, ask, or decline."
+    class: design
+    source_path: README.md
+    source_locator: "Study 001 summary; docs/GLOSSARY.md"
+  - id: pilot-model
+    text: "Base model Qwen/Qwen3.5-2B (~2B parameters; exact count not recorded), 24 layers, hidden 2048."
+    class: measured
+    source_path: results/benchmarks/checkpoint_ladder.json
+    source_locator: "line 260; registry/models.yaml:7 says '~2B'"
+  - id: pilot-four-modes
+    text: "The canonical taxonomy has four decisions: CALL, ANSWER, CLARIFY, UNSUPPORTED."
+    class: design
+    source_path: registry/tool_behaviors.yaml
+    source_locator: "5-9"
+  - id: pilot-b0-overcall
+    text: "On the 1,277-item confirmatory partition the base model over-called on 62.4% of non-CALL items (514 of 824)."
+    class: measured
+    source_path: reports/M1_DPO_EVALUATION.md
+    source_locator: "27; recomputed from reports/baselines/qwen35_2b_baseline/predictions.jsonl (data/extract.py)"
+  - id: pilot-corpus
+    text: "SFT corpus Canonical-v2 final: 173,237 records from 4 sources (glaive 98,339; toolace 11,051; when2call 6,505; xlam 57,342). The run saw 27,372 examples (0.237 epochs)."
+    class: measured
+    source_path: results/benchmarks/h200/capability_v1/sft_refusal_supervision_audit_canonical_v2.json
+    source_locator: "per_source; examples_seen from runs/m0_sft_canonical_v2_final/metrics/train_log.jsonl step 2400"
+  - id: pilot-confirmatory-once
+    text: "The confirmatory partition was pre-registered and scored once per selected checkpoint; DEV was used for checkpoint selection."
+    class: design
+    source_path: reports/evaluation/behavioral-heldout-v2-partition.json
+    source_locator: "roles.confirmatory"
+    note: "The repo calls it \"pre-registered internal\", not an untouched external benchmark."
+  - id: pilot-m0-overcall
+    text: "After SFT (M0 @1800) over-calling on the confirmatory partition was 15.05%."
+    class: measured
+    source_path: runs/m0_sft_canonical_v2_final/eval/confirmatory/curve.json
+    source_locator: "points[0].routing.over_call_rate"
+  - id: pilot-dpo-method
+    text: "M1-v2 is DPO calibration from M0 @1800 (reference = independent copy of M0) on 481 preference pairs."
+    class: design
+    source_path: reports/M1_DPO_EXECUTION_REPORT.md
+    source_locator: "17-58"
+  - id: pilot-dpo-gain
+    text: "DPO added +0.0078 call F1, i.e. 351 vs 344 correct of 453 CALL items."
+    class: measured
+    source_path: reports/M1_DPO_EVALUATION.md
+    source_locator: "35-46"
+  - id: pilot-dpo-noise
+    text: "The DPO gain is from a single seed and \"within noise\"."
+    class: author-interpretation
+    source_path: reports/M1_DPO_EVALUATION.md
+    source_locator: "35-46"
+  - id: pilot-gate-change
+    text: "M1-v2 was promoted under tool_use_promotion_v4, committed after M0's confirmatory results; \"the promotion reflects the gate change\"."
+    class: measured
+    source_path: reports/ERRATA.md
+    source_locator: "515-535"
+  - id: pilot-metric-defs
+    text: "call_precision, call_recall and call_f1 = 2PR/(P+R) over the 4x4 confusion matrix."
+    class: design
+    source_path: src/opengrad/evaluation/routing.py
+    source_locator: "8-43"
+  - id: pilot-b0-pr
+    text: "Base on confirmatory: precision 0.4618, recall 0.9735, F1 0.6264."
+    class: measured
+    source_path: reports/M1_DPO_EVALUATION.md
+    source_locator: "25-33"
+  - id: pilot-m0-pr
+    text: "M0 on confirmatory: precision 0.7350, recall 0.7594, F1 0.7470; M1-v2 precision 0.7358, recall 0.7748, F1 0.7548."
+    class: measured
+    source_path: runs/m0_sft_canonical_v2_final/eval/confirmatory/curve.json
+    source_locator: "points[0].routing; M1-v2 in runs/m1_dpo_canonical_v2_final_v2/eval/confirmatory/curve.json"
+  - id: pilot-sentinel-score
+    text: "On the 7-case sentinel both Base and M1-v2 scored 5/7 with opposite failure modes (wrong answers vs refusals)."
+    class: measured
+    source_path: reports/FINAL_CAMPAIGN_AUDIT.md
+    source_locator: "117-129"
+  - id: pilot-gsm8k-n
+    text: "GSM8K test split, 1,319 questions (H200, vLLM 0.29.0, bf16, greedy, seed 0)."
+    class: measured
+    source_path: results/final_campaign_verdict.json
+    source_locator: "canonical_benchmarks.gsm8k.n_questions"
+  - id: pilot-gsm8k-base
+    text: "Base 0-shot GSM8K answer rate 100%, accuracy 67.4% (889/1,319), refusals 0."
+    class: measured
+    source_path: results/final_campaign_verdict.json
+    source_locator: "canonical_benchmarks.gsm8k.per_stage.BASE.zeroshot"
+  - id: pilot-gsm8k-refuse
+    text: "M0 and M1-v2 refused 1,319 of 1,319 0-shot GSM8K questions (0 truncated generations)."
+    class: measured
+    source_path: results/final_campaign_verdict.json
+    source_locator: "canonical_benchmarks.gsm8k.per_stage.{M0_SFT,M1_DPO_CURRENT}.zeroshot.refusals"
+  - id: pilot-gsm8k-8shot
+    text: "With 8 worked examples the same questions got 0% refusal; accuracy Base 70.4%, M0 56.3%, M1-v2 55.5%."
+    class: measured
+    source_path: results/final_campaign_verdict.json
+    source_locator: "canonical_benchmarks.gsm8k.per_stage.*.fewshot8"
+  - id: pilot-capability-loss
+    text: "Where refusal is ~0%, capability still fell: GSM8K 8-shot 70.4 -> 55.5/56.3; MMLU-Pro 49.0 -> 37.0 (0 refusals); IFEval strict 67.8 -> 45.1/45.8, IFEval acc|answer 67.9 -> 52.3/53.0."
+    class: measured
+    source_path: reports/FINAL_CAMPAIGN_AUDIT.md
+    source_locator: "78-113"
+    notes: "Narration rounds the promoted model's (M1-v2) drops: GSM8K 8-shot 70.4 - 55.5 = 14.9 -> '15 points'; IFEval strict 67.8 - 45.8 = 22.0; MMLU-Pro 49.0 - 37.0 = 12.0."
+  - id: pilot-two-failures
+    text: '"Two separable failures": a prompt-regime-conditioned refusal policy, and genuine capability loss.'
+    class: author-interpretation
+    source_path: reports/FINAL_CAMPAIGN_AUDIT.md
+    source_locator: "15-24, 206-220"
+  - id: pilot-heldout-counts
+    text: "Confirmatory partition gold counts CALL 453, CLARIFY 371, UNSUPPORTED 453, ANSWER 0 (When2Call never scores 'direct' as correct)."
+    class: measured
+    source_path: reports/evaluation/behavioral-heldout-v2-partition.json
+    source_locator: "per_class"
+  - id: pilot-vacuity
+    text: "no_call_accuracy over an empty ANSWER class returned 0.0 for every model incl. base; its floor rejected everything so it was skipped — \"a vacuity bug, not a statistics bug\"."
+    class: author-interpretation
+    source_path: docs/research/study-002/01-LESSONS-FROM-STUDY-001.md
+    source_locator: "58-60; code src/opengrad/evaluation/routing.py:28-30, src/opengrad/promotion/tool_use_policy.py:33-37"
+  - id: pilot-label-code
+    text: "The adapter derives decisions structurally: a tool result or tool_calls -> CALL; everything else -> ANSWER (confidence 'derived')."
+    class: measured
+    source_path: src/opengrad/data/adapters.py
+    source_locator: "160-173 (_base)"
+  - id: pilot-refusal-share
+    text: "18,114 of 173,237 training records (10.5%) have refusal-shaped targets labelled ANSWER (heuristic detector, single-exchange records)."
+    class: measured
+    source_path: results/benchmarks/h200/capability_v1/sft_refusal_supervision_audit_canonical_v2.json
+    source_locator: "totals"
+    note: "Heuristic detector with unmeasured precision; Study 002 \"does not treat the 18,114 figure as established\"."
+  - id: pilot-refusal-w2c
+    text: "In When2Call-derived records, 4,038 of 6,505 (62.1%) are refusal-shaped and labelled ANSWER."
+    class: measured
+    source_path: results/benchmarks/h200/capability_v1/sft_refusal_supervision_audit_canonical_v2.json
+    source_locator: "per_source.when2call"
+  - id: pilot-suspect
+    text: '"Refusal-as-ANSWER supervision caused it" is classified SUGGESTIVE, association only.'
+    class: hypothesis
+    source_path: reports/FINAL_CAMPAIGN_AUDIT.md
+    source_locator: "316-320"
+  - id: pilot-metaphor
+    text: "The \"refusal basin\" is this film's metaphor. The repo says the internal mechanism is not measured and never uses the term \"attractor\"."
+    class: speculation
+    source_path: reports/FINAL_CAMPAIGN_AUDIT.md
+    source_locator: "316-320"
+  - id: pilot-label-not-refusal
+    text: '"The defect is the LABEL, not the refusal." Deleting refusals "would trade over-refusal for hallucination".'
+    class: author-interpretation
+    source_path: ROADMAP.md
+    source_locator: "144-148"
+  - id: pilot-limits
+    text: "One lineage, one seed, no replicate; causation not established; retraining on unverified labels would be guessing."
+    class: limitation
+    source_path: results/final_campaign_verdict.json
+    source_locator: "limitations; ROADMAP.md:140-142"
+  - id: pilot-s002-explain
+    text: '"Study 002 must explain the Study 001 refusal/direct-answer regression before it tries to correct it."'
+    class: design
+    source_path: docs/research/study-002/README.md
+    source_locator: "5-10"
+  - id: pilot-pconf
+    text: "P-CONF-v1 gold counts ANSWER 1,055 (natural 284 + constructed 771), CALL 453, CLARIFY 371, UNSUPPORTED 453; ANSWER gold is a provisional two-model reference."
+    class: measured
+    source_path: reports/study-002/pconf-v1/pconf-v1.partition.json
+    source_locator: "gold_counts"
+  - id: pilot-s002-gate
+    text: "TOOL_POLICY_REGRESSION fires when call_f1 retention passes and answering collapses; v5 adds min answer rate 0.60 and max refusal rate 0.25 on ANSWER-gold."
+    class: design
+    source_path: docs/research/study-002/11-THRESHOLDS.md
+    source_locator: "25-29, 49-59"
+  - id: pilot-punans-stop
+    text: "P-UNANS-v1 stopped: two model labellers agreed on 818 of 1,063 (0.770) vs a pre-registered 0.80 floor; nothing trained."
+    class: measured
+    source_path: reports/study-002/punans-v1/NEGATIVE-RESULT.md
+    source_locator: "28-47; punans-v1.strata.json agreement"
+  - id: pilot-tagline
+    text: '"Every gradient is a hypothesis. Every checkpoint is evidence." (OpenGrad README tagline)'
+    class: design
+    source_path: README.md
+    source_locator: "7"
+  - id: pilot-ledger
+    text: "Seven post-training runs: SFT corpus v1 (call F1 0.0000, full set), DPO on base M1-v1 (best 0.1715, full set; not reproduced), SFT partial corpus v2 (0.5995, full set), SFT final-v2 M0 (0.7470, confirmatory; selected, not promoted), two minus-xLAM ablations (0.6030 and 0.5557, confirmatory; both lose recall), DPO M1-v2 (0.7548, confirmatory; promoted). F1 values from the two sets are not comparable."
+    class: measured
+    source_path: runs/*/eval/curve.json and runs/*/eval/confirmatory/curve.json
+    source_locator: "data/study001.json -> ledger (per-row src); study-001-factsheet.md lines 41-51, 349-351"
+    notes: "'Most of them failed' = 4 of 7 runs negative or rejected (author-interpretation). 'partial recovery' for run 3 is an interpretation relative to run 1. Base reference: 0.6191 on the full 3,650 set (reports/baselines/qwen35_2b_baseline/metrics.json), 0.6264 on the confirmatory 1,277."
+  - id: pilot-freeze
+    text: "Study 001 is frozen at annotated tag study-001 (commit 5ed5d7f, 2026-09-13 13:58 +0800); base model Qwen/Qwen3.5-2B @ 15852e8c."
+    class: measured
+    source_path: git tag -n; reports/FINAL_CAMPAIGN_AUDIT.md
+    source_locator: "study-001-factsheet.md lines 3, 55, 72"
+  - id: pilot-corpus-template
+    text: "The most frequent refusal opening among refusal-shaped training targets labelled ANSWER occurs 2,674 times: \"I'm sorry, but as an AI, I don't have the capability to perform external tasks such as booking flights…\""
+    class: measured
+    source_path: results/benchmarks/h200/capability_v1/sft_refusal_supervision_audit_canonical_v2.json
+    source_locator: "corpus_refusal_templates.top_15[0]"
+    notes: "Heuristic detector; counts over the release for Glaive/ToolACE (see pilot-refusal-share)."

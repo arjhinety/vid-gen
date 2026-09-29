@@ -1,0 +1,8 @@
+{
+  "name": "@vid/player",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Vite app: interactive scene preview and the headless render host.",
+  "exports": { "./vite-plugin": "./vite-plugin.ts", "./server": "./server.ts" }
+}

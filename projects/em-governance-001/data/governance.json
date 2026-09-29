@@ -1,0 +1,163 @@
+{
+ "source": "sources/governance-draft-v0.1.pdf",
+ "source_title": "Experimental Machines — Founding Governance Design Draft v0.1 (Sep 26, 2026)",
+ "source_sha256": "72c680b899597cb033303f6339adc64e93095c689b23302c8ee4d9faa1003a8a",
+ "pages": {
+  "v": 53,
+  "src": "p.1: “Page 1 of 53”"
+ },
+ "status": {
+  "v": "proposal",
+  "src": "p.1: “This is a design proposal for three founders to argue with, not a legal document.”"
+ },
+ "founders": {
+  "v": 3,
+  "src": "p.2: “three founding members, three unpaid trustees, and three officers”"
+ },
+ "officers": {
+  "v": {
+   "President": "Alpha",
+   "Treasurer": "John",
+   "Corporate Secretary": "Arjhine"
+  },
+  "src": "p.51: “GDR-003 Initial Officers: President Alpha, Treasurer John, Corporate Secretary Arjhine”"
+ },
+ "unpaid_period": {
+  "v": "about a year",
+  "src": "p.25: “Founders serve unpaid for about a year.”"
+ },
+ "decided": {
+  "v": 8,
+  "src": "p.6: “Eight decisions are DECIDED”"
+ },
+ "provisional": {
+  "v": 24,
+  "src": "p.6: “Twenty-four are PROVISIONAL”"
+ },
+ "open": {
+  "v": 3,
+  "src": "p.6: “Three are OPEN and three DEFERRED”"
+ },
+ "deferred": {
+  "v": 3,
+  "src": "p.6: “Three are OPEN and three DEFERRED”"
+ },
+ "for_review": {
+  "v": 27,
+  "src": "p.51: “Eight decided, twenty-seven for review (including three open), three deferred.”"
+ },
+ "decisions_total": {
+  "v": 38,
+  "src": "p.6 (the four counts above); the record's ids run GDR-001 to GDR-038 (p.11)",
+  "derived": "8 decided + 24 provisional + 3 open + 3 deferred"
+ },
+ "two_thirds_of_three": {
+  "v": 2,
+  "src": "p.11: “With three members, \"2/3 of all members\" means two of three”"
+ },
+ "quorum": {
+  "v": 2,
+  "src": "p.25: “With one trustee recused, two remain: exactly a quorum. Both must vote yes.”"
+ },
+ "mission_notice_days": {
+  "v": 30,
+  "src": "p.15: “circulated to all members at least 30 days before the first vote”"
+ },
+ "unanimity_alt_members": {
+  "v": 5,
+  "src": "p.15: “require unanimity for purpose changes only while there are fewer than five members”"
+ },
+ "mission_gap_days": {
+  "v": 60,
+  "src": "p.15: “Approval by 2/3 of all members at two meetings held at least 60 days apart.”"
+ },
+ "intervention_grounds": {
+  "v": [
+   "Law",
+   "Privacy",
+   "Security",
+   "Safety",
+   "Research misconduct",
+   "Contract",
+   "Budget",
+   "IP constraints",
+   "Material institutional risk"
+  ],
+  "src": "p.18: “When the Board may intervene Only on these grounds, and only as far as the ground requires”",
+  "derived": "the nine row heads of the table that follows the quote"
+ },
+ "intervention_rules": {
+  "v": [
+   "written",
+   "gives reasons",
+   "names the ground",
+   "time-limited"
+  ],
+  "src": "p.19: “Every intervention is written, gives reasons, names the ground, and is time-limited.”"
+ },
+ "disinterested_needed": {
+  "v": 2,
+  "src": "p.25: “until the Board has at least two trustees with no interest in them”"
+ },
+ "deadlock_days": {
+  "v": 60,
+  "src": "p.24: “operationally necessary matter for 60 days”"
+ },
+ "removal_response_days": {
+  "v": 30,
+  "src": "p.22: “At least 30 days to respond in writing and at a hearing.”"
+ },
+ "not_causes": {
+  "v": [
+   "scientific disagreement",
+   "voting against the majority",
+   "publishing a result others dislike",
+   "good-faith criticism"
+  ],
+  "src": "p.22: “Not a cause: scientific disagreement, disagreement about research direction, voting against the majority, publishing a result others dislike, or criticizing the organization in good faith.”"
+ },
+ "safeguards": {
+  "v": 10,
+  "src": "p.30: “The ten safeguards (GOVERNANCE RECOMMENDATION)”"
+ },
+ "sponsor_review_days": {
+  "v": 30,
+  "src": "p.30: “limited to removing its own confidential information: recommend up to 30 days”"
+ },
+ "patent_delay_days": {
+  "v": 90,
+  "src": "p.31: “A reasonable delay for patent filing is allowed: recommend up to 90 days.”"
+ },
+ "ip_categories": {
+  "v": 5,
+  "src": "p.27: “The five categories”"
+ },
+ "ip_program_triggers": {
+  "v": 6,
+  "src": "p.28: “Category B is triggered only by the six listed connections.”"
+ },
+ "flags": {
+  "v": 5,
+  "src": "p.44: “Five items are flagged.”"
+ },
+ "founder_choices": {
+  "v": 16,
+  "src": "p.48: “Sixteen choices are yours.”"
+ },
+ "blocking_choices": {
+  "v": 5,
+  "src": "p.48: “Five block Articles drafting”"
+ },
+ "broaden_members": {
+  "v": 2,
+  "src": "p.45: “admit at least two non-founder members”"
+ },
+ "board_expand_to": {
+  "v": 5,
+  "src": "p.25: “Trigger to expand to five”"
+ },
+ "broaden_years": {
+  "v": 3,
+  "src": "p.45: “within a set period (e.g. 3 years)”"
+ }
+}

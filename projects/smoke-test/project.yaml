@@ -1,0 +1,23 @@
+# Minimal fixture project. Used by `pnpm video smoke` and the render smoke test.
+id: smoke-test
+title: Smoke test
+description: Two short scenes that exercise web rendering, cues, both languages and captions.
+format: { width: 1920, height: 1080, fps: 30 }
+brand: { name: Experimental Labs, place: Philippines, crumbs: [Smoke test] }
+languages:
+  en: { voice: narrator-en }
+  ja: { voice: narrator-ja, subtitles: [en] }
+scenes:
+  - id: hello
+    renderer: web
+    entry: scenes/Hello.tsx
+    section: [§ Fixture]
+    beats: [intro]
+  - id: figure
+    renderer: still
+    entry: assets/figure.png
+    section: [§ Still]
+    beats: []
+    lead: 0
+    hold: 0
+    min_duration: 1.5

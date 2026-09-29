@@ -1,0 +1,60 @@
+[project]
+name = "vidmedia"
+version = "0.1.0"
+description = "Media tooling for the research-video pipeline: transcription, alignment, audio analysis, reference-video analysis."
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "faster-whisper>=1.1",
+  "numpy>=1.26",
+  "soundfile>=0.12",
+  "pyloudnorm>=0.1.1",
+  "rapidfuzz>=3.9",
+  "pyyaml>=6.0",
+  "scipy>=1.13",
+]
+
+[project.optional-dependencies]
+cuda = [
+  "nvidia-cublas-cu12",
+  "nvidia-cudnn-cu12>=9,<10",
+]
+# TTS QA metrics (vidmedia.ttsqa). All permissive: torch/torchaudio BSD (CPU build, see sources),
+# speechbrain Apache-2.0 (+ ECAPA weights Apache-2.0), silero-vad MIT, librosa ISC, jiwer Apache-2.0,
+# whisper-normalizer MIT, fugashi MIT, unidic-lite BSD, jaconv MIT. UTMOS22 weights come via torch.hub
+# from tarepan/SpeechMOS (MIT).
+qa = [
+  "torch>=2.10,<2.11",
+  "torchaudio>=2.10,<2.11",
+  "speechbrain>=1.1",
+  "silero-vad>=6.2",
+  "librosa>=0.11",
+  "jiwer>=4.0",
+  "whisper-normalizer>=0.1.15",
+  "fugashi>=1.5",
+  "unidic-lite>=1.0.8",
+  "jaconv>=0.5",
+]
+
+[project.scripts]
+vidmedia = "vidmedia.cli:main"
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+torchaudio = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vidmedia"]

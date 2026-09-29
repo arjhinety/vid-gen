@@ -1,0 +1,43 @@
+# English narrator: Kokoro-82M preset af_heart (the launch film's voice), directed per line by prosody.
+# History:
+#   2026-09-28  Qwen3 soft clone -> Kokoro af_heart: the owner found the clone "too monotone".
+#               af_heart is the launch film's narrator (ECAPA similarity 0.95; pitch variation 5.02 st vs the film's 5.34).
+#   2026-09-29  -> Qwen3 1.7B CustomVoice Serena with per-line instructions, for emotion control
+#               (research/tts/emotion-tags.md). On hearing it the owner found it robotic and "static" next to
+#               Kokoro, which "has better flowing and tone", but still wanted the semantic tags: "keep the
+#               semantic tags, but proper voice".
+#   2026-09-29  -> Kokoro af_heart with tone direction by prosody (this file).
+# How direction works (py/tts/kokoro/run.py): Kokoro predicts each line's durations and pitch contour, then decodes
+# them with the preset's timbre style. A tone edits those predictions (pace, pitch level, pitch range) before
+# decoding, so the timbre is af_heart's exactly. The decoder follows the edited contour only partly (a 25 % wider
+# range came out ~10 % wider), so the palette below is deliberately stronger than it sounds.
+# Measured on one sentence ("And yet, by the score we used to judge it, the trained model was the better one."):
+#   median F0 neutral 194 Hz; curious 209, surprise 210, warm 203, disbelief 201, irony 192, resolve 186,
+#   reveal 177, gravity 172; length 4.80 s neutral, 4.67 (surprise) to 5.38 s (reveal); ASR identical in every tone.
+# Previous setting (Serena), to switch back:
+#   {engine: qwen3, params: {model: Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice, mode: custom, speaker: Serena,
+#    language: English, seed: 1234}, tempo: 1.12, tone_via: instruct, tones: <see git history>}
+id: narrator-en
+lang: en
+engine: kokoro
+description: Clear, lively young female narrator (Kokoro af_heart), the Experimental Labs house voice, directed by tone.
+params:
+  voice: af_heart
+  speed: 1.0
+  lang_code: a
+  seed: 1234
+tone_via: prosody
+tones:
+  curious: "speed=1.00 pitch=1.5 range=1.5"
+  disbelief: "speed=0.93 pitch=1.0 range=1.35"
+  irony: "speed=0.94 pitch=-0.5 range=1.4"
+  gravity: "speed=0.88 pitch=-2.5 range=0.6"
+  surprise: "speed=1.05 pitch=2.5 range=1.6"
+  reveal: "speed=0.86 pitch=-1.5 range=0.8"
+  resolve: "speed=0.92 pitch=-1.0 range=1.2"
+  warm: "speed=0.96 pitch=1.0 range=1.25"
+# Pipeline contract: one line per call; send the normalised spoken form (numbers spelled out, lexicon applied).
+provenance: >-
+  Kokoro-82M (Apache-2.0 weights) built-in preset voice af_heart. No cloning; no recording of any real person was
+  supplied by us. Same preset as the Experimental Labs launch film. Direction edits only the model's predicted
+  pace and pitch contour.

@@ -1,0 +1,28 @@
+# VoxCPM2 adapter environment (Apache-2.0 weights + code). Python 3.10 + torch 2.10.0+cu128 so uv hardlinks
+# the same cached torch build as the other engine envs. Run: py/tts/voxcpm/.venv/Scripts/python py/tts/voxcpm/run.py job.json
+[project]
+name = "tts-voxcpm"
+version = "0.1.0"
+description = "VoxCPM2 (2B, 30 languages, parenthetical style/voice-design control) adapter env"
+requires-python = "==3.10.*"
+dependencies = [
+  "voxcpm==2.0.3",
+  "torch==2.10.0",
+  "torchaudio==2.10.0",
+  "soundfile>=0.12",
+  "numpy>=1.26,<2.3",
+]
+
+[tool.uv]
+package = false
+# the upstream demo UI / hosting shims are not needed for inference
+override-dependencies = ["gradio; python_version < '0'", "spaces; python_version < '0'"]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
+torchaudio = { index = "pytorch-cu128" }
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true

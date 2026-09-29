@@ -1,0 +1,197 @@
+# Experimental Machines — the founding governance draft, explained. ~10 minutes.
+# Same house format as opengrad-study-001 (docs/design-system.md): the lab sheet, one open question at the top,
+# one exhibit at a time with its terms written on the objects, silent holds after the turns, no running caption.
+# The cute part: the three founders appear as little bean characters (scenes/shared/cast.tsx) that wear the hats,
+# vote, step out of the room, and get protected by an outsider.
+# Source: sources/governance-draft-v0.1.pdf (a proposal, v0.1). Numbers: data/governance.json (data/extract.py,
+# each value with the page and a quote). Claims: sources/claims.yaml.
+id: em-governance-001
+title: "Every seat, three friends"
+description: >-
+  How the Experimental Machines founding governance draft v0.1 works: the three hats, the two layers (corporate vs
+  research), member and Board powers, research independence, conflicts, membership, money, IP, sponsors, where each
+  rule lives, and the draft's own weak spots.
+format: { width: 1920, height: 1080, fps: 30 }
+brand: { name: Experimental Machines, place: Philippines, crumbs: [Governance draft v0.1] }
+headline: { enabled: false }
+languages:
+  en: { voice: narrator-en, subtitles: [en] }
+script: script/narration.yaml
+claims: sources/claims.yaml
+audio:
+  target_lufs: -16
+  line_gap: 0.35
+  beat_gap: 1.0
+  # The owner's calm Flow track from the pilot (projects/opengrad-study-001/assets/music/PROVENANCE.md), looped to
+  # length. Same levels as the pilot.
+  music:
+    path: projects/opengrad-study-001/assets/music/graph-paper-learning.wav
+    gain_db: -9
+    duck_db: -7
+  # Sound marks the three turns and two verdicts only.
+  sfx:
+    - { at: "cold-open:notlegal", offset: 0.3, sound: stamp, gain_db: -16 }
+    - { at: "member-powers:justtwo", offset: 0.3, sound: impact, gain_db: -13 }
+    - { at: "membership:twoone", offset: 0.6, sound: impact, gain_db: -12 }
+    - { at: "weak-spots:cant", offset: 0.5, sound: impact, gain_db: -12 }
+    - { at: "close:outsiderc", offset: 0.4, sound: stamp, gain_db: -16 }
+scenes:
+  - id: cold-open
+    renderer: web
+    entry: scenes/ColdOpen.tsx
+    section: [Three friends]
+    lead: 1.6
+    hold: 1.2
+    question: [{ at: honest, text: "How do three friends keep each other honest?" }]
+    beats: [b01, b02]
+    claims: [em-purpose, draft-scope, draft-status]
+  - id: what-it-is
+    renderer: web
+    entry: scenes/WhatItIs.tsx
+    section: [01 · What it is]
+    lead: 0.6
+    hold: 1.0
+    question: "What kind of thing is Experimental Machines?"
+    beats: [b03, b04]
+    claims: [em-form, fin-no-dividends, spon-accept, fin-surplus, em-purpose-clause, em-tax-test, em-not]
+  - id: three-hats
+    renderer: web
+    entry: scenes/ThreeHats.tsx
+    section: [02 · Three hats]
+    lead: 0.6
+    hold: 1.0
+    question: "Who’s in charge?"
+    beats: [b05, b06]
+    claims: [facts-roles, members-change, officers, layers-flow, law-combo, law-president, unpaid, titles-legal]
+  - id: two-layers
+    renderer: web
+    entry: scenes/TwoLayers.tsx
+    section: [03 · Two layers]
+    lead: 0.6
+    hold: 1.2
+    question: "Who decides what’s true?"
+    beats: [b07, b08]
+    claims: [layers, titles, titles-noauth]
+  - id: member-powers
+    renderer: web
+    entry: scenes/MemberPowers.tsx
+    section: [04 · Member powers]
+    lead: 0.6
+    hold: 1.0
+    question: "What can two out of three do?"
+    beats: [b09, b10]
+    claims: [members-change, members-table, members-twothirds, members-process, members-unanimity]
+  - id: mission-lock
+    renderer: web
+    entry: scenes/MissionLock.tsx
+    section: [04 · Member powers, The mission lock]
+    lead: 0.6
+    hold: 1.2
+    question: "Can the mission be changed?"
+    beats: [b11]
+    claims: [mission-rule, mission-effect]
+  - id: board-limits
+    renderer: web
+    entry: scenes/BoardLimits.tsx
+    section: [05 · The Board]
+    lead: 0.6
+    hold: 1.0
+    question: "What can’t the Board touch?"
+    beats: [b12, b13]
+    claims: [board-powers, board-limits, prohibit-disguise]
+  - id: intervene
+    renderer: web
+    entry: scenes/Intervene.tsx
+    section: [05 · The Board, Research independence]
+    lead: 0.6
+    hold: 1.2
+    question: "When may the Board step in?"
+    beats: [b14, b15]
+    claims: [intervene-grounds, intervene-procedure, science-disputes]
+  - id: conflicts
+    renderer: web
+    entry: scenes/Conflicts.tsx
+    section: [06 · Conflicts]
+    lead: 0.6
+    hold: 1.2
+    question: "What if a trustee has a stake?"
+    beats: [b16, b17]
+    claims: [coi-rule, coi-quorum, coi-all, deadlock]
+  - id: membership
+    renderer: web
+    entry: scenes/Membership.tsx
+    section: [07 · Membership]
+    lead: 0.6
+    hold: 1.4
+    question:
+      - { text: "Who becomes a member?" }
+      - { at: serious, text: "Who can be removed, and how?" }
+    beats: [b18, b19]
+    claims: [members-not, members-admission, removal-causes, removal-notcause, removal-process, removal-why]
+  - id: money
+    renderer: web
+    entry: scenes/Money.tsx
+    section: [08 · Money]
+    lead: 0.6
+    hold: 1.2
+    question:
+      - { text: "Where does the money go?" }
+      - { at: "line:b21#0", text: "Could a founder be paid later?" }
+    beats: [b20, b21]
+    claims: [fin-principles, fin-ownpay, fin-reimburse, fin-twoperson, founder-transition, future-company]
+  - id: ip
+    renderer: web
+    entry: scenes/Ownership.tsx
+    section: [09 · Who owns what]
+    lead: 0.6
+    hold: 1.2
+    question: "Who owns the work?"
+    beats: [b22]
+    claims: [ip-a-c, ip-b, ip-rule, ip-d]
+  - id: sponsors
+    renderer: web
+    entry: scenes/Sponsors.tsx
+    section: [10 · Sponsors]
+    lead: 0.6
+    hold: 1.2
+    question: "Can money buy a result?"
+    beats: [b23, b24]
+    claims: [spon-accept, spon-principle, spon-safeguards, consulting-line, consulting-vs, consulting-risk]
+  - id: where-rules
+    renderer: web
+    entry: scenes/WhereRules.tsx
+    section: [11 · Where rules live]
+    lead: 0.6
+    hold: 1.2
+    question: "Why are some rules harder to change?"
+    beats: [b25]
+    claims: [where-rules]
+  - id: weak-spots
+    renderer: web
+    entry: scenes/WeakSpots.tsx
+    section: [12 · Self-review]
+    lead: 0.6
+    hold: 1.2
+    question: "Where is the design still weak?"
+    beats: [b26]
+    claims: [review-summary, review-entrench, review-twoone]
+  - id: next
+    renderer: web
+    entry: scenes/Next.tsx
+    section: [13 · What’s next]
+    lead: 0.6
+    hold: 1.2
+    question: "What do the founders decide next?"
+    beats: [b27, b28]
+    claims: [draft-scope, status-counts, founder-blocking, next-step, draft-counsel]
+  - id: close
+    renderer: web
+    entry: scenes/Close.tsx
+    section: [Three friends]
+    lead: 0.8
+    hold: 5.0
+    question:
+      - { text: "How do three friends keep each other honest?" }
+      - { at: outsiderc, text: null }
+    beats: [b29]
+    claims: [close-summary]

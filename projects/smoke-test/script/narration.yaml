@@ -1,0 +1,8 @@
+beats:
+  - id: intro
+    intent: The pipeline turns a sentence into a synchronised frame.
+    lines:
+      - en: "Every gradient is a [[hyp]]*hypothesis*."
+        ja: "すべての勾配は[[hyp]]仮説です。"
+      - en: "Every checkpoint is [[ev]]evidence, not a ~~guess~~."
+        ja: "すべてのチェックポイントは[[ev]]推測ではなく、証拠です。"

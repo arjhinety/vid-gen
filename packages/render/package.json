@@ -1,0 +1,8 @@
+{
+  "name": "@vid/render",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Renderers (web via Playwright, Manim via uv) and the FFmpeg compositor.",
+  "exports": { ".": "./src/index.ts" }
+}
