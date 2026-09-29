@@ -84,7 +84,7 @@ Everything else in the track is a pure function of the timeline (`film.ts`, `mot
 
 ## Rendering speed
 
-The first full-film render ran at **4 frames per second**, which is about 48 minutes for the 6.5-minute lesson. After the changes below, it runs at **18–22 fps at full size** (about 9–11 minutes) and **~59 fps at draft size** (about 3.3 minutes; one test run). The captured pixels are the same as before.
+The first full-film render ran at **4 frames per second**, which is about 48 minutes for the 6.5-minute lesson. After the changes below, it runs at **18–22 fps at full size** (about 9–11 minutes). At draft size, the whole lesson's track (11,698 frames) took **274 s, 43 fps**; a short test run had reached 59 fps. The captured pixels are the same as before.
 
 **Measured on:** an Intel i5-13420H (8 cores, 12 threads) with SwiftShader (Chromium's CPU WebGL), a 520×864 canvas, on 2026-09-30. Numbers moved by ±30% between runs as other work loaded the machine, so compare settings back to back. To measure your own machine:
 
